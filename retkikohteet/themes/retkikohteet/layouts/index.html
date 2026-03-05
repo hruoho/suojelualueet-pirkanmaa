@@ -1,22 +1,57 @@
-{{ define "main" }}
-<section class="hero">
-  <div class="hero__content">
-    <h1 class="hero__title">Retkikohteet</h1>
-    <p class="hero__tagline">Pirkanmaan retkikohteet yhdessä paikassa</p>
-    <div class="hero__cta">
-      <a href="{{ "/kartta/" | relURL }}" class="hero__button hero__button--primary">Katso kartalta</a>
-      <a href="{{ "/kohteet/" | relURL }}" class="hero__button hero__button--secondary">Selaa kohteita</a>
-    </div>
-  </div>
-</section>
+{{ define "head" }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin="">
+{{ end }}
 
-<section class="featured">
-  <h2>Kohteita</h2>
-  <div class="kohteet-grid">
-    {{ $places := where .Site.RegularPages "Section" "kohteet" }}
-    {{ range first 4 $places }}
-      {{ partial "kohde-card.html" . }}
-    {{ end }}
+{{ define "main" }}
+<div class="kartta-page">
+  <div id="map"></div>
+  <div id="info-panel" class="info-panel" hidden>
+    <button class="info-panel__close" aria-label="Sulje">&times;</button>
+    <h2 class="info-panel__title"></h2>
+    <div class="info-panel__meta"></div>
+    <div class="info-panel__tags"></div>
+    <p class="info-panel__desc"></p>
+    <div class="info-panel__facilities"></div>
+    <div class="info-panel__links"></div>
   </div>
-</section>
+</div>
+
+{{ $features := slice }}
+{{ $pages := where .Site.RegularPages "Section" "kohteet" }}
+{{ range $pages }}
+  {{ if .Params.koordinaatit }}
+    {{ $props := dict
+      "name" .Title
+      "kunta" .Params.kunta
+      "url" .RelPermalink
+      "pinta_ala_ha" .Params.pinta_ala_ha
+      "tags" .Params.tags
+      "vaellusreitit_km" .Params.vaellusreitit_km
+      "tulipaikkoja" .Params.tulipaikkoja
+      "laavuja" .Params.laavuja
+      "vuokratupia" .Params.vuokratupia
+      "lahde" .Params.lahde
+      "lahde_url" .Params.lahde_url
+      "description" (trim .RawContent "\n ")
+    }}
+    {{ $feature := dict
+      "type" "Feature"
+      "geometry" (dict "type" "Point" "coordinates" (slice (index .Params.koordinaatit 1) (index .Params.koordinaatit 0)))
+      "properties" $props
+    }}
+    {{ $features = $features | append $feature }}
+  {{ end }}
+{{ end }}
+{{ $geojson := dict "type" "FeatureCollection" "features" $features | jsonify }}
+<script id="places-data" type="application/json">{{ $geojson | safeJS }}</script>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+{{ $js := resources.Get "js/kartta.js" | minify }}
+<script src="{{ $js.RelPermalink }}"></script>
 {{ end }}

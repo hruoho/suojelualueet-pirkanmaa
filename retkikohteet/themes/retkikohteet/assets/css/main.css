@@ -426,30 +426,115 @@ main:has(.kartta-page) {
   height: 100%;
 }
 
-.map-popup h3 {
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  margin: 0 0 0.3rem;
+/* Override Leaflet default font */
+.leaflet-container {
+  font-family: var(--sans);
 }
 
-.map-popup h3 a {
+/* Info panel */
+.info-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 360px;
+  max-height: 100%;
+  overflow-y: auto;
+  background: var(--bg);
+  border-left: 1px solid var(--bg-alt);
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  z-index: 1000;
+  font-family: var(--sans);
+}
+
+.info-panel__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
+}
+
+.info-panel__close:hover {
+  color: var(--gold);
+}
+
+.info-panel__title {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  margin: 0 1.5rem 0.5rem 0;
+  line-height: 1.3;
+}
+
+.info-panel__title a {
   color: var(--text);
   text-decoration: none;
 }
 
-.map-popup h3 a:hover {
+.info-panel__title a:hover {
   color: var(--gold);
 }
 
-.map-popup p {
-  margin: 0;
-  font-size: 0.9rem;
+.info-panel__meta {
+  font-size: 0.95rem;
   color: var(--moss);
+  margin-bottom: 0.6rem;
 }
 
-/* Override Leaflet default font */
-.leaflet-container {
-  font-family: var(--sans);
+.info-panel__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.info-panel__desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.info-panel__facilities {
+  margin-bottom: 1rem;
+}
+
+.info-panel__facilities ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.info-panel__facilities li {
+  background: var(--bg-alt);
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.info-panel__links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .info-panel {
+    width: 100%;
+    max-height: 50vh;
+    top: auto;
+    bottom: 0;
+    border-left: none;
+    border-top: 1px solid var(--bg-alt);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* ---------- Hero ---------- */
