@@ -1,12 +1,12 @@
 ---
 title: "Hiidenkivenkorpi"
 kunta: "Urjala"
-koordinaatit: [61.04, 23.43]
+koordinaatit: [61.0673, 23.297]
 pinta_ala_ha: 12
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.04,23.43"
-  paikkatietoikkuna: ""
+  google_maps: "https://www.google.com/maps?q=61.0673,23.297"
+  paikkatietoikkuna: "https://kartta.paikkatietoikkuna.fi/?zoomLevel=11&coord=300449.22442027996_6776034.37477755&mapLayers=802+100+default,99+100+default,90+100+default&markers=2|5|3233ff|300217.2244202801_6775940.874777549|Hiidenkivenkorpi&uuid=90246d84-3958-fd8c-cb2c-2510cccca1d3&noSavedState=true&showIntro=false"
   maastokartat_app: ""
 lahde: "Luonnonperintösäätiö"
 lahde_url: "https://luonnonperintosaatio.fi/suojelualue/hiidenkivenkorpi/"

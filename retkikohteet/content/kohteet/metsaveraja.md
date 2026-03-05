@@ -1,12 +1,12 @@
 ---
 title: "Metsäveräjä"
 kunta: "Lempäälä"
-koordinaatit: [61.39, 23.78]
+koordinaatit: [61.3977, 23.8258]
 pinta_ala_ha: 5
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.39,23.78"
-  paikkatietoikkuna: ""
+  google_maps: "https://www.google.com/maps?q=61.3977,23.8258"
+  paikkatietoikkuna: "https://kartta.paikkatietoikkuna.fi/?zoomLevel=11&coord=330662.7199267578_6811429.514322982&mapLayers=802+100+default,99+100+default,90+100+default&markers=2|5|26bf4b|330517.7199267578_6811212.409227486|Mets%C3%A4ver%C3%A4j%C3%A4&uuid=90246d84-3958-fd8c-cb2c-2510cccca1d3&noSavedState=true&showIntro=false"
   maastokartat_app: ""
 lahde: "Luonnonperintösäätiö"
 lahde_url: "https://luonnonperintosaatio.fi/suojelualue/metsaveraja/"

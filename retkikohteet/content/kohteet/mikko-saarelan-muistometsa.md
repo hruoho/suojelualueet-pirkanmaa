@@ -1,12 +1,12 @@
 ---
 title: "Mikko Saarelan muistometsä"
 kunta: "Ylöjärvi"
-koordinaatit: [61.56, 23.62]
+koordinaatit: [61.5877, 23.6539]
 pinta_ala_ha: 14
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.56,23.62"
-  paikkatietoikkuna: ""
+  google_maps: "https://www.google.com/maps?q=61.5877,23.6539"
+  paikkatietoikkuna: "https://kartta.paikkatietoikkuna.fi/?zoomLevel=10&coord=322741.56776422_6832844.129459694&mapLayers=802+100+default,99+100+default,90+100+default&markers=2|5|3233ff|322431.56776422_6832811.129459694|Mikon%20mets%C3%A4&uuid=90246d84-3958-fd8c-cb2c-2510cccca1d3&noSavedState=true&showIntro=false"
   maastokartat_app: ""
 lahde: "Luonnonperintösäätiö"
 lahde_url: "https://luonnonperintosaatio.fi/suojelualue/mikko-saarelan-muistometsa/"
