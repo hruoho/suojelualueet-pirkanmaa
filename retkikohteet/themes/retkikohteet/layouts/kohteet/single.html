@@ -53,22 +53,7 @@
     </ul>
   </section>
 
-  {{ if or .Params.kartat.google_maps .Params.kartat.paikkatietoikkuna .Params.kartat.maastokartat_app }}
-  <section class="kohde-maps">
-    <h2>Kartat ja navigointi</h2>
-    <div class="kohde-map-links">
-      {{ with .Params.kartat.google_maps }}
-        <a href="{{ . }}" class="kohde-map-link" target="_blank" rel="noopener">Google Maps</a>
-      {{ end }}
-      {{ with .Params.kartat.paikkatietoikkuna }}
-        <a href="{{ . }}" class="kohde-map-link" target="_blank" rel="noopener">Paikkatietoikkuna</a>
-      {{ end }}
-      {{ with .Params.kartat.maastokartat_app }}
-        <a href="{{ . }}" class="kohde-map-link" target="_blank" rel="noopener">Maastokartat</a>
-      {{ end }}
-    </div>
-  </section>
-  {{ end }}
+  {{ partial "map-links.html" . }}
 
   <footer class="kohde-source">
     {{ with .Params.lahde_url }}
