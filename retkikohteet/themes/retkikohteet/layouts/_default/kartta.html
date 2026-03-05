@@ -16,7 +16,7 @@
     {{ $feature := dict
       "type" "Feature"
       "geometry" (dict "type" "Point" "coordinates" (slice (index .Params.koordinaatit 1) (index .Params.koordinaatit 0)))
-      "properties" (dict "name" .Title "kunta" .Params.kunta "url" .RelPermalink "pinta_ala_ha" .Params.pinta_ala_ha)
+      "properties" (dict "name" .Title "kunta" .Params.kunta "url" .RelPermalink "pinta_ala_ha" .Params.pinta_ala_ha "tags" .Params.tags)
     }}
     {{ $features = $features | append $feature }}
   {{ end }}
