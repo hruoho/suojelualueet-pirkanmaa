@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="hero__content">
+    <h1 class="hero__title">Retkikohteet</h1>
+    <p class="hero__tagline">Pirkanmaan retkikohteet yhdessä paikassa</p>
+    <div class="hero__cta">
+      <a href="{{ "/kartta/" | relURL }}" class="hero__button hero__button--primary">Katso kartalta</a>
+      <a href="{{ "/kohteet/" | relURL }}" class="hero__button hero__button--secondary">Selaa kohteita</a>
+    </div>
+  </div>
+</section>
+
+<section class="featured">
+  <h2>Kohteita</h2>
+  <div class="kohteet-grid">
+    {{ $places := where .Site.RegularPages "Section" "kohteet" }}
+    {{ range first 4 $places }}
+      {{ partial "kohde-card.html" . }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

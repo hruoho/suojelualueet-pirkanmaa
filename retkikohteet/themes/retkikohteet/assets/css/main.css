@@ -451,3 +451,116 @@ main:has(.kartta-page) {
 .leaflet-container {
   font-family: var(--sans);
 }
+
+/* ---------- Hero ---------- */
+main:has(.hero) {
+  max-width: none;
+  padding: 0;
+}
+
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #2C3527 0%,
+    #3a4a35 30%,
+    #4a5a43 50%,
+    #5B7A5E 70%,
+    #C4933F 100%
+  );
+  padding: 4rem 2rem;
+  margin: -1rem -1rem 0;
+}
+
+.hero__content {
+  max-width: 600px;
+}
+
+.hero__title {
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  color: var(--bg);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.hero__tagline {
+  font-family: var(--sans);
+  font-size: 1.25rem;
+  color: rgba(245, 240, 232, 0.85);
+  margin-bottom: 2rem;
+}
+
+.hero__cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero__button {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.hero__button:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.hero__button--primary {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+.hero__button--primary:hover {
+  background: var(--gold-dark);
+  color: var(--bg);
+}
+
+.hero__button--secondary {
+  background: rgba(245, 240, 232, 0.15);
+  color: var(--bg);
+  border: 1px solid rgba(245, 240, 232, 0.4);
+}
+
+.hero__button--secondary:hover {
+  background: rgba(245, 240, 232, 0.25);
+  color: var(--bg);
+}
+
+/* ---------- Featured section ---------- */
+.featured {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.featured h2 {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__tagline {
+    font-size: 1.1rem;
+  }
+}
