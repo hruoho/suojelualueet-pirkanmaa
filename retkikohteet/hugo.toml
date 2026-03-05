@@ -1,0 +1,11 @@
+baseURL = "https://example.github.io/retkikohteet/"
+languageCode = "fi"
+title = "Retkikohteet — Pirkanmaa"
+theme = "retkikohteet"
+
+[params]
+  description = "Pirkanmaan retkikohteet yhdessä paikassa"
+  region = "Pirkanmaa"
+
+[markup.goldmark.renderer]
+  unsafe = true

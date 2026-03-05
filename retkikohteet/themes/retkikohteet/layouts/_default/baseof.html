@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }} — {{ .Site.Title }}</title>
+  {{ $style := resources.Get "css/main.css" | minify }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{ block "head" . }}{{ end }}
+</head>
+<body>
+  <nav class="site-nav">
+    <a href="{{ "/" | relURL }}" class="site-nav__home">Retkikohteet</a>
+    <ul class="site-nav__links">
+      <li><a href="{{ "/kartta/" | relURL }}">Kartta</a></li>
+      <li><a href="{{ "/kohteet/" | relURL }}">Kohteet</a></li>
+      <li><a href="{{ "/tietoa/" | relURL }}">Tietoa</a></li>
+    </ul>
+  </nav>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer class="site-footer">
+    <p>&copy; {{ now.Year }} Retkikohteet</p>
+  </footer>
+  {{ block "scripts" . }}{{ end }}
+</body>
+</html>
