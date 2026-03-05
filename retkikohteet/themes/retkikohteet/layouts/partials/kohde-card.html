@@ -1,0 +1,33 @@
+<a href="{{ .RelPermalink }}" class="kohde-card">
+  <div class="kohde-card__image">
+    {{ if .Params.kuvia }}
+      {{ $firstImg := index .Params.kuvia 0 }}
+      {{ $imgPath := printf "img/kohteet/%s/%s" (.File.ContentBaseName) $firstImg.src }}
+      {{ $img := resources.Get $imgPath }}
+      {{ if $img }}
+        {{ $thumb := $img.Fill "400x250 q80" }}
+        <img src="{{ $thumb.RelPermalink }}" alt="{{ $firstImg.alt }}" loading="lazy">
+      {{ else }}
+        <div class="kohde-card__placeholder">
+          <span>{{ substr .Title 0 1 }}</span>
+        </div>
+      {{ end }}
+    {{ else }}
+      <div class="kohde-card__placeholder">
+        <span>{{ substr .Title 0 1 }}</span>
+      </div>
+    {{ end }}
+  </div>
+  <div class="kohde-card__content">
+    <h3 class="kohde-card__title">{{ .Title }}</h3>
+    <span class="kohde-card__kunta">{{ .Params.kunta }}</span>
+    {{ with .Params.pinta_ala_ha }}
+      <span class="kohde-card__ala">{{ . }} ha</span>
+    {{ end }}
+    {{ with .Params.tags }}
+    <div class="kohde-card__tags">
+      {{ range (first 2 .) }}<span class="kohde-tag">{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+</a>

@@ -316,3 +316,94 @@ main {
   font-size: 0.9rem;
   color: var(--moss);
 }
+
+/* ---------- Card grid ---------- */
+.kohteet-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.kohteet-page h1 {
+  margin-bottom: 2rem;
+}
+
+.kohteet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.kohde-card {
+  display: block;
+  background: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kohde-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  color: var(--text);
+}
+
+.kohde-card__image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.kohde-card__placeholder {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--moss), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kohde-card__placeholder span {
+  font-family: var(--serif);
+  font-size: 3rem;
+  color: var(--bg);
+  opacity: 0.8;
+}
+
+.kohde-card__content {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.kohde-card__title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem;
+}
+
+.kohde-card__kunta {
+  font-size: 0.9rem;
+  color: var(--moss);
+}
+
+.kohde-card__ala {
+  font-size: 0.9rem;
+  color: var(--moss);
+  margin-left: 0.75rem;
+}
+
+.kohde-card__tags {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 768px) {
+  .kohteet-grid {
+    grid-template-columns: 1fr;
+  }
+}

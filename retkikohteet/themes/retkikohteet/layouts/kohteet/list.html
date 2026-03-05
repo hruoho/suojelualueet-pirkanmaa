@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="kohteet-page">
+  <h1>{{ .Title }}</h1>
+  <div class="kohteet-grid">
+    {{ range where .Pages "Params.draft" "ne" true }}
+      {{ partial "kohde-card.html" . }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}
