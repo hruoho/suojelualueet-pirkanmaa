@@ -180,3 +180,139 @@ main {
     padding: 2rem 2rem;
   }
 }
+
+/* ---------- Place page ---------- */
+.kohde-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.kohde-header {
+  margin-bottom: 2rem;
+}
+
+.kohde-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.kohde-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: var(--moss);
+  margin-bottom: 0.75rem;
+}
+
+.kohde-kunta::before {
+  content: "📍 ";
+}
+
+.kohde-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.kohde-tag {
+  background: var(--bg-alt);
+  color: var(--text);
+  padding: 0.2rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-family: var(--sans);
+}
+
+.kohde-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.kohde-gallery figure {
+  margin: 0;
+}
+
+.kohde-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.kohde-gallery figcaption {
+  font-size: 0.85rem;
+  color: var(--moss);
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+
+.kohde-body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.kohde-facilities {
+  margin-bottom: 2rem;
+}
+
+.kohde-facilities h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.kohde-facilities-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.kohde-facilities-list li {
+  background: var(--bg-alt);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.kohde-maps {
+  margin-bottom: 2rem;
+}
+
+.kohde-maps h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.kohde-map-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.kohde-map-link {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--bg);
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  font-family: var(--sans);
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.kohde-map-link:hover {
+  background: var(--gold-dark);
+  color: var(--bg);
+  text-decoration: none;
+}
+
+.kohde-source {
+  border-top: 1px solid var(--bg-alt);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--moss);
+}
