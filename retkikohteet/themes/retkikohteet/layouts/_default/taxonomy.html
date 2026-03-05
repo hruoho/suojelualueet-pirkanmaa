@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="kohteet-page">
+  <h1>{{ .Title }}</h1>
+  <ul class="taxonomy-list">
+    {{ range .Pages }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }} ({{ len .Pages }})</a></li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
