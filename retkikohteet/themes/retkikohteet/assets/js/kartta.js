@@ -1,7 +1,5 @@
 (function() {
   var data = JSON.parse(document.getElementById('places-data').textContent);
-  var panel = document.getElementById('info-panel');
-  var closeBtn = panel.querySelector('.info-panel__close');
 
   // Center on Pirkanmaa
   var map = L.map('map').setView([61.5, 23.8], 9);
@@ -35,56 +33,47 @@
     return tags.indexOf('luonnonperintösäätiö') !== -1;
   }
 
-  function showPanel(p) {
-    // Title
-    panel.querySelector('.info-panel__title').innerHTML =
-      '<a href="' + p.url + '">' + p.name + '</a>';
+  function buildPopupHTML(p) {
+    var html = '<div class="map-popup">';
+    html += '<h3><a href="' + p.url + '">' + p.name + '</a></h3>';
 
-    // Meta: kunta + area
-    var meta = p.kunta;
-    if (p.pinta_ala_ha) meta += ' · ' + p.pinta_ala_ha + ' ha';
-    panel.querySelector('.info-panel__meta').textContent = meta;
+    // Meta
+    html += '<p class="map-popup__meta">' + p.kunta;
+    if (p.pinta_ala_ha) html += ' · ' + p.pinta_ala_ha + ' ha';
+    html += '</p>';
 
     // Tags
-    var tagsEl = panel.querySelector('.info-panel__tags');
-    tagsEl.innerHTML = '';
     if (p.tags && p.tags.length) {
+      html += '<div class="map-popup__tags">';
       p.tags.forEach(function(tag) {
-        tagsEl.innerHTML += '<span class="kohde-tag">' + tag + '</span>';
+        html += '<span class="map-popup__tag">' + tag + '</span>';
       });
+      html += '</div>';
     }
 
-    // Description (truncated)
+    // Description
     var desc = p.description || '';
-    if (desc.length > 300) desc = desc.substring(0, 300) + '…';
-    panel.querySelector('.info-panel__desc').textContent = desc;
+    if (desc.length > 200) desc = desc.substring(0, 200) + '…';
+    if (desc) html += '<p class="map-popup__desc">' + desc + '</p>';
 
     // Facilities
     var fac = [];
-    if (p.vaellusreitit_km) fac.push('Reittejä: ' + p.vaellusreitit_km + ' km');
-    if (p.tulipaikkoja) fac.push('Tulipaikkoja: ' + p.tulipaikkoja);
-    if (p.laavuja) fac.push('Laavuja: ' + p.laavuja);
+    if (p.vaellusreitit_km) fac.push('Reittejä ' + p.vaellusreitit_km + ' km');
+    if (p.tulipaikkoja) fac.push('Tulipaikkoja ' + p.tulipaikkoja);
+    if (p.laavuja) fac.push('Laavuja ' + p.laavuja);
     if (p.vuokratupia && p.vuokratupia.length) fac.push('Vuokratupia: ' + p.vuokratupia.join(', '));
-    var facEl = panel.querySelector('.info-panel__facilities');
     if (fac.length) {
-      facEl.innerHTML = '<ul>' + fac.map(function(f) { return '<li>' + f + '</li>'; }).join('') + '</ul>';
-    } else {
-      facEl.innerHTML = '';
+      html += '<div class="map-popup__facilities">' + fac.join(' · ') + '</div>';
     }
 
-    // Links
-    var links = '<a href="' + p.url + '" class="kohde-map-link">Avaa kohde</a>';
-    panel.querySelector('.info-panel__links').innerHTML = links;
-
-    panel.hidden = false;
+    // Link
+    html += '<a href="' + p.url + '" class="map-popup__link">Avaa kohde →</a>';
+    html += '</div>';
+    return html;
   }
 
-  function hidePanel() {
-    panel.hidden = true;
-  }
-
-  closeBtn.addEventListener('click', hidePanel);
-
+  // Tooltip for hover (name only, lightweight)
+  // Popup for click (full details)
   var activeLayer = null;
 
   L.geoJSON(data, {
@@ -93,40 +82,45 @@
       return L.circleMarker(latlng, style);
     },
     onEachFeature: function(feature, layer) {
+      // Lightweight tooltip on hover
+      layer.bindTooltip(feature.properties.name, {
+        direction: 'top',
+        offset: [0, -10],
+        className: 'map-tooltip'
+      });
+
+      // Rich popup on click
+      layer.bindPopup(buildPopupHTML(feature.properties), {
+        maxWidth: 320,
+        minWidth: 240,
+        className: 'map-popup-container'
+      });
+
       layer.on('mouseover', function() {
         var hover = isLPS(feature) ? greenMarkerHover : goldMarkerHover;
         layer.setStyle(hover);
-        showPanel(feature.properties);
       });
+
       layer.on('mouseout', function() {
         if (activeLayer !== layer) {
           var normal = isLPS(feature) ? greenMarker : goldMarker;
           layer.setStyle(normal);
         }
       });
+
       layer.on('click', function() {
-        // Reset previously active
         if (activeLayer && activeLayer !== layer) {
           var prevLPS = isLPS(activeLayer.feature);
           activeLayer.setStyle(prevLPS ? greenMarker : goldMarker);
         }
         activeLayer = layer;
-        var hover = isLPS(feature) ? greenMarkerHover : goldMarkerHover;
-        layer.setStyle(hover);
-        showPanel(feature.properties);
+      });
+
+      layer.on('popupclose', function() {
+        var normal = isLPS(feature) ? greenMarker : goldMarker;
+        layer.setStyle(normal);
+        if (activeLayer === layer) activeLayer = null;
       });
     }
   }).addTo(map);
-
-  // Close panel when clicking on empty map
-  map.on('click', function(e) {
-    if (!e.originalEvent.target.closest('.info-panel')) {
-      if (activeLayer) {
-        var prevLPS = isLPS(activeLayer.feature);
-        activeLayer.setStyle(prevLPS ? greenMarker : goldMarker);
-        activeLayer = null;
-      }
-      hidePanel();
-    }
-  });
 })();
