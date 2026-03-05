@@ -15,7 +15,7 @@ vuokratupia: ["Rajalan kämppä"]
 lahde: "laipanmaa.fi"
 lahde_url: "https://www.laipanmaa.fi"
 tags: ["virkistysalue", "vaellus", "luontopolku"]
-draft: true
+draft: false
 ---
 
 Laipanmaa on Etelä-Suomen suurin yhtenäinen metsäalue Pälkäneen ja Kangasalan rajamailla, noin 50 km itään Tampereelta. Metsäalueen pinta-ala on noin 15 000 hehtaaria eli 150 neliökilometriä, ja se jää Längelmäveden, Pälkäneveden ja Kukkian väliselle alueelle.

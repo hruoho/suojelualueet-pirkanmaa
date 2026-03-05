@@ -15,7 +15,7 @@ vuokratupia: []
 lahde: "kangasala.fi"
 lahde_url: "https://www.kangasala.fi/dreambroker_video/kaarinanpolun-vaellusreitti/"
 tags: ["vaellus"]
-draft: true
+draft: false
 ---
 
 Kaarinanpolku on noin 60 kilometrin mittainen vaellusreitti Kangasalla, avattu vuonna 2001. Polku kuuluu Pirkanmaan ulkoilureittiverkostoon Pirkan Taipaleeseen. Reitti ulottuu Kangasalan pohjoisosasta (Lihasula, Säynäjärventie) etelään Lempäälän rajalle, jossa se yhdistyy Birgitan polkuun.

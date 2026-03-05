@@ -15,7 +15,7 @@ vuokratupia: []
 lahde: "luontoon.fi"
 lahde_url: "https://www.luontoon.fi/helvetinjarvi"
 tags: ["kansallispuisto", "vaellus"]
-draft: true
+draft: false
 ---
 
 Helvetinjärven kansallispuisto on Ruovedellä sijaitseva vuonna 1982 perustettu kansallispuisto, jonka pinta-ala on 49,8 neliökilometriä. Puisto on tunnettu jylhistä rotkolaaksoistaan ja -järvistään. Tunnetuin nähtävyys on 200 miljoonaa vuotta vanha kalliosola Helvetinkolu.

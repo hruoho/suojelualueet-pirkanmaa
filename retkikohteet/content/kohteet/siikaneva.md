@@ -15,7 +15,7 @@ vuokratupia: []
 lahde: "luontoon.fi"
 lahde_url: "https://www.luontoon.fi/siikaneva"
 tags: ["luonnonsuojelualue", "luontopolku"]
-draft: true
+draft: false
 ---
 
 Siikaneva on Pirkanmaan suurin yhtenäinen suoalue ja maakunnan tärkein soidensuojelualue Ruoveden kunnassa. Suojelualueen pinta-ala on 9,5 neliökilometriä ja se on perustettu vuonna 1988. Suot ovat keidas- ja aapasoita, ja turvekerros on paksuimmillaan 7 metriä.

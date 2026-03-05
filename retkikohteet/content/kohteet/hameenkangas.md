@@ -15,7 +15,7 @@ vuokratupia: []
 lahde: "luontoon.fi"
 lahde_url: "https://www.luontoon.fi/hameenkangas"
 tags: ["virkistysalue", "vaellus"]
-draft: true
+draft: false
 ---
 
 Hämeenkangas on hieman yli 20 kilometriä pitkä harjujakso Pohjois-Satakunnassa ja Pirkanmaan rajalla. Alue on ensisijaisesti puolustusvoimien harjoitusalue, jossa myös retkeilijät voivat liikkua. Metsähallitus hoitaa aluetta vuodesta 2002 lähtien.

@@ -15,7 +15,7 @@ vuokratupia: []
 lahde: "luontoon.fi"
 lahde_url: "https://www.luontoon.fi/pukala"
 tags: ["virkistysmetsä", "vaellus", "melonta"]
-draft: true
+draft: false
 ---
 
 Pukalan virkistysmetsä sijaitsee Oriveden länsipuolella. Alueen sydän on syvä ja kirkasvetinen Pukalajärvi, jota kutsutaan "Etelä-Suomen Inariksi" syvimmän kohdan ollessa jopa 54 metriä.
