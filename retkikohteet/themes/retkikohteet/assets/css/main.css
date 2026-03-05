@@ -564,3 +564,10 @@ main:has(.hero) {
     font-size: 1.1rem;
   }
 }
+
+/* About page */
+.tietoa-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
