@@ -407,3 +407,47 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------- Map page ---------- */
+main:has(.kartta-page) {
+  max-width: none;
+  padding: 0;
+}
+
+.kartta-page {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 60px); /* Subtract nav height */
+  max-width: none;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-popup h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  margin: 0 0 0.3rem;
+}
+
+.map-popup h3 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.map-popup h3 a:hover {
+  color: var(--gold);
+}
+
+.map-popup p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--moss);
+}
+
+/* Override Leaflet default font */
+.leaflet-container {
+  font-family: var(--sans);
+}
