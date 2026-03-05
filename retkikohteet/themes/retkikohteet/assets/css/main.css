@@ -1,1 +1,182 @@
-/* placeholder */
+/* ==========================================================================
+   Retkikohteet — CSS Foundation
+   ========================================================================== */
+
+/* ---------- Design Tokens ---------- */
+:root {
+  --bg:        #F5F0E8;
+  --bg-alt:    #EDE7DB;
+  --text:      #2C3527;
+  --gold:      #C4933F;
+  --gold-dark: #A67B2F;
+  --moss:      #5B7A5E;
+  --serif:     'Lora', serif;
+  --sans:      'Source Sans 3', sans-serif;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Base ---------- */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  /* Subtle paper-grain texture */
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.008) 2px,
+      rgba(0, 0, 0, 0.008) 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.005) 3px,
+      rgba(0, 0, 0, 0.005) 5px
+    );
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.35rem; }
+h4 { font-size: 1.1rem;  }
+
+p {
+  margin-bottom: 1em;
+}
+
+/* ---------- Links ---------- */
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--gold-dark);
+  text-decoration: underline;
+}
+
+/* ---------- Images ---------- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Navigation ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  background-color: var(--bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.site-nav__home {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.site-nav__home:hover {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.site-nav__links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.site-nav__links a {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.site-nav__links a:hover,
+.site-nav__links a:focus {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+/* ---------- Main Content ---------- */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(44, 53, 39, 0.6);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.4rem;  }
+  h3 { font-size: 1.15rem; }
+
+  .site-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .site-nav__links {
+    gap: 1rem;
+  }
+
+  main {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    padding: 2rem 2rem;
+  }
+}
