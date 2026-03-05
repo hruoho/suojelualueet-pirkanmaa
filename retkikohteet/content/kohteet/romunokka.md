@@ -2,6 +2,10 @@
 title: "Romunokka"
 kunta: "Ylöjärvi"
 koordinaatit: [61.8550, 23.6800]
+tulipaikkoja: 1
+laavuja: 0
+kotia: 1
+vuokratupia: []
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.8550,23.6800"

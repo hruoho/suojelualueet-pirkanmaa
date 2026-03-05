@@ -2,6 +2,11 @@
 title: "Hautsaari"
 kunta: "Kangasala"
 koordinaatit: [61.3632, 24.0989]
+pinta_ala_ha: 3.3
+tulipaikkoja: 0
+laavuja: 0
+kotia: 1
+vuokratupia: []
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.3632,24.0989"

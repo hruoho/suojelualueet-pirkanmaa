@@ -2,6 +2,9 @@
 title: "Kukkosaari"
 kunta: "Pälkäne"
 koordinaatit: [61.4786, 23.6711]
+tulipaikkoja: 1
+laavuja: 1
+vuokratupia: []
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.4786,23.6711"

@@ -2,7 +2,7 @@
 title: "Kaarinanpolku"
 kunta: "Kangasala"
 koordinaatit: [61.53, 24.07]
-pinta_ala_ha:
+pinta_ala_ha: # Ei sovellettavissa – kyseessä on reitti, ei alue
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.53,24.07"

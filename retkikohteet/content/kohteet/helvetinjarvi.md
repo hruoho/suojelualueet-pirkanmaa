@@ -8,9 +8,9 @@ kartat:
   google_maps: "https://www.google.com/maps?q=62.0243,23.8465"
   paikkatietoikkuna: ""
   maastokartat_app: ""
-vaellusreitit_km:
+vaellusreitit_km: 40
 tulipaikkoja: 9
-laavuja:
+laavuja: 0
 vuokratupia: []
 lahde: "luontoon.fi"
 lahde_url: "https://www.luontoon.fi/helvetinjarvi"
@@ -20,4 +20,4 @@ draft: false
 
 Helvetinjärven kansallispuisto on Ruovedellä sijaitseva vuonna 1982 perustettu kansallispuisto, jonka pinta-ala on 49,8 neliökilometriä. Puisto on tunnettu jylhistä rotkolaaksoistaan ja -järvistään. Tunnetuin nähtävyys on 200 miljoonaa vuotta vanha kalliosola Helvetinkolu.
 
-Alueella on yhdeksän tulipaikkaa ja Helvetinkolun päivätupa. Kankimäessä toimii ravintola Helvetinportti. Puistoon pääsee Ruoveden, Kurun ja Virtojen suunnista.
+Merkattua reitistöä on noin 40 kilometriä. Reitit ovat suurten korkeuserojen vuoksi paikoin vaativia. Alueella on yhdeksän tulipaikkaa, Helvetinkolun päivätupa ja keittokatos, mutta ei laavuja – yöpymiseen on käytettävissä telttailualueet. Kankimäessä toimii ravintola Helvetinportti. Puistoon pääsee Ruoveden, Kurun ja Virtojen suunnista.

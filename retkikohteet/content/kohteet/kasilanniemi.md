@@ -2,6 +2,10 @@
 title: "Kasilanniemi"
 kunta: "Mänttä-Vilppula"
 koordinaatit: [62.0069, 24.3479]
+pinta_ala_ha: 3
+tulipaikkoja: 2
+laavuja: 1
+vuokratupia: []
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=62.0069,24.3479"

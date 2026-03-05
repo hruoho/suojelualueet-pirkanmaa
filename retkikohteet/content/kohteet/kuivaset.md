@@ -2,6 +2,10 @@
 title: "Kuivaset"
 kunta: "Vesilahti"
 koordinaatit: [61.3636, 23.5234]
+tulipaikkoja: 1
+laavuja: 1
+kotia: 1
+vuokratupia: []
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.3636,23.5234"
