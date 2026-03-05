@@ -1,0 +1,16 @@
+---
+title: "Kasilanniemi"
+kunta: "Mänttä-Vilppula"
+koordinaatit: [62.0069, 24.3479]
+kuvia: []
+kartat:
+  google_maps: "https://www.google.com/maps?q=62.0069,24.3479"
+  paikkatietoikkuna: ""
+  maastokartat_app: ""
+lahde: "Pirkanmaan virkistysalueyhdistys"
+lahde_url: "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/kasilanniemi-vilppula"
+tags: ["virkistysalue"]
+draft: true
+---
+
+Kasilanniemen virkistysalue sijaitsee Kasilansaaressa, Huopioniemen kylässä entisen Vilppulan kunnan alueella. Kolmen hehtaarin alue on saavutettavissa vesiteitse, ja rantaan sopii useita veneitä. Venelaiturissa on poijupaikat neljälle isolle veneelle. Alueella on laavu, kaksi nuotiopaikkaa ja puucee. Alueen kunnossapidosta vastaa Mänttä-Vilppulan kaupungin liikuntatoimi.
