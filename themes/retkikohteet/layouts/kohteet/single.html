@@ -1,0 +1,66 @@
+{{ define "main" }}
+<article class="kohde-page">
+  <header class="kohde-header">
+    <h1>{{ .Title }}</h1>
+    <div class="kohde-meta">
+      <span class="kohde-kunta">{{ .Params.kunta }}</span>
+      {{ with .Params.pinta_ala_ha }}
+        <span class="kohde-ala">{{ . }} ha</span>
+      {{ end }}
+    </div>
+    {{ with .Params.tags }}
+    <div class="kohde-tags">
+      {{ range . }}<span class="kohde-tag">{{ . }}</span>{{ end }}
+    </div>
+    {{ end }}
+  </header>
+
+  {{ if .Params.kuvia }}
+  <div class="kohde-gallery">
+    {{ range .Params.kuvia }}
+      {{ $imgPath := printf "img/kohteet/%s/%s" ($.File.ContentBaseName) .src }}
+      {{ $img := resources.Get $imgPath }}
+      {{ if $img }}
+        {{ $resized := $img.Fit "800x1000 q85" }}
+        <figure>
+          <img src="{{ $resized.RelPermalink }}" alt="{{ .alt }}" loading="lazy">
+          {{ with .alt }}<figcaption>{{ . }}</figcaption>{{ end }}
+        </figure>
+      {{ end }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <div class="kohde-body">
+    {{ .Content }}
+  </div>
+
+  <section class="kohde-facilities">
+    <h2>Palvelut</h2>
+    <ul class="kohde-facilities-list">
+      {{ with .Params.vaellusreitit_km }}
+        <li><strong>Reittejä:</strong> {{ . }} km</li>
+      {{ end }}
+      {{ with .Params.tulipaikkoja }}
+        <li><strong>Tulipaikkoja:</strong> {{ . }}</li>
+      {{ end }}
+      {{ with .Params.laavuja }}
+        <li><strong>Laavuja:</strong> {{ . }}</li>
+      {{ end }}
+      {{ with .Params.vuokratupia }}
+        <li><strong>Vuokratupia:</strong> {{ delimit . ", " }}</li>
+      {{ end }}
+    </ul>
+  </section>
+
+  {{ partial "map-links.html" . }}
+
+  <footer class="kohde-source">
+    {{ with .Params.lahde_url }}
+      <p>Lähde: <a href="{{ . }}" target="_blank" rel="noopener">{{ $.Params.lahde }}</a></p>
+    {{ else }}
+      {{ with .Params.lahde }}<p>Lähde: {{ . }}</p>{{ end }}
+    {{ end }}
+  </footer>
+</article>
+{{ end }}

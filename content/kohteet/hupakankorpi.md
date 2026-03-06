@@ -1,0 +1,21 @@
+---
+title: "Hupakankorven luonnonsuojelualue"
+kunta: "Tampere"
+koordinaatit: [61.4400, 23.8500]
+pinta_ala_ha: 8.9
+kuvia: []
+kartat:
+  google_maps: "https://www.google.com/maps?q=61.4400,23.8500"
+  paikkatietoikkuna: ""
+  maastokartat_app: ""
+vaellusreitit_km:
+tulipaikkoja: 0
+laavuja: 0
+vuokratupia: []
+lahde: "tampere.fi"
+lahde_url: "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/hupakankorven-luonnonsuojelualue"
+tags: ["luonnonsuojelualue"]
+draft: false
+---
+
+Hupakankorven luonnonsuojelualue on noin 8,9 hehtaarin kokoinen korpi- ja rämealue Vuoreksen ja Hervannan välissä, Suolijärven eteläpuolella. Alue on perustettu erityisesti suojaamaan pirkanpalkosen elinympäristöä – laji kuvattiin tieteelle uutena vuonna 2000, ja Suomessa tunnetaan vain kolme populaatiota. Alueella kulkee pitkospuut ja sorastettu polku.

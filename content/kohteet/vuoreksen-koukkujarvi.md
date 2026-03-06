@@ -1,0 +1,21 @@
+---
+title: "Vuoreksen Koukkujärven luonnonsuojelualue"
+kunta: "Tampere"
+koordinaatit: [61.445, 23.820]
+pinta_ala_ha: 1
+kuvia: []
+kartat:
+  google_maps: "https://www.google.com/maps?q=61.445,23.820"
+  paikkatietoikkuna: ""
+  maastokartat_app: ""
+vaellusreitit_km:
+tulipaikkoja:
+laavuja:
+vuokratupia: []
+lahde: "tampere.fi"
+lahde_url: "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/vuoreksen-koukkujarven-luonnonsuojelualue"
+tags: ["luonnonsuojelualue"]
+draft: false
+---
+
+Vuoreksen Koukkujärven luonnonsuojelualue on reilun hehtaarin laajuinen alue Koukkujärven pohjoispuolella Vuoreksessa, lähellä Lempäälän rajaa. Alue on perustettu suojelemaan arvokasta tervaleppälehtoa, jossa kasvaa vanhoja monirunkoisia tervaleppiä sekä harvinaista pallorahkasammalta. Koukkujärven luontopolku kiertää järven ja kulkee suojelualueen läpi opastein ja pitkospuin.

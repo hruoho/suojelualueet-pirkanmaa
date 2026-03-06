@@ -1,0 +1,21 @@
+---
+title: "Viikinsaaren luonnonsuojelualue"
+kunta: "Tampere"
+koordinaatit: [61.488, 23.730]
+pinta_ala_ha: 10.53
+kuvia: []
+kartat:
+  google_maps: "https://www.google.com/maps?q=61.488,23.730"
+  paikkatietoikkuna: ""
+  maastokartat_app: ""
+vaellusreitit_km: 1.3
+tulipaikkoja:
+laavuja:
+vuokratupia: []
+lahde: "tampere.fi"
+lahde_url: "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/viikinsaaren-luonnonsuojelualue"
+tags: ["luonnonsuojelualue"]
+draft: false
+---
+
+Viikinsaaren luonnonsuojelualue kattaa 10,53 hehtaaria saaren länsiosasta Pyhäjärvellä, noin 3,5 kilometrin päässä Tampereen keskustasta. Alue edustaa vuosisatojen laidunnuksen ja metsänkäytön muovaamaa puolikulttuurista jalopuumetsää, jossa yli satavuotiaat kuuset ja koivut kohoavat 20–24 metrin korkeuteen. Alueella kulkee 1,3 kilometrin luontopolku 14 rastilla sekä mietiskelypolku, ja saarelle pääsee Hopealinjan lautoilla Laukonlahdesta.

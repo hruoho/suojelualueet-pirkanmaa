@@ -1,0 +1,49 @@
+{{ define "head" }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin="">
+{{ end }}
+
+{{ define "main" }}
+<div class="kartta-page">
+  <div id="map"></div>
+</div>
+
+{{ $features := slice }}
+{{ $pages := where .Site.RegularPages "Section" "kohteet" }}
+{{ range $pages }}
+  {{ if .Params.koordinaatit }}
+    {{ $props := dict
+      "name" .Title
+      "kunta" .Params.kunta
+      "url" .RelPermalink
+      "pinta_ala_ha" .Params.pinta_ala_ha
+      "tags" .Params.tags
+      "vaellusreitit_km" .Params.vaellusreitit_km
+      "tulipaikkoja" .Params.tulipaikkoja
+      "laavuja" .Params.laavuja
+      "vuokratupia" .Params.vuokratupia
+      "lahde" .Params.lahde
+      "lahde_url" .Params.lahde_url
+      "luontoon_fi" .Params.kartat.luontoon_fi
+      "description" (trim .RawContent "\n ")
+    }}
+    {{ $feature := dict
+      "type" "Feature"
+      "geometry" (dict "type" "Point" "coordinates" (slice (index .Params.koordinaatit 1) (index .Params.koordinaatit 0)))
+      "properties" $props
+    }}
+    {{ $features = $features | append $feature }}
+  {{ end }}
+{{ end }}
+{{ $geojson := dict "type" "FeatureCollection" "features" $features | jsonify }}
+<script id="places-data" type="application/json">{{ $geojson | safeJS }}</script>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+{{ $js := resources.Get "js/kartta.js" | minify }}
+<script src="{{ $js.RelPermalink }}"></script>
+{{ end }}

@@ -1,0 +1,21 @@
+---
+title: "Vaiverosuon luonnonsuojelualue"
+kunta: "Tampere"
+koordinaatit: [61.7657, 23.9169]
+pinta_ala_ha: 6
+kuvia: []
+kartat:
+  google_maps: "https://www.google.com/maps?q=61.7657,23.9169"
+  paikkatietoikkuna: ""
+  maastokartat_app: ""
+vaellusreitit_km:
+tulipaikkoja:
+laavuja:
+vuokratupia: []
+lahde: "tampere.fi"
+lahde_url: "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/vaiverosuon-luonnonsuojelualue"
+tags: ["luonnonsuojelualue"]
+draft: false
+---
+
+Vaiverosuon luonnonsuojelualue sijaitsee Pohjois-Teiskossa noin 32 kilometrin päässä Tampereen keskustasta, Ala-Pirttijärven eteläpuolella. Reilun kuuden hehtaarin alue on Tampereen ainoa tunnettu vaiveron kasvupaikka, ja koko Pirkanmaalla vastaavia kasvupaikkoja tunnetaan vain noin kymmenkunta. Alueella ei ole reittejä tai palveluita.

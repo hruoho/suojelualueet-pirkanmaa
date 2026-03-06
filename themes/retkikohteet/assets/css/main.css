@@ -1,0 +1,666 @@
+/* ==========================================================================
+   Retkikohteet — CSS Foundation
+   ========================================================================== */
+
+/* ---------- Design Tokens ---------- */
+:root {
+  --bg:        #F5F0E8;
+  --bg-alt:    #EDE7DB;
+  --text:      #2C3527;
+  --gold:      #C4933F;
+  --gold-dark: #A67B2F;
+  --moss:      #5B7A5E;
+  --serif:     'Lora', serif;
+  --sans:      'Source Sans 3', sans-serif;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Base ---------- */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  /* Subtle paper-grain texture */
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.008) 2px,
+      rgba(0, 0, 0, 0.008) 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.005) 3px,
+      rgba(0, 0, 0, 0.005) 5px
+    );
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.35rem; }
+h4 { font-size: 1.1rem;  }
+
+p {
+  margin-bottom: 1em;
+}
+
+/* ---------- Links ---------- */
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--gold-dark);
+  text-decoration: underline;
+}
+
+/* ---------- Images ---------- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Navigation ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  background-color: var(--bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.site-nav__home {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.site-nav__home:hover {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.site-nav__links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.site-nav__links a {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.site-nav__links a:hover,
+.site-nav__links a:focus {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+/* ---------- Main Content ---------- */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(44, 53, 39, 0.6);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.4rem;  }
+  h3 { font-size: 1.15rem; }
+
+  .site-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .site-nav__links {
+    gap: 1rem;
+  }
+
+  main {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    padding: 2rem 2rem;
+  }
+}
+
+/* ---------- Place page ---------- */
+.kohde-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.kohde-header {
+  margin-bottom: 2rem;
+}
+
+.kohde-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.kohde-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.1rem;
+  color: var(--moss);
+  margin-bottom: 0.75rem;
+}
+
+.kohde-kunta::before {
+  content: "📍 ";
+}
+
+.kohde-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.kohde-tag {
+  background: var(--bg-alt);
+  color: var(--text);
+  padding: 0.2rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-family: var(--sans);
+}
+
+.kohde-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.kohde-gallery figure {
+  margin: 0;
+}
+
+.kohde-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.kohde-gallery figcaption {
+  font-size: 0.85rem;
+  color: var(--moss);
+  margin-top: 0.4rem;
+  font-style: italic;
+}
+
+.kohde-body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.kohde-facilities {
+  margin-bottom: 2rem;
+}
+
+.kohde-facilities h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.kohde-facilities-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.kohde-facilities-list li {
+  background: var(--bg-alt);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.kohde-maps {
+  margin-bottom: 2rem;
+}
+
+.kohde-maps h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.kohde-map-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.kohde-map-link {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--bg);
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  font-family: var(--sans);
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.kohde-map-link:hover {
+  background: var(--gold-dark);
+  color: var(--bg);
+  text-decoration: none;
+}
+
+.kohde-source {
+  border-top: 1px solid var(--bg-alt);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--moss);
+}
+
+/* ---------- Card grid ---------- */
+.kohteet-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.kohteet-page h1 {
+  margin-bottom: 2rem;
+}
+
+.kohteet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.kohde-card {
+  display: block;
+  background: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kohde-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  color: var(--text);
+}
+
+.kohde-card__image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.kohde-card__placeholder {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--moss), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kohde-card__placeholder span {
+  font-family: var(--serif);
+  font-size: 3rem;
+  color: var(--bg);
+  opacity: 0.8;
+}
+
+.kohde-card__content {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.kohde-card__title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem;
+}
+
+.kohde-card__kunta {
+  font-size: 0.9rem;
+  color: var(--moss);
+}
+
+.kohde-card__ala {
+  font-size: 0.9rem;
+  color: var(--moss);
+  margin-left: 0.75rem;
+}
+
+.kohde-card__tags {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 768px) {
+  .kohteet-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Map page ---------- */
+main:has(.kartta-page) {
+  max-width: none;
+  padding: 0;
+}
+
+.kartta-page {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 60px); /* Subtract nav height */
+  max-width: none;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Override Leaflet default font */
+.leaflet-container {
+  font-family: var(--sans);
+}
+
+/* Map tooltip (hover - name only) */
+.map-tooltip {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--bg-alt);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
+}
+
+/* Map popup (click - full details) */
+.map-popup-container .leaflet-popup-content-wrapper {
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.map-popup-container .leaflet-popup-tip {
+  background: var(--bg);
+}
+
+.map-popup-container .leaflet-popup-content {
+  margin: 0;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.map-popup {
+  padding: 1rem 1.25rem;
+}
+
+.map-popup h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  margin: 0 0 0.4rem;
+  line-height: 1.3;
+}
+
+.map-popup h3 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.map-popup h3 a:hover {
+  color: var(--gold);
+}
+
+.map-popup__meta {
+  font-size: 0.9rem;
+  color: var(--moss);
+  margin: 0 0 0.5rem;
+}
+
+.map-popup__desc {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--text);
+  margin: 0 0 0.6rem;
+}
+
+.map-popup__facilities {
+  font-size: 0.8rem;
+  color: var(--moss);
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.map-popup__links {
+  display: flex;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--bg-alt);
+}
+
+.map-popup__link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.map-popup__link:hover {
+  color: var(--gold-dark);
+  text-decoration: underline;
+}
+
+/* ---------- Map legend ---------- */
+.map-legend {
+  background: var(--bg);
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.map-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.map-legend__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ---------- Hero ---------- */
+main:has(.hero) {
+  max-width: none;
+  padding: 0;
+}
+
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    #2C3527 0%,
+    #3a4a35 30%,
+    #4a5a43 50%,
+    #5B7A5E 70%,
+    #C4933F 100%
+  );
+  padding: 4rem 2rem;
+  margin: -1rem -1rem 0;
+}
+
+.hero__content {
+  max-width: 600px;
+}
+
+.hero__title {
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  color: var(--bg);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.hero__tagline {
+  font-family: var(--sans);
+  font-size: 1.25rem;
+  color: rgba(245, 240, 232, 0.85);
+  margin-bottom: 2rem;
+}
+
+.hero__cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero__button {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.hero__button:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.hero__button--primary {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+.hero__button--primary:hover {
+  background: var(--gold-dark);
+  color: var(--bg);
+}
+
+.hero__button--secondary {
+  background: rgba(245, 240, 232, 0.15);
+  color: var(--bg);
+  border: 1px solid rgba(245, 240, 232, 0.4);
+}
+
+.hero__button--secondary:hover {
+  background: rgba(245, 240, 232, 0.25);
+  color: var(--bg);
+}
+
+/* ---------- Featured section ---------- */
+.featured {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.featured h2 {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__tagline {
+    font-size: 1.1rem;
+  }
+}
+
+/* About page */
+.tietoa-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
