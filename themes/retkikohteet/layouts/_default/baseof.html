@@ -14,11 +14,6 @@
 <body>
   <nav class="site-nav">
     <a href="{{ "/" | relURL }}" class="site-nav__home">Retkikohteet</a>
-    <ul class="site-nav__links">
-      <li><a href="{{ "/kartta/" | relURL }}">Kartta</a></li>
-      <li><a href="{{ "/kohteet/" | relURL }}">Kohteet</a></li>
-      <li><a href="{{ "/tietoa/" | relURL }}">Tietoa</a></li>
-    </ul>
   </nav>
   <main>
     {{ block "main" . }}{{ end }}
