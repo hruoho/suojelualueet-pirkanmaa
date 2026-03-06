@@ -1,13 +1,14 @@
 ---
 title: "Laipanmaa"
 kunta: "Pälkäne/Kangasala"
-koordinaatit: [61.42, 24.45]
+koordinaatit: [61.4372, 24.5784]
 pinta_ala_ha: 15000
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.42,24.45"
+  google_maps: "https://www.google.com/maps?q=61.4372,24.5784"
   paikkatietoikkuna: ""
   maastokartat_app: ""
+  karttapaikka: "https://asiointi.maanmittauslaitos.fi/karttapaikka/?n=6813880&e=370851&zoom=9&lang=fi"
 vaellusreitit_km: 30
 tulipaikkoja: 4
 laavuja: 4

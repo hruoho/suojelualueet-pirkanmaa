@@ -520,6 +520,51 @@ main:has(.kartta-page) {
   text-decoration: underline;
 }
 
+/* ---------- Map labels ---------- */
+.map-label {
+  background: none;
+  border: none;
+  white-space: nowrap;
+}
+
+.map-label span {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(245, 240, 232, 0.9);
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Map search ---------- */
+.map-search {
+  margin: 10px 0 0 10px;
+}
+
+.map-search__input {
+  width: 220px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.4rem;
+  background: var(--bg);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  outline: none;
+}
+
+.map-search__input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12), 0 0 0 2px rgba(196, 147, 63, 0.25);
+}
+
+.map-search__input::placeholder {
+  color: rgba(44, 53, 39, 0.4);
+}
+
 /* ---------- Map legend ---------- */
 .map-legend {
   background: var(--bg);

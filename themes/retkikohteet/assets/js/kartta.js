@@ -10,30 +10,11 @@
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
 
-  // Marker styles
-  var goldMarker = {
-    radius: 8, fillColor: '#C4933F', color: '#A67B2F',
-    weight: 2, opacity: 1, fillOpacity: 0.85
-  };
-  var goldMarkerHover = {
-    radius: 10, fillColor: '#C4933F', color: '#A67B2F',
-    weight: 3, opacity: 1, fillOpacity: 1
-  };
-  var greenMarker = {
-    radius: 7, fillColor: '#5B7A5E', color: '#3d5440',
-    weight: 2, opacity: 1, fillOpacity: 0.85
-  };
-  var greenMarkerHover = {
-    radius: 9, fillColor: '#5B7A5E', color: '#3d5440',
-    weight: 3, opacity: 1, fillOpacity: 1
-  };
-  var redMarker = {
-    radius: 6, fillColor: '#B54C3A', color: '#8C3A2B',
-    weight: 2, opacity: 1, fillOpacity: 0.85
-  };
-  var redMarkerHover = {
-    radius: 8, fillColor: '#B54C3A', color: '#8C3A2B',
-    weight: 3, opacity: 1, fillOpacity: 1
+  // Marker colors by category
+  var colors = {
+    default: { fill: '#C4933F', stroke: '#A67B2F' },
+    lps:     { fill: '#5B7A5E', stroke: '#3d5440' },
+    lsa:     { fill: '#B54C3A', stroke: '#8C3A2B' }
   };
 
   function getCategory(feature) {
@@ -43,18 +24,22 @@
     return 'default';
   }
 
+  function areaRadius(ha) {
+    if (!ha || ha <= 0) return 5;
+    // log10: 1-10→4, 10-100→6, 100-1000→8, 1000+→10
+    return Math.min(Math.max(Math.floor(Math.log10(ha)) * 2 + 2, 4), 10);
+  }
+
   function getStyle(feature) {
-    var cat = getCategory(feature);
-    if (cat === 'lps') return greenMarker;
-    if (cat === 'lsa') return redMarker;
-    return goldMarker;
+    var c = colors[getCategory(feature)];
+    var r = areaRadius(feature.properties.pinta_ala_ha);
+    return { radius: r, fillColor: c.fill, color: c.stroke, weight: 2, opacity: 1, fillOpacity: 0.85 };
   }
 
   function getHoverStyle(feature) {
-    var cat = getCategory(feature);
-    if (cat === 'lps') return greenMarkerHover;
-    if (cat === 'lsa') return redMarkerHover;
-    return goldMarkerHover;
+    var c = colors[getCategory(feature)];
+    var r = areaRadius(feature.properties.pinta_ala_ha) + 2;
+    return { radius: r, fillColor: c.fill, color: c.stroke, weight: 3, opacity: 1, fillOpacity: 1 };
   }
 
   function buildPopupHTML(p, coords) {
@@ -70,7 +55,6 @@
 
     // Description
     var desc = p.description || '';
-    if (desc.length > 200) desc = desc.substring(0, 200) + '…';
     if (desc) html += '<p class="map-popup__desc">' + desc + '</p>';
 
     // Facilities
@@ -85,9 +69,12 @@
 
     // Links
     html += '<div class="map-popup__links">';
-    html += '<a href="' + p.url + '" class="map-popup__link">Kohde</a>';
     html += '<a href="https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lon + '" class="map-popup__link" target="_blank" rel="noopener">Navigoi</a>';
-    html += '<a href="#" class="map-popup__link map-popup__link--mml" data-lat="' + lat + '" data-lon="' + lon + '" data-name="' + p.name + '" target="_blank" rel="noopener">Maastokartta</a>';
+    if (p.karttapaikka) {
+      html += '<a href="' + p.karttapaikka + '" class="map-popup__link" target="_blank" rel="noopener">Maastokartta</a>';
+    } else {
+      html += '<a href="#" class="map-popup__link map-popup__link--mml" data-lat="' + lat + '" data-lon="' + lon + '" data-name="' + p.name + '" target="_blank" rel="noopener">Maastokartta</a>';
+    }
     if (p.luontoon_fi) html += '<a href="' + p.luontoon_fi + '" class="map-popup__link" target="_blank" rel="noopener">Luontoon.fi</a>';
     html += '</div>';
 
@@ -95,17 +82,31 @@
     return html;
   }
 
-  // Tooltip for hover (name only, lightweight)
-  // Popup for click (full details)
+  // Simple fuzzy match: all query chars appear in order
+  function fuzzy(query, text) {
+    query = query.toLowerCase();
+    text = text.toLowerCase();
+    var qi = 0;
+    for (var ti = 0; ti < text.length && qi < query.length; ti++) {
+      if (text[ti] === query[qi]) qi++;
+    }
+    return qi === query.length;
+  }
+
+  var allLayers = [];
   var activeLayer = null;
 
-  L.geoJSON(data, {
+  var geoLayer = L.geoJSON(data, {
     pointToLayer: function(feature, latlng) {
       return L.circleMarker(latlng, getStyle(feature));
     },
     onEachFeature: function(feature, layer) {
+      allLayers.push(layer);
+
       // Lightweight tooltip on hover
-      layer.bindTooltip(feature.properties.name, {
+      var tip = feature.properties.name;
+      if (feature.properties.pinta_ala_ha) tip += ', ' + feature.properties.pinta_ala_ha + ' ha';
+      layer.bindTooltip(tip, {
         direction: 'top',
         offset: [0, -10],
         className: 'map-tooltip'
@@ -141,6 +142,55 @@
       });
     }
   }).addTo(map);
+
+  // Search control
+  var search = L.control({ position: 'topleft' });
+  search.onAdd = function() {
+    var div = L.DomUtil.create('div', 'map-search');
+    div.innerHTML = '<input type="text" class="map-search__input" placeholder="Hae kohteita…">';
+    L.DomEvent.disableClickPropagation(div);
+    L.DomEvent.disableScrollPropagation(div);
+    var input = div.querySelector('input');
+    input.addEventListener('input', function() {
+      var q = this.value.trim();
+      var visible = [];
+      allLayers.forEach(function(layer) {
+        var name = layer.feature.properties.name || '';
+        var kunta = layer.feature.properties.kunta || '';
+        if (!q || fuzzy(q, name) || fuzzy(q, kunta)) {
+          if (!geoLayer.hasLayer(layer)) geoLayer.addLayer(layer);
+          visible.push(layer);
+        } else {
+          if (geoLayer.hasLayer(layer)) geoLayer.removeLayer(layer);
+        }
+      });
+      updateLabels(visible);
+    });
+    return div;
+  };
+  search.addTo(map);
+
+  // Permanent labels when few markers visible
+  var labelMarkers = [];
+  function updateLabels(visible) {
+    labelMarkers.forEach(function(m) { map.removeLayer(m); });
+    labelMarkers = [];
+    if (visible.length > 0 && visible.length <= 10) {
+      visible.forEach(function(layer) {
+        var latlng = layer.getLatLng();
+        var label = L.marker(latlng, {
+          icon: L.divIcon({
+            className: 'map-label',
+            html: '<span>' + layer.feature.properties.name + '</span>',
+            iconAnchor: [-12, 12]
+          }),
+          interactive: false
+        });
+        label.addTo(map);
+        labelMarkers.push(label);
+      });
+    }
+  }
 
   // Legend
   var legend = L.control({ position: 'bottomright' });
