@@ -5,10 +5,8 @@ koordinaatit: [61.55, 24.45]
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.55,24.45"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-lahde: "Luonnonperintösäätiö"
-lahde_url: "https://luonnonperintosaatio.fi/suojelualue/korpivainio/"
+sources:
+  - "https://luonnonperintosaatio.fi/suojelualue/korpivainio/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
 ---

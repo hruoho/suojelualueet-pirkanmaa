@@ -6,14 +6,12 @@ pinta_ala_ha: # Ei sovellettavissa – kyseessä on reitti, ei alue
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.53,24.07"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
+sources:
+  - "https://www.kangasala.fi/dreambroker_video/kaarinanpolun-vaellusreitti/"
 vaellusreitit_km: 60
 tulipaikkoja: 4
 laavuja: 4
 vuokratupia: []
-lahde: "kangasala.fi"
-lahde_url: "https://www.kangasala.fi/dreambroker_video/kaarinanpolun-vaellusreitti/"
 tags: ["vaellus"]
 draft: false
 ---

@@ -6,10 +6,8 @@ pinta_ala_ha: 8.5
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.35,24.30"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-lahde: "Luonnonperintösäätiö"
-lahde_url: "https://luonnonperintosaatio.fi/suojelualue/suden-metsa/"
+sources:
+  - "https://luonnonperintosaatio.fi/suojelualue/suden-metsa/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
 ---

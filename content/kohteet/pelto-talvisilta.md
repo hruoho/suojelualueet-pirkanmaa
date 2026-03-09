@@ -7,10 +7,8 @@ vuokratupia: []
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.9696,23.5895"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-lahde: "Pirkanmaan virkistysalueyhdistys"
-lahde_url: "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/pelto-talvisilta-kuru"
+sources:
+  - "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/pelto-talvisilta-kuru"
 tags: ["virkistysalue"]
 draft: false
 ---

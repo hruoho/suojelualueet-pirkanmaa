@@ -9,10 +9,8 @@ vuokratupia: []
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.8550,23.6800"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-lahde: "Pirkanmaan virkistysalueyhdistys"
-lahde_url: "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/romunokka-ylojarvi"
+sources:
+  - "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/romunokka-ylojarvi"
 tags: ["virkistysalue"]
 draft: false
 ---

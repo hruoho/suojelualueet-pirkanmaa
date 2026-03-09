@@ -6,14 +6,12 @@ pinta_ala_ha: 1
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.445,23.820"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
+sources:
+  - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/vuoreksen-koukkujarven-luonnonsuojelualue"
 vaellusreitit_km:
 tulipaikkoja:
 laavuja:
 vuokratupia: []
-lahde: "tampere.fi"
-lahde_url: "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/vuoreksen-koukkujarven-luonnonsuojelualue"
 tags: ["luonnonsuojelualue"]
 draft: false
 ---

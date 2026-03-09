@@ -6,15 +6,12 @@ pinta_ala_ha: 950
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.8299,24.1700"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-  luontoon_fi: "https://www.luontoon.fi/fi/kohteet/siikanevan-soidensuojelualue"
+sources:
+  - "https://www.luontoon.fi/fi/kohteet/siikanevan-soidensuojelualue"
 vaellusreitit_km: 9.9
 tulipaikkoja: 2
 laavuja: 1
 vuokratupia: []
-lahde: "luontoon.fi"
-lahde_url: "https://www.luontoon.fi/fi/kohteet/siikanevan-soidensuojelualue"
 tags: ["luontopolku"]
 draft: false
 ---

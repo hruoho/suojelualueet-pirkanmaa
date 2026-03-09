@@ -8,15 +8,12 @@ kuvia:
     alt: "Isojärven kansallispuiston retkeilykartta"
 kartat:
   google_maps: "https://www.google.com/maps?q=61.6833,25.0167"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-  luontoon_fi: "https://www.luontoon.fi/fi/kohteet/isojarven-kansallispuisto"
+sources:
+  - "https://www.luontoon.fi/fi/kohteet/isojarven-kansallispuisto"
 vaellusreitit_km: 30
 tulipaikkoja: 4
 laavuja: 1
 vuokratupia: ["Heretty"]
-lahde: "luontoon.fi"
-lahde_url: "https://www.luontoon.fi/fi/kohteet/isojarven-kansallispuisto"
 tags: ["kansallispuisto", "vaellus"]
 draft: false
 ---

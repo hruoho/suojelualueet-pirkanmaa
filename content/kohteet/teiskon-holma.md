@@ -6,14 +6,12 @@ pinta_ala_ha: 13
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.5878,24.0340"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
+sources:
+  - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/teiskon-holman-luonnonsuojelualue"
 vaellusreitit_km:
 tulipaikkoja:
 laavuja:
 vuokratupia: []
-lahde: "tampere.fi"
-lahde_url: "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/teiskon-holman-luonnonsuojelualue"
 tags: ["luonnonsuojelualue"]
 draft: false
 ---

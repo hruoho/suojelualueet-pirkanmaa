@@ -6,14 +6,12 @@ pinta_ala_ha: 35
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.4780,23.7100"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
+sources:
+  - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/halimasjarven-luonnonsuojelualue"
 vaellusreitit_km: 1
 tulipaikkoja: 0
 laavuja: 0
 vuokratupia: []
-lahde: "tampere.fi"
-lahde_url: "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/halimasjarven-luonnonsuojelualue"
 tags: ["luonnonsuojelualue"]
 draft: false
 ---

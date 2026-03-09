@@ -6,10 +6,8 @@ pinta_ala_ha: 49
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.3986,23.0439"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-lahde: "Luonnonperintösäätiö"
-lahde_url: "https://luonnonperintosaatio.fi/suojelualue/pirunvuori/"
+sources:
+  - "https://luonnonperintosaatio.fi/suojelualue/pirunvuori/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
 ---

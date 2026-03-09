@@ -6,10 +6,8 @@ pinta_ala_ha: 6.6
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.39,24.42"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-lahde: "Luonnonperintösäätiö"
-lahde_url: "https://luonnonperintosaatio.fi/suojelualue/mustikkamaki/"
+sources:
+  - "https://luonnonperintosaatio.fi/suojelualue/mustikkamaki/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
 ---

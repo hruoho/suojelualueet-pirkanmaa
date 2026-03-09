@@ -75,7 +75,12 @@
     } else {
       html += '<a href="#" class="map-popup__link map-popup__link--mml" data-lat="' + lat + '" data-lon="' + lon + '" data-name="' + p.name + '" target="_blank" rel="noopener">Maastokartta</a>';
     }
-    if (p.luontoon_fi) html += '<a href="' + p.luontoon_fi + '" class="map-popup__link" target="_blank" rel="noopener">Luontoon.fi</a>';
+    if (p.sources && p.sources.length) {
+      p.sources.forEach(function(url) {
+        var host = url.replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
+        html += '<a href="' + url + '" class="map-popup__link" target="_blank" rel="noopener">' + host + '</a>';
+      });
+    }
     html += '</div>';
 
     html += '</div>';

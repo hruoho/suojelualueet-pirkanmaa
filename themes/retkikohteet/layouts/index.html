@@ -23,10 +23,9 @@
       "tulipaikkoja" .Params.tulipaikkoja
       "laavuja" .Params.laavuja
       "vuokratupia" .Params.vuokratupia
-      "lahde" .Params.lahde
-      "lahde_url" .Params.lahde_url
+      "sources" .Params.sources
+      "google_maps" .Params.kartat.google_maps
       "karttapaikka" .Params.kartat.karttapaikka
-      "luontoon_fi" .Params.kartat.luontoon_fi
       "description" (trim .RawContent "\n ")
     }}
     {{ $feature := dict

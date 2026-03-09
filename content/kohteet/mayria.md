@@ -8,10 +8,8 @@ vuokratupia: ["mökki"]
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.3400,23.6433"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-lahde: "Pirkanmaan virkistysalueyhdistys"
-lahde_url: "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/mayria-lempaala"
+sources:
+  - "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/mayria-lempaala"
 tags: ["virkistysalue"]
 draft: false
 ---

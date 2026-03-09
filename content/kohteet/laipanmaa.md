@@ -6,15 +6,13 @@ pinta_ala_ha: 15000
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.4372,24.5784"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
   karttapaikka: "https://asiointi.maanmittauslaitos.fi/karttapaikka/?n=6813880&e=370851&zoom=9&lang=fi"
+sources:
+  - "https://www.laipanmaa.fi"
 vaellusreitit_km: 30
 tulipaikkoja: 4
 laavuja: 4
 vuokratupia: ["Rajalan kämppä"]
-lahde: "laipanmaa.fi"
-lahde_url: "https://www.laipanmaa.fi"
 tags: ["virkistysalue", "vaellus", "luontopolku"]
 draft: false
 ---

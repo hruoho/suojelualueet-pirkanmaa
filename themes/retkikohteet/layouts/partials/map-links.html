@@ -1,21 +1,18 @@
 {{/* Map links from coordinates and front matter */}}
 {{ if .Params.koordinaatit }}
-{{ $lat := index .Params.koordinaatit 0 }}
-{{ $lon := index .Params.koordinaatit 1 }}
-
 <section class="kohde-maps">
   <h2>Kartat ja navigointi</h2>
   <div class="kohde-map-links">
-    <a href="https://www.google.com/maps?q={{ $lat }},{{ $lon }}" class="kohde-map-link" target="_blank" rel="noopener">Google Maps</a>
-
+    {{ with .Params.kartat.google_maps }}
+      <a href="{{ . }}" class="kohde-map-link" target="_blank" rel="noopener">Google Maps</a>
+    {{ end }}
     {{ with .Params.kartat.karttapaikka }}
       <a href="{{ . }}" class="kohde-map-link" target="_blank" rel="noopener">Maastokartta (MML)</a>
+    {{ else }}
+      {{ $lat := index .Params.koordinaatit 0 }}
+      {{ $lon := index .Params.koordinaatit 1 }}
+      <a href="#" class="kohde-map-link kohde-map-link--mml" data-lat="{{ $lat }}" data-lon="{{ $lon }}" data-name="{{ .Title }}" target="_blank" rel="noopener">Maastokartta (MML)</a>
     {{ end }}
-
-    {{ with .Params.kartat.luontoon_fi }}
-      <a href="{{ . }}" class="kohde-map-link" target="_blank" rel="noopener">Luontoon.fi</a>
-    {{ end }}
-
     {{ with .Params.kartat.paikkatietoikkuna }}
       <a href="{{ . }}" class="kohde-map-link" target="_blank" rel="noopener">Paikkatietoikkuna</a>
     {{ end }}

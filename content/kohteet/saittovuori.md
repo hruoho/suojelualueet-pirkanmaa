@@ -6,10 +6,8 @@ pinta_ala_ha: 7
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.05,23.40"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-lahde: "Luonnonperintösäätiö"
-lahde_url: "https://luonnonperintosaatio.fi/suojelualue/saittovuori/"
+sources:
+  - "https://luonnonperintosaatio.fi/suojelualue/saittovuori/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
 ---

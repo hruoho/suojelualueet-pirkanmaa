@@ -6,14 +6,12 @@ pinta_ala_ha: 8.9
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.494,23.710"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
+sources:
+  - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/vaakkolammi-likokallion-luonnonsuojelualue"
 vaellusreitit_km:
 tulipaikkoja:
 laavuja:
 vuokratupia: []
-lahde: "tampere.fi"
-lahde_url: "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/vaakkolammi-likokallion-luonnonsuojelualue"
 tags: ["luonnonsuojelualue"]
 draft: false
 ---

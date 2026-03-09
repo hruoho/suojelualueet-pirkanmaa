@@ -9,10 +9,8 @@ vuokratupia: []
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=62.0069,24.3479"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-lahde: "Pirkanmaan virkistysalueyhdistys"
-lahde_url: "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/kasilanniemi-vilppula"
+sources:
+  - "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/kasilanniemi-vilppula"
 tags: ["virkistysalue"]
 draft: false
 ---

@@ -6,14 +6,12 @@ pinta_ala_ha: 35.3
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.5150,23.5800"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
+sources:
+  - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/ikuri-kalkun-myllypuron-luonnonsuojelualue"
 vaellusreitit_km:
 tulipaikkoja: 0
 laavuja: 0
 vuokratupia: []
-lahde: "tampere.fi"
-lahde_url: "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/ikuri-kalkun-myllypuron-luonnonsuojelualue"
 tags: ["luonnonsuojelualue"]
 draft: false
 ---

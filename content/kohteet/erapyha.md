@@ -10,10 +10,8 @@ vuokratupia: []
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.5726,24.4566"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-lahde: "Pirkanmaan virkistysalueyhdistys"
-lahde_url: "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/erapyha-orivesi"
+sources:
+  - "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/erapyha-orivesi"
 tags: ["virkistysalue"]
 draft: false
 ---

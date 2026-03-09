@@ -8,15 +8,12 @@ kuvia:
     alt: "Seitsemisen kansallispuiston retkeilykartta"
 kartat:
   google_maps: "https://www.google.com/maps/place/Seitseminen+National+Park"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-  luontoon_fi: "https://www.luontoon.fi/fi/kohteet/seitsemisen-kansallispuisto"
+sources:
+  - "https://www.luontoon.fi/fi/kohteet/seitsemisen-kansallispuisto"
 vaellusreitit_km: 30
 tulipaikkoja: 10
 laavuja: 5
 vuokratupia: ["Kortesalo", "Pitkäjärvi"]
-lahde: "luontoon.fi"
-lahde_url: "https://www.luontoon.fi/fi/kohteet/seitsemisen-kansallispuisto"
 tags: ["kansallispuisto", "vaellus"]
 draft: false
 ---

@@ -9,10 +9,8 @@ vuokratupia: []
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.3636,23.5234"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-lahde: "Pirkanmaan virkistysalueyhdistys"
-lahde_url: "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/kuivaset-vesilahti"
+sources:
+  - "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/kuivaset-vesilahti"
 tags: ["virkistysalue"]
 draft: false
 ---

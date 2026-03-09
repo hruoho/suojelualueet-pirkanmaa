@@ -6,15 +6,13 @@ pinta_ala_ha: 127
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.4504,22.9205"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-  luontoon_fi: "https://www.luontoon.fi/fi/kohteet/ritajarven-luonnonsuojelualue-sastamala-527578"
+sources:
+  - "https://www.visitsastamala.fi/ritajarven-luonnonsuojelualue/"
+  - "https://www.luontoon.fi/fi/kohteet/ritajarven-luonnonsuojelualue-sastamala-527578"
 vaellusreitit_km: 12
 tulipaikkoja: 8
 laavuja: 1
 vuokratupia: ["varaustuva"]
-lahde: "visitsastamala.fi"
-lahde_url: "https://www.visitsastamala.fi/ritajarven-luonnonsuojelualue/"
 tags: ["luonnonsuojelualue", "vaellus"]
 draft: false
 ---

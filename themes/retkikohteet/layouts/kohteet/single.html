@@ -1,3 +1,58 @@
+{{ define "scripts" }}
+<script>
+(function() {
+  // WGS84 -> ETRS-TM35FIN
+  function wgs84ToETRS(lat, lon) {
+    var a=6378137,f=1/298.257222101,k0=0.9996,lon0=27,falseE=500000;
+    var e2=2*f-f*f,e4=e2*e2,e6=e4*e2,ep2=e2/(1-e2);
+    var latR=lat*Math.PI/180,lonR=lon*Math.PI/180,dLon=lonR-lon0*Math.PI/180;
+    var N=a/Math.sqrt(1-e2*Math.sin(latR)*Math.sin(latR));
+    var T=Math.tan(latR)*Math.tan(latR),C=ep2*Math.cos(latR)*Math.cos(latR),A=Math.cos(latR)*dLon;
+    var M=a*((1-e2/4-3*e4/64-5*e6/256)*latR-(3*e2/8+3*e4/32+45*e6/1024)*Math.sin(2*latR)+(15*e4/256+45*e6/1024)*Math.sin(4*latR)-(35*e6/3072)*Math.sin(6*latR));
+    return {
+      e: Math.round(falseE+k0*N*(A+(1-T+C)*A*A*A/6+(5-18*T+T*T+72*C-58*ep2)*A*A*A*A*A/120)),
+      n: Math.round(k0*(M+N*Math.tan(latR)*(A*A/2+(5-T+9*C+4*C*C)*A*A*A*A/24+(61-58*T+T*T+600*C-330*ep2)*A*A*A*A*A*A/720)))
+    };
+  }
+
+  // ETRS-TM35FIN -> WGS84
+  function etrsToWGS84(n, e) {
+    var a=6378137,f=1/298.257222101,k0=0.9996,lon0=27,falseE=500000;
+    var e2=2*f-f*f,e1=(1-Math.sqrt(1-e2))/(1+Math.sqrt(1-e2));
+    var M=n/k0,mu=M/(a*(1-e2/4-3*e2*e2/64-5*e2*e2*e2/256));
+    var phi=mu+(3*e1/2-27*e1*e1*e1/32)*Math.sin(2*mu)+(21*e1*e1/16-55*e1*e1*e1*e1/32)*Math.sin(4*mu)+(151*e1*e1*e1/96)*Math.sin(6*mu);
+    var sp=Math.sin(phi),cp=Math.cos(phi),tp=Math.tan(phi);
+    var ep2=e2/(1-e2),C=ep2*cp*cp,T=tp*tp;
+    var N=a/Math.sqrt(1-e2*sp*sp),R=a*(1-e2)/Math.pow(1-e2*sp*sp,1.5);
+    var D=(e-falseE)/(N*k0);
+    var lat=phi-(N*tp/R)*(D*D/2-(5+3*T+10*C-4*C*C-9*ep2)*D*D*D*D/24+(61+90*T+298*C+45*T*T-252*ep2-3*C*C)*D*D*D*D*D*D/720);
+    var lon=lon0*Math.PI/180+(D-(1+2*T+C)*D*D*D/6+(5-2*C+28*T-3*C*C+8*ep2+24*T*T)*D*D*D*D*D/120)/cp;
+    return { lat: lat*180/Math.PI, lon: lon*180/Math.PI };
+  }
+
+  // Maastokartta link
+  var mmlLink = document.querySelector('.kohde-map-link--mml');
+  if (mmlLink) {
+    var c = wgs84ToETRS(parseFloat(mmlLink.dataset.lat), parseFloat(mmlLink.dataset.lon));
+    mmlLink.href='https://asiointi.maanmittauslaitos.fi/karttapaikka/?lang=fi&n='+c.n+'&e='+c.e+'&zoom=11&share=customMarker&title='+encodeURIComponent(mmlLink.dataset.name);
+  }
+
+  // Parking links — auto-detect ETRS vs WGS84
+  document.querySelectorAll('.kohde-parking-link').forEach(function(link) {
+    var a = parseFloat(link.dataset.a), b = parseFloat(link.dataset.b);
+    var lat, lon;
+    if (a > 100000) {
+      var wgs = etrsToWGS84(a, b);
+      lat = wgs.lat; lon = wgs.lon;
+    } else {
+      lat = a; lon = b;
+    }
+    link.href = 'https://www.google.com/maps/dir/?api=1&destination=' + lat.toFixed(6) + ',' + lon.toFixed(6);
+  });
+})();
+</script>
+{{ end }}
+
 {{ define "main" }}
 <article class="kohde-page">
   <header class="kohde-header">
@@ -53,14 +108,35 @@
     </ul>
   </section>
 
+  {{ with .Params.pysakointi }}
+  <section class="kohde-parking">
+    <h2>Pysäköinti</h2>
+    <div class="kohde-parking-links" id="parking-links">
+      {{ range $i, $val := . }}
+        {{ if reflect.IsSlice $val }}
+          {{ $a := index $val 0 }}
+          {{ $b := index $val 1 }}
+          <a href="#" class="kohde-map-link kohde-parking-link" data-a="{{ $a }}" data-b="{{ $b }}" target="_blank" rel="noopener">Pysäköinti {{ add $i 1 }}</a>
+        {{ else }}
+          <a href="https://www.google.com/maps/dir/?api=1&destination={{ urlquery $val }}" class="kohde-map-link" target="_blank" rel="noopener">{{ $val }}</a>
+        {{ end }}
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
   {{ partial "map-links.html" . }}
 
-  <footer class="kohde-source">
-    {{ with .Params.lahde_url }}
-      <p>Lähde: <a href="{{ . }}" target="_blank" rel="noopener">{{ $.Params.lahde }}</a></p>
-    {{ else }}
-      {{ with .Params.lahde }}<p>Lähde: {{ . }}</p>{{ end }}
-    {{ end }}
-  </footer>
+  {{ with .Params.sources }}
+  <section class="kohde-sources">
+    <h2>Lähteet</h2>
+    <div class="kohde-source-links">
+      {{ range . }}
+        {{ $host := (urls.Parse .).Host }}
+        <a href="{{ . }}" class="kohde-source-link" target="_blank" rel="noopener">{{ strings.TrimPrefix "www." $host }}</a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
 </article>
 {{ end }}

@@ -6,14 +6,12 @@ pinta_ala_ha: 5.7
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.470,23.695"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
+sources:
+  - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/villilansaaren-luonnonsuojelualue"
 vaellusreitit_km:
 tulipaikkoja:
 laavuja:
 vuokratupia: []
-lahde: "tampere.fi"
-lahde_url: "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/villilansaaren-luonnonsuojelualue"
 tags: ["luonnonsuojelualue"]
 draft: false
 ---

@@ -6,15 +6,12 @@ pinta_ala_ha: 1600
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.92,23.60"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-  luontoon_fi: "https://www.luontoon.fi/fi/reitit/riuttaskorven-reitti-ylojarvi-198786"
+sources:
+  - "https://www.luontoon.fi/fi/reitit/riuttaskorven-reitti-ylojarvi-198786"
 vaellusreitit_km: 15
 tulipaikkoja: 5
 laavuja: 1
 vuokratupia: []
-lahde: "luontoon.fi"
-lahde_url: "https://www.luontoon.fi/fi/reitit/riuttaskorven-reitti-ylojarvi-198786"
 tags: ["virkistysalue", "vaellus"]
 draft: false
 ---

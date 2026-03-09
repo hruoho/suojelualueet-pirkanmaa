@@ -8,15 +8,12 @@ kuvia:
     alt: "Helvetinjärven kansallispuiston retkeilykartta"
 kartat:
   google_maps: "https://www.google.com/maps?q=62.0243,23.8465"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-  luontoon_fi: "https://www.luontoon.fi/fi/kohteet/helvetinjarven-kansallispuisto"
+sources:
+  - "https://www.luontoon.fi/fi/kohteet/helvetinjarven-kansallispuisto"
 vaellusreitit_km: 40
 tulipaikkoja: 9
 laavuja: 0
 vuokratupia: []
-lahde: "luontoon.fi"
-lahde_url: "https://www.luontoon.fi/fi/kohteet/helvetinjarven-kansallispuisto"
 tags: ["kansallispuisto", "vaellus"]
 draft: false
 ---

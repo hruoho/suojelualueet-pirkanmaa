@@ -10,15 +10,12 @@ kuvia:
     alt: "Hämeenkankaan talvikartta"
 kartat:
   google_maps: "https://www.google.com/maps?q=61.75,22.70"
-  paikkatietoikkuna: ""
-  maastokartat_app: ""
-  luontoon_fi: "https://www.luontoon.fi/fi/kohteet/hameenkangas"
+sources:
+  - "https://www.luontoon.fi/fi/kohteet/hameenkangas"
 vaellusreitit_km:
 tulipaikkoja:
 laavuja: 32
 vuokratupia: []
-lahde: "luontoon.fi"
-lahde_url: "https://www.luontoon.fi/fi/kohteet/hameenkangas"
 tags: ["virkistysalue", "vaellus"]
 draft: false
 ---
