@@ -24,9 +24,20 @@ tags: ["virkistysmetsä", "vaellus", "melonta"]
 draft: false
 ---
 
-Pukalan virkistysmetsä (1 200 ha) sijaitsee Oriveden länsipuolella. Se perustettiin vuonna 1968 Pukalan luonnonhoitometsän nimellä. Alueen sydän on syvä ja kirkasvetinen Pukalajärvi (410 ha), jota kutsutaan "Etelä-Suomen Inariksi" – järven suurin syvyys on 57 metriä.
+Pukalan virkistysmetsä sijaitsee Oriveden länsipuolella. Se perustettiin vuonna 1968 Pukalan luonnonhoitometsän nimellä. Alueen sydän on syvä ja kirkasvetinen Pukalajärvi (syvyys jopa 57m), jota kutsutaan "Etelä-Suomen Inariksi".
 
-Alueella on 17 kilometriä merkittyjä retkeilyreittejä, kuusi tulipaikkaa ja kaksi laavua. Seitsemän veden melontareitti kulkee alueen halki. Alue on remontin alla. Pysäköintialueita on kolme: Juurakko, Roninmaa ja Siitinjärvi. Matkaa Oriveden keskustasta Juurakkoon on 12 km ja Tampereelta 52 km.
+Pukala valittiin vuonna 2017 yhdeksi Suomen 100 luontohelmestä.
+
+Alueella on 17 kilometriä merkittyjä retkeilyreittejä, kuusi tulipaikkaa ja kaksi laavua. 
+
+## Sijainti
+Seitsemän veden melontareitti kulkee alueen halki. Alue on remontin alla. Pysäköintialueita on kolme: Juurakko, Roninmaa ja Siitinjärvi. Matkaa Oriveden keskustasta Juurakkoon on 12 km ja Tampereelta 52 km.
+
+## Reitit
+
+- **Pohjoisosan kierros** (6,5 km): Siitinjärvi–Valkeajärvi–Vähä-Musturi–Ikkala–Siitinjärvi. Vaihtelevat maisemat, lapinrauniot. Siitinjärven tulentekopaikka ja telttailualue, Valkeajärven tulentekopaikka ja laavu, Vähä-Musturin tulentekopaikka.
+- **Eteläosan kierros** (6,0 km): Majalahti–Pukala–Iililammi–Iso-Musturi–Neejärvi–Majalahti. Pukalajärven rantoja ja rantakallioita. Roninmaan laavu ja tulentekopaikka. Paljon korkeuseroja.
+- **Juurakko–Siitinjärvi** (5,0 km): Yhdysreitti pysäköintialueiden välillä.
 
 ## Metsien ja järvien eläimet
 

@@ -223,10 +223,14 @@ main {
   margin-bottom: 2rem;
 }
 
+.kohde-sources,
+.kohde-parking,
 .kohde-facilities {
   margin-bottom: 2rem;
 }
 
+.kohde-sources h2,
+.kohde-parking h2,
 .kohde-facilities h2 {
   font-size: 1.3rem;
   margin-bottom: 1rem;

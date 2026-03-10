@@ -63,11 +63,6 @@
         <span class="kohde-ala">{{ . }} ha</span>
       {{ end }}
     </div>
-    {{ with .Params.tags }}
-    <div class="kohde-tags">
-      {{ range . }}<span class="kohde-tag">{{ . }}</span>{{ end }}
-    </div>
-    {{ end }}
   </header>
 
   {{ if .Params.kuvia }}
@@ -90,23 +85,7 @@
     {{ .Content }}
   </div>
 
-  <section class="kohde-facilities">
-    <h2>Palvelut</h2>
-    <ul class="kohde-facilities-list">
-      {{ with .Params.vaellusreitit_km }}
-        <li><strong>Reittejä:</strong> {{ . }} km</li>
-      {{ end }}
-      {{ with .Params.tulipaikkoja }}
-        <li><strong>Tulipaikkoja:</strong> {{ . }}</li>
-      {{ end }}
-      {{ with .Params.laavuja }}
-        <li><strong>Laavuja:</strong> {{ . }}</li>
-      {{ end }}
-      {{ with .Params.vuokratupia }}
-        <li><strong>Vuokratupia:</strong> {{ delimit . ", " }}</li>
-      {{ end }}
-    </ul>
-  </section>
+  {{ partial "map-links.html" . }}
 
   {{ with .Params.pysakointi }}
   <section class="kohde-parking">
@@ -125,7 +104,23 @@
   </section>
   {{ end }}
 
-  {{ partial "map-links.html" . }}
+  <section class="kohde-facilities">
+    <h2>Palvelut</h2>
+    <ul class="kohde-facilities-list">
+      {{ with .Params.vaellusreitit_km }}
+      <li><strong>Reittejä:</strong> {{ . }} km</li>
+      {{ end }}
+      {{ with .Params.tulipaikkoja }}
+      <li><strong>Tulipaikkoja:</strong> {{ . }}</li>
+      {{ end }}
+      {{ with .Params.laavuja }}
+      <li><strong>Laavuja:</strong> {{ . }}</li>
+      {{ end }}
+      {{ with .Params.vuokratupia }}
+      <li><strong>Vuokratupia:</strong> {{ delimit . ", " }}</li>
+      {{ end }}
+    </ul>
+  </section>
 
   {{ with .Params.sources }}
   <section class="kohde-sources">
