@@ -1,0 +1,103 @@
+{{ define "head" }}
+<style>
+  .status-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .status-table th, .status-table td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #e0e0e0; text-align: left; }
+  .status-table th { font-family: var(--sans); font-weight: 600; position: sticky; top: 0; background: var(--bg); cursor: pointer; user-select: none; }
+  .status-table th:hover { color: var(--gold); }
+  .status-table td { font-family: var(--sans); }
+  .status-table tr:hover { background: rgba(0,0,0,0.03); }
+  .status-ok { color: #5B7A5E; }
+  .status-missing { color: #B54C3A; }
+  .status-summary { font-family: var(--sans); margin-bottom: 1.5rem; color: #666; }
+</style>
+{{ end }}
+
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+{{ $pages := where .Site.RegularPages "Section" "kohteet" }}
+{{ $total := len $pages }}
+{{ $withSources := 0 }}
+{{ $withContent := 0 }}
+{{ $withArea := 0 }}
+{{ $withKarttapaikka := 0 }}
+
+{{ range $pages }}
+  {{ if .Params.sources }}{{ $withSources = add $withSources 1 }}{{ end }}
+  {{ if gt (len (trim .RawContent "\n ")) 50 }}{{ $withContent = add $withContent 1 }}{{ end }}
+  {{ if .Params.pinta_ala_ha }}{{ $withArea = add $withArea 1 }}{{ end }}
+  {{ if .Params.kartat.karttapaikka }}{{ $withKarttapaikka = add $withKarttapaikka 1 }}{{ end }}
+{{ end }}
+
+<p class="status-summary">
+  {{ $total }} kohdetta.
+  Sisältö: {{ $withContent }}/{{ $total }}.
+  Lähteet: {{ $withSources }}/{{ $total }}.
+  Pinta-ala: {{ $withArea }}/{{ $total }}.
+  Karttapaikka: {{ $withKarttapaikka }}/{{ $total }}.
+</p>
+
+<table class="status-table" id="status-table">
+  <thead>
+    <tr>
+      <th data-sort="text">Kohde</th>
+      <th data-sort="text">Kunta</th>
+      <th data-sort="text">Koord.</th>
+      <th data-sort="num">ha</th>
+      <th data-sort="num">Sisältö</th>
+      <th data-sort="num">Lähteet</th>
+      <th data-sort="text">Karttapaikka</th>
+      <th data-sort="text">Pysäköinti</th>
+      <th data-sort="date">Muokattu</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $pages }}
+    {{ $contentLen := len (trim .RawContent "\n ") }}
+    {{ $hasSources := and .Params.sources (gt (len .Params.sources) 0) }}
+    {{ $hasArea := .Params.pinta_ala_ha }}
+    {{ $hasKarttapaikka := .Params.kartat.karttapaikka }}
+    {{ $hasParking := and .Params.pysakointi (gt (len .Params.pysakointi) 0) }}
+    <tr>
+      <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
+      <td>{{ .Params.kunta }}</td>
+      <td>{{ if .Params.koordinaatit }}<span class="status-ok">ok</span>{{ else }}<span class="status-missing">-</span>{{ end }}</td>
+      <td>{{ with .Params.pinta_ala_ha }}{{ . }}{{ else }}<span class="status-missing">-</span>{{ end }}</td>
+      <td>{{ if gt $contentLen 50 }}<span class="status-ok">{{ $contentLen }}</span>{{ else }}<span class="status-missing">{{ $contentLen }}</span>{{ end }}</td>
+      <td>{{ if $hasSources }}<span class="status-ok">{{ len .Params.sources }}</span>{{ else }}<span class="status-missing">0</span>{{ end }}</td>
+      <td>{{ if $hasKarttapaikka }}<span class="status-ok">ok</span>{{ else }}<span class="status-missing">-</span>{{ end }}</td>
+      <td>{{ if $hasParking }}<span class="status-ok">{{ with .Params.pysakointi }}{{ len . }}{{ end }}</span>{{ else }}<span class="status-missing">-</span>{{ end }}</td>
+      <td>{{ .File.UniqueID | truncate 0 "" }}{{ with .GitInfo }}{{ .AuthorDate.Format "2006-01-02" }}{{ else }}-{{ end }}</td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+(function() {
+  var table = document.getElementById('status-table');
+  var headers = table.querySelectorAll('th');
+  var tbody = table.querySelector('tbody');
+  var dir = 1;
+  var lastCol = -1;
+
+  headers.forEach(function(th, col) {
+    th.addEventListener('click', function() {
+      if (lastCol === col) { dir = -dir; } else { dir = 1; lastCol = col; }
+      var rows = Array.from(tbody.querySelectorAll('tr'));
+      var type = th.dataset.sort;
+      rows.sort(function(a, b) {
+        var av = a.cells[col].textContent.trim();
+        var bv = b.cells[col].textContent.trim();
+        if (type === 'num') return (parseFloat(av) || 0) - (parseFloat(bv) || 0);
+        return av.localeCompare(bv, 'fi');
+      });
+      if (dir === -1) rows.reverse();
+      rows.forEach(function(r) { tbody.appendChild(r); });
+    });
+  });
+})();
+</script>
+{{ end }}

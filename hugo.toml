@@ -7,5 +7,7 @@ theme = "retkikohteet"
   description = "Pirkanmaan retkikohteet yhdessä paikassa"
   region = "Pirkanmaa"
 
+enableGitInfo = true
+
 [markup.goldmark.renderer]
   unsafe = true
