@@ -26,8 +26,12 @@
 
   function areaRadius(ha) {
     if (!ha || ha <= 0) return 5;
-    // log10: 1-10→4, 10-100→6, 100-1000→8, 1000+→10
-    return Math.min(Math.max(Math.floor(Math.log10(ha)) * 2 + 2, 4), 10);
+    // Piecewise: sqrt for <100ha (4–16px), 4th root for 100–15000ha (16–25px)
+    if (ha < 100) {
+      return Math.round(4 + 12 * (Math.sqrt(Math.max(ha, 1)) - 1) / (Math.sqrt(100) - 1));
+    }
+    var root = function(x) { return Math.pow(x, 0.25); };
+    return Math.round(16 + 9 * (root(ha) - root(100)) / (root(15000) - root(100)));
   }
 
   function getStyle(feature) {

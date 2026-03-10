@@ -26,7 +26,7 @@
       "sources" .Params.sources
       "google_maps" .Params.kartat.google_maps
       "karttapaikka" .Params.kartat.karttapaikka
-      "description" (trim .RawContent "\n ")
+      "description" (trim (index (split .RawContent "\n##") 0) "\n ")
     }}
     {{ $feature := dict
       "type" "Feature"
