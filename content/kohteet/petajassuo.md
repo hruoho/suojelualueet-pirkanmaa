@@ -2,7 +2,7 @@
 title: "Petäjässuon luonnonsuojelualue"
 kunta: "Tampere"
 koordinaatit: [61.4956, 23.9346]
-pinta_ala_ha:
+pinta_ala_ha: 9
 kuvia: []
 kartat:
   google_maps: "https://www.google.com/maps?q=61.4956,23.9346"

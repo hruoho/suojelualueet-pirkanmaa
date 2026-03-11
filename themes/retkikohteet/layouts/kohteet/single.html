@@ -30,11 +30,26 @@
     return { lat: lat*180/Math.PI, lon: lon*180/Math.PI };
   }
 
-  // Maastokartta link
-  var mmlLink = document.querySelector('.kohde-map-link--mml');
-  if (mmlLink) {
-    var c = wgs84ToETRS(parseFloat(mmlLink.dataset.lat), parseFloat(mmlLink.dataset.lon));
-    mmlLink.href='https://asiointi.maanmittauslaitos.fi/karttapaikka/?lang=fi&n='+c.n+'&e='+c.e+'&zoom=11&share=customMarker&title='+encodeURIComponent(mmlLink.dataset.name);
+  // Paikkatietoikkuna link with all coordinates as markers
+  var ptiLink = document.querySelector('.kohde-map-link--pti');
+  if (ptiLink) {
+    var points = JSON.parse(ptiLink.dataset.points);
+    var markers = [];
+    var sumE = 0, sumN = 0;
+    points.forEach(function(p) {
+      var etrs;
+      if (p.a > 100000) {
+        etrs = { e: Math.round(p.b), n: Math.round(p.a) };
+      } else {
+        etrs = wgs84ToETRS(p.a, p.b);
+      }
+      sumE += etrs.e; sumN += etrs.n;
+      markers.push('2|3|ffde00|' + etrs.e + '_' + etrs.n + '|' + p.label);
+    });
+    var cE = Math.round(sumE / points.length);
+    var cN = Math.round(sumN / points.length);
+    ptiLink.href = 'https://kartta.paikkatietoikkuna.fi/?lang=fi&coord=' + cE + '_' + cN +
+      '&zoomLevel=10&mapLayers=base_35+100+default&markers=' + encodeURIComponent(markers.join('___'));
   }
 
   // Parking links — auto-detect ETRS vs WGS84
@@ -86,23 +101,6 @@
   </div>
 
   {{ partial "map-links.html" . }}
-
-  {{ with .Params.pysakointi }}
-  <section class="kohde-parking">
-    <h2>Pysäköinti</h2>
-    <div class="kohde-parking-links" id="parking-links">
-      {{ range $i, $val := . }}
-        {{ if reflect.IsSlice $val }}
-          {{ $a := index $val 0 }}
-          {{ $b := index $val 1 }}
-          <a href="#" class="kohde-map-link kohde-parking-link" data-a="{{ $a }}" data-b="{{ $b }}" target="_blank" rel="noopener">Pysäköinti {{ add $i 1 }}</a>
-        {{ else }}
-          <a href="https://www.google.com/maps/dir/?api=1&destination={{ urlquery $val }}" class="kohde-map-link" target="_blank" rel="noopener">{{ $val }}</a>
-        {{ end }}
-      {{ end }}
-    </div>
-  </section>
-  {{ end }}
 
   <section class="kohde-facilities">
     <h2>Palvelut</h2>

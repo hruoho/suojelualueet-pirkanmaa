@@ -3,7 +3,8 @@ title: "Seitseminen"
 kunta: "Ylöjärvi"
 koordinaatit: [61.9123, 23.3945]
 pinta_ala_ha: 4550
-kuvia:
+kuvia: []
+karttakuvat:
   - src: "kartta.png"
     alt: "Seitsemisen kansallispuiston retkeilykartta"
 kartat:

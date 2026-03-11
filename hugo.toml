@@ -1,6 +1,6 @@
 baseURL = "https://example.github.io/retkikohteet/"
 languageCode = "fi"
-title = "Retkikohteet — Pirkanmaa"
+title = "Suojelualueet — Pirkanmaa"
 theme = "retkikohteet"
 
 [params]

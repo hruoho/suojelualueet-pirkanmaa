@@ -3,7 +3,8 @@ title: "Isojärvi"
 kunta: "Kuhmoinen"
 koordinaatit: [61.6833, 25.0167]
 pinta_ala_ha: 2200
-kuvia:
+kuvia: []
+karttakuvat:
   - src: "kartta.png"
     alt: "Isojärven kansallispuiston retkeilykartta"
 kartat:

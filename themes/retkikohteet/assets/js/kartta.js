@@ -12,9 +12,9 @@
 
   // Marker colors by category
   var colors = {
-    default: { fill: '#C4933F', stroke: '#A67B2F' },
-    lps:     { fill: '#5B7A5E', stroke: '#3d5440' },
-    lsa:     { fill: '#B54C3A', stroke: '#8C3A2B' }
+    default: { fill: '#6B7B9E', stroke: '#536180' },
+    lps:     { fill: '#5B8A8A', stroke: '#456B6B' },
+    lsa:     { fill: '#B07285', stroke: '#8C5A6A' }
   };
 
   function getCategory(feature) {
@@ -74,17 +74,10 @@
     // Links
     html += '<div class="map-popup__links">';
     html += '<a href="https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lon + '" class="map-popup__link" target="_blank" rel="noopener">Navigoi</a>';
-    if (p.karttapaikka) {
-      html += '<a href="' + p.karttapaikka + '" class="map-popup__link" target="_blank" rel="noopener">Maastokartta</a>';
-    } else {
-      html += '<a href="#" class="map-popup__link map-popup__link--mml" data-lat="' + lat + '" data-lon="' + lon + '" data-name="' + p.name + '" target="_blank" rel="noopener">Maastokartta</a>';
-    }
-    if (p.sources && p.sources.length) {
-      p.sources.forEach(function(url) {
-        var host = url.replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
-        html += '<a href="' + url + '" class="map-popup__link" target="_blank" rel="noopener">' + host + '</a>';
-      });
-    }
+    var c = wgs84ToETRS(lat, lon);
+    var ptiUrl = 'https://kartta.paikkatietoikkuna.fi/?lang=fi&coord=' + c.e + '_' + c.n +
+      '&zoomLevel=10&mapLayers=base_35+100+default&markers=' + encodeURIComponent('2|3|ffde00|' + c.e + '_' + c.n + '|' + p.name);
+    html += '<a href="' + ptiUrl + '" class="map-popup__link" target="_blank" rel="noopener">Kartta</a>';
     html += '</div>';
 
     html += '</div>';
@@ -206,9 +199,9 @@
   legend.onAdd = function() {
     var div = L.DomUtil.create('div', 'map-legend');
     div.innerHTML =
-      '<div class="map-legend__item"><span class="map-legend__dot" style="background:#C4933F"></span> Virkistysalueet</div>' +
-      '<div class="map-legend__item"><span class="map-legend__dot" style="background:#5B7A5E"></span> Luonnonperintösäätiö</div>' +
-      '<div class="map-legend__item"><span class="map-legend__dot" style="background:#B54C3A"></span> Luonnonsuojelualueet</div>';
+      '<div class="map-legend__item"><span class="map-legend__dot" style="background:#6B7B9E"></span> Virkistysalueet</div>' +
+      '<div class="map-legend__item"><span class="map-legend__dot" style="background:#5B8A8A"></span> Luonnonperintösäätiö</div>' +
+      '<div class="map-legend__item"><span class="map-legend__dot" style="background:#B07285"></span> Luonnonsuojelualueet</div>';
     return div;
   };
   legend.addTo(map);
@@ -228,14 +221,4 @@
     return { e: Math.round(easting), n: Math.round(northing) };
   }
 
-  document.addEventListener('click', function(e) {
-    var link = e.target.closest('.map-popup__link--mml');
-    if (!link) return;
-    e.preventDefault();
-    var lat = parseFloat(link.dataset.lat);
-    var lon = parseFloat(link.dataset.lon);
-    var c = wgs84ToETRS(lat, lon);
-    var url = 'https://asiointi.maanmittauslaitos.fi/karttapaikka/?lang=fi&n=' + c.n + '&e=' + c.e + '&zoom=11&share=customMarker&title=' + encodeURIComponent(link.dataset.name);
-    window.open(url, '_blank');
-  });
 })();

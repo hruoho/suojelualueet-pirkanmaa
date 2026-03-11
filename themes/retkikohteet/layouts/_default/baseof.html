@@ -13,13 +13,13 @@
 </head>
 <body>
   <nav class="site-nav">
-    <a href="{{ "/" | relURL }}" class="site-nav__home">Retkikohteet</a>
+    <a href="{{ "/" | relURL }}" class="site-nav__home">Suojelualueet</a>
   </nav>
   <main>
     {{ block "main" . }}{{ end }}
   </main>
   <footer class="site-footer">
-    <p>&copy; {{ now.Year }} Retkikohteet</p>
+    <p>&copy; {{ now.Year }} Suojelualueet</p>
   </footer>
   {{ block "scripts" . }}{{ end }}
 </body>

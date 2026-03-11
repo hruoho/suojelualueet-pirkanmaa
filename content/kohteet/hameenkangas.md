@@ -3,7 +3,8 @@ title: "Hämeenkangas"
 kunta: "Ikaalinen/Jämijärvi"
 koordinaatit: [61.75, 22.70]
 pinta_ala_ha: 5500
-kuvia:
+kuvia: []
+karttakuvat:
   - src: "kartta-kesa.png"
     alt: "Hämeenkankaan kesäkartta"
   - src: "kartta-talvi.png"

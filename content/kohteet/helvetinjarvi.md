@@ -3,7 +3,8 @@ title: "Helvetinjärvi"
 kunta: "Ruovesi"
 koordinaatit: [62.0243, 23.8465]
 pinta_ala_ha: 4980
-kuvia:
+kuvia: []
+karttakuvat:
   - src: "kartta.png"
     alt: "Helvetinjärven kansallispuiston retkeilykartta"
 kartat:
