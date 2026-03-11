@@ -8,7 +8,6 @@ karttakuvat:
   - src: "kartta.png"
     alt: "Seitsemisen kansallispuiston retkeilykartta"
 kartat:
-  google_maps: "https://www.google.com/maps/place/Seitseminen+National+Park"
 sources:
   - "https://www.luontoon.fi/fi/kohteet/seitsemisen-kansallispuisto"
 vaellusreitit_km: 30

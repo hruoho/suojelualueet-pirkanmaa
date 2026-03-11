@@ -2,15 +2,23 @@
 {{ if .Params.koordinaatit }}
 
 {{/* Collect all coordinate points for Paikkatietoikkuna */}}
-{{ $points := slice (dict "a" (index .Params.koordinaatit 0) "b" (index .Params.koordinaatit 1) "label" .Title) }}
+{{ $lat := index .Params.koordinaatit 0 }}
+{{ $lon := index .Params.koordinaatit 1 }}
+{{ $points := slice (dict "a" $lat "b" $lon "label" .Title) }}
 {{ range $i, $val := .Params.pysakointi }}
   {{ if reflect.IsSlice $val }}
     {{ $points = $points | append (dict "a" (index $val 0) "b" (index $val 1) "label" (printf "P%d" (add $i 1))) }}
   {{ end }}
 {{ end }}
 
+<div class="kohde-location">
+  <code class="kohde-coords" title="Klikkaa kopioidaksesi">📍 {{ $lat }}, {{ $lon }}</code>
+  <a href="#" class="kohde-map-link kohde-map-link--pti" data-points='{{ $points | jsonify }}' target="_blank" rel="noopener">Paikkatietoikkuna</a>
+</div>
+
 <section class="kohde-maps">
   <h2>Kartat</h2>
+  <div id="kohde-map" class="kohde-embed-map" data-points='{{ $points | jsonify }}' data-area="{{ .Params.pinta_ala_ha }}"></div>
   {{ with .Params.karttakuvat }}
   <div class="kohde-map-thumbs">
     {{ range . }}
@@ -26,9 +34,6 @@
     {{ end }}
   </div>
   {{ end }}
-  <div class="kohde-map-links">
-    <a href="#" class="kohde-map-link kohde-map-link--pti" data-points='{{ $points | jsonify }}' target="_blank" rel="noopener">Paikkatietoikkuna</a>
-  </div>
 </section>
 
 <section class="kohde-nav">
@@ -45,8 +50,6 @@
     {{ end }}
     {{/* Fallback: if no parking, link to main coordinates */}}
     {{ if not .Params.pysakointi }}
-      {{ $lat := index .Params.koordinaatit 0 }}
-      {{ $lon := index .Params.koordinaatit 1 }}
       {{ if .Params.kartat.google_maps }}
         <a href="{{ .Params.kartat.google_maps }}" class="kohde-map-link" target="_blank" rel="noopener">Google Maps</a>
       {{ else }}

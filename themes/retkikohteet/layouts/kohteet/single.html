@@ -1,4 +1,11 @@
+{{ define "head" }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+{{ end }}
+
 {{ define "scripts" }}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 (function() {
   // WGS84 -> ETRS-TM35FIN
@@ -30,6 +37,47 @@
     return { lat: lat*180/Math.PI, lon: lon*180/Math.PI };
   }
 
+  // Embedded terrain map
+  var mapEl = document.getElementById('kohde-map');
+  if (mapEl) {
+    var points = JSON.parse(mapEl.dataset.points);
+    var latlngs = [];
+    points.forEach(function(p) {
+      var lat, lon;
+      if (p.a > 100000) {
+        var wgs = etrsToWGS84(p.a, p.b);
+        lat = wgs.lat; lon = wgs.lon;
+      } else {
+        lat = p.a; lon = p.b;
+      }
+      latlngs.push({ lat: lat, lon: lon, label: p.label });
+    });
+
+    var center = latlngs[0];
+    var ha = parseFloat(mapEl.dataset.area) || 0;
+    // Zoom: 15 for tiny (<5ha), down to 10 for huge (>5000ha)
+    var zoom = ha <= 0 ? 14 : Math.round(15.5 - 1.3 * Math.log10(Math.max(ha, 1)));
+    zoom = Math.max(10, Math.min(15, zoom));
+    var kohdeMap = L.map('kohde-map', { scrollWheelZoom: false }).setView([center.lat, center.lon], zoom);
+
+    L.tileLayer('https://avoin-karttakuva.maanmittauslaitos.fi/avoin/wmts/1.0.0/maastokartta/default/WGS84_Pseudo-Mercator/{z}/{y}/{x}.png?api-key={{ .Site.Params.mml_api_key }}', {
+      maxZoom: 16,
+      attribution: '&copy; <a href="https://www.maanmittauslaitos.fi/">MML</a> CC 4.0'
+    }).addTo(kohdeMap);
+
+    var bounds = L.latLngBounds();
+    latlngs.forEach(function(p) {
+      var isParking = p.label.charAt(0) === 'P';
+      var marker = L.marker([p.lat, p.lon]).addTo(kohdeMap);
+      marker.bindTooltip(p.label, { permanent: latlngs.length <= 5, direction: 'top', offset: [0, -10] });
+      bounds.extend([p.lat, p.lon]);
+    });
+
+    if (latlngs.length > 1) {
+      kohdeMap.fitBounds(bounds, { padding: [30, 30], maxZoom: 14 });
+    }
+  }
+
   // Paikkatietoikkuna link with all coordinates as markers
   var ptiLink = document.querySelector('.kohde-map-link--pti');
   if (ptiLink) {
@@ -50,6 +98,20 @@
     var cN = Math.round(sumN / points.length);
     ptiLink.href = 'https://kartta.paikkatietoikkuna.fi/?lang=fi&coord=' + cE + '_' + cN +
       '&zoomLevel=10&mapLayers=base_35+100+default&markers=' + encodeURIComponent(markers.join('___'));
+  }
+
+  // Copy coordinates on click
+  var coordsEl = document.querySelector('.kohde-coords');
+  if (coordsEl) {
+    coordsEl.addEventListener('click', function() {
+      var text = coordsEl.textContent.replace(/📍\s*/, '').trim();
+      navigator.clipboard.writeText(text).then(function() {
+        coordsEl.classList.add('kohde-coords--copied');
+        var orig = coordsEl.textContent;
+        coordsEl.textContent = '✓ Kopioitu';
+        setTimeout(function() { coordsEl.textContent = orig; coordsEl.classList.remove('kohde-coords--copied'); }, 1500);
+      });
+    });
   }
 
   // Parking links — auto-detect ETRS vs WGS84

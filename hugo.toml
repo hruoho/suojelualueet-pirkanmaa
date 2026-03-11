@@ -4,8 +4,9 @@ title = "Suojelualueet — Pirkanmaa"
 theme = "retkikohteet"
 
 [params]
-  description = "Pirkanmaan retkikohteet yhdessä paikassa"
+  description = "Pirkanmaan suojelualueet yhdessä paikassa"
   region = "Pirkanmaa"
+  mml_api_key = "4ecffb02-3f05-4625-9f21-0db41cc01c97"
 
 enableGitInfo = true
 

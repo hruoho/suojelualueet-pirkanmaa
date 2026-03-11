@@ -253,6 +253,41 @@ main {
   margin-bottom: 2rem;
 }
 
+.kohde-location {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.kohde-coords {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--text);
+  background: var(--bg);
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.3rem;
+  border: 1px dashed var(--bg-alt);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.kohde-coords:hover {
+  border-color: var(--accent);
+}
+
+.kohde-coords--copied {
+  border-color: var(--muted);
+}
+
+.kohde-embed-map {
+  width: 100%;
+  height: 300px;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--bg-alt);
+}
+
 .kohde-map-thumbs {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

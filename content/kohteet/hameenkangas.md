@@ -1,7 +1,7 @@
 ---
 title: "Hämeenkangas"
 kunta: "Ikaalinen/Jämijärvi"
-koordinaatit: [61.75, 22.70]
+koordinaatit: [61.775921, 22.692110]
 pinta_ala_ha: 5500
 kuvia: []
 karttakuvat:
@@ -9,8 +9,6 @@ karttakuvat:
     alt: "Hämeenkankaan kesäkartta"
   - src: "kartta-talvi.png"
     alt: "Hämeenkankaan talvikartta"
-kartat:
-  google_maps: "https://www.google.com/maps?q=61.75,22.70"
 sources:
   - "https://www.luontoon.fi/fi/kohteet/hameenkangas"
 vaellusreitit_km:
