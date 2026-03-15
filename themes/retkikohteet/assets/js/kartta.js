@@ -10,6 +10,31 @@
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
 
+  // Municipality boundaries
+  var kuntaEl = document.getElementById('kuntarajat-data');
+  var kuntaData = kuntaEl ? JSON.parse(kuntaEl.textContent) : null;
+  var kuntaLayer = null;
+  if (kuntaData) {
+    kuntaLayer = L.geoJSON(kuntaData, {
+      style: {
+        color: '#536180',
+        weight: 1.5,
+        opacity: 0.5,
+        fillColor: '#C8C3B8',
+        fillOpacity: 0.5,
+        dashArray: '6 3'
+      },
+      onEachFeature: function(feature, layer) {
+        layer.bindTooltip(feature.properties.nimi, {
+          direction: 'center',
+          className: 'kunta-tooltip',
+          permanent: true,
+          interactive: false
+        });
+      }
+    }).addTo(map);
+  }
+
   // Marker colors by category
   var colors = {
     default: { fill: '#6B7B9E', stroke: '#536180' },
@@ -194,6 +219,22 @@
     }
   }
 
+  // Kuntarajat toggle
+  if (kuntaLayer) {
+    var toggle = L.control({ position: 'topright' });
+    toggle.onAdd = function() {
+      var div = L.DomUtil.create('div', 'map-toggle');
+      div.innerHTML = '<label><input type="checkbox" checked> Kuntarajat</label>';
+      L.DomEvent.disableClickPropagation(div);
+      var cb = div.querySelector('input');
+      cb.addEventListener('change', function() {
+        if (cb.checked) { map.addLayer(kuntaLayer); } else { map.removeLayer(kuntaLayer); }
+      });
+      return div;
+    };
+    toggle.addTo(map);
+  }
+
   // Legend
   var legend = L.control({ position: 'bottomright' });
   legend.onAdd = function() {
@@ -205,6 +246,50 @@
     return div;
   };
   legend.addTo(map);
+
+  // Keyboard zoom: P = zoom in, M = zoom out
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'p' || e.key === 'P') map.zoomIn();
+    if (e.key === 'm' || e.key === 'M') map.zoomOut();
+  });
+
+  // Crosshair overlay
+  var crosshair = document.createElement('div');
+  crosshair.className = 'map-crosshair';
+  map.getContainer().appendChild(crosshair);
+
+  // Center coordinates bar
+  var coordsCtrl = L.control({ position: 'bottomleft' });
+  coordsCtrl.onAdd = function() {
+    var div = L.DomUtil.create('div', 'map-coords-bar');
+    div.innerHTML = '<span class="coords-label">WGS84</span><span class="coords-wgs"></span><span class="coords-label">ETRS-TM35FIN</span><span class="coords-etrs"></span>';
+    L.DomEvent.disableClickPropagation(div);
+    div.addEventListener('click', function() {
+      var c = map.getCenter();
+      var text = c.lat.toFixed(6) + ', ' + c.lng.toFixed(6);
+      navigator.clipboard.writeText(text).then(function() {
+        div.classList.add('map-coords-bar--copied');
+        var wgsEl = div.querySelector('.coords-wgs');
+        var orig = wgsEl.textContent;
+        wgsEl.textContent = 'Kopioitu!';
+        setTimeout(function() { wgsEl.textContent = orig; div.classList.remove('map-coords-bar--copied'); }, 1200);
+      });
+    });
+    return div;
+  };
+  coordsCtrl.addTo(map);
+
+  function updateCoordsBar() {
+    var c = map.getCenter();
+    var bar = document.querySelector('.map-coords-bar');
+    if (!bar) return;
+    bar.querySelector('.coords-wgs').textContent = c.lat.toFixed(6) + ', ' + c.lng.toFixed(6);
+    var etrs = wgs84ToETRS(c.lat, c.lng);
+    bar.querySelector('.coords-etrs').textContent = etrs.n + ', ' + etrs.e;
+  }
+  map.on('move', updateCoordsBar);
+  updateCoordsBar();
 
   // WGS84 to ETRS-TM35FIN for Maastokartta links
   function wgs84ToETRS(lat, lon) {

@@ -582,6 +582,105 @@ body:has(.kartta-page) .site-footer {
   text-decoration: underline;
 }
 
+/* ---------- Map crosshair ---------- */
+.map-crosshair {
+  pointer-events: none;
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 28px; height: 28px;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.map-crosshair::before,
+.map-crosshair::after {
+  content: '';
+  position: absolute;
+  background: rgba(43, 50, 64, 0.5);
+}
+
+.map-crosshair::before {
+  top: 0; left: 50%;
+  width: 2px; height: 100%;
+  transform: translateX(-50%);
+}
+
+.map-crosshair::after {
+  top: 50%; left: 0;
+  width: 100%; height: 2px;
+  transform: translateY(-50%);
+}
+
+.map-coords-bar {
+  background: var(--bg);
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.2s;
+  border: 1px solid transparent;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.map-coords-bar:hover {
+  border-color: var(--accent);
+}
+
+.map-coords-bar--copied {
+  border-color: var(--muted);
+}
+
+.map-coords-bar span {
+  white-space: nowrap;
+}
+
+.map-coords-bar .coords-label {
+  color: rgba(43, 50, 64, 0.5);
+  font-size: 0.7rem;
+}
+
+/* ---------- Municipality toggle ---------- */
+.map-toggle {
+  background: var(--bg);
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.map-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.map-toggle input[type="checkbox"] {
+  accent-color: var(--accent);
+}
+
+/* ---------- Municipality tooltip ---------- */
+.kunta-tooltip {
+  background: rgba(236, 238, 241, 0.9);
+  color: var(--accent-dk);
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+}
+
 /* ---------- Map labels ---------- */
 .map-label {
   background: none;
