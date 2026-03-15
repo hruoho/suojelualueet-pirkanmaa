@@ -5,11 +5,10 @@ koordinaatit: [61.4900, 23.5000]
 pinta_ala_ha:
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.4900,23.5000"
 sources:
   - "https://visitnokia.fi/kohde/markluhdanlahden-luontolava/"
   - "https://www.nokiankaupunki.fi/hyvinvointi-ja-vapaa-aika/ulkoilupaikat-ja-retkeily/luontoliikunta-ja-retkeilykohteet/"
-pysakointi: []
+pysakointi:
 vaellusreitit_km:
 tulipaikkoja: 1
 laavuja: 0

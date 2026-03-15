@@ -5,7 +5,6 @@ koordinaatit: [61.55, 23.57]
 pinta_ala_ha: 31
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.55,23.57"
 sources:
   - "https://luonnonperintosaatio.fi/suojelualue/kapypojan-metsa/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]

@@ -5,7 +5,6 @@ koordinaatit: [61.5750, 23.8600]
 pinta_ala_ha: 4.1
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.5750,23.8600"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/korvenvuoren-luonnonsuojelualue"
 vaellusreitit_km:

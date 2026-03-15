@@ -8,10 +8,11 @@ karttakuvat:
   - src: "kartta.png"
     alt: "Kintulammin retkeilyalueen kartta"
 kartat:
-  google_maps: "https://www.google.com/maps/place/Kintulammi"
 pysakointi:
-  - "Keltolahdentie 47, Tampere"
-  - "Kintulammentie 378, Tampere"
+  - osoite: "Keltolahdentie 47, Tampere"
+    koordinaatit: [61.598748, 23.989572]
+  - osoite: "Kintulammentie 378, Tampere"
+    koordinaatit: [61.601881, 23.992472]
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/kintulammin-luonnonsuojelualue"
   - "https://outdoorstampere.fi/retkeilyalueet/kintulammin-retkeilyalue/"
@@ -22,7 +23,7 @@ laavuja: 5
 vuokratupia: ["Kintulammi", "Kortejärvi"]
 tags: ["luonnonsuojelualue", "vaellus"]
 draft: false
-reviewed:
+reviewed: 2026-03-15
 ---
 
 Tampereen laajin luonnonsuojelualue ja Pirkanmaan kolmanneksi suurin suojeltu metsäalue Seitsemisen ja Helvetinjärven jälkeen. Sijaitsee noin 20 km keskustasta koilliseen. Rauhoitettu 18.4.2018 Suomen 100-vuotisjuhlan luontolahjana. Metsien, lampien ja soiden mosaiikkia hallitsevat 300–400-vuotiaat aihkimännyt. Alueella esiintyy metso (yksi Pirkanmaan vahvimmista esiintymisalueista), liito-orava, pohjantikka ja viitasammakko.

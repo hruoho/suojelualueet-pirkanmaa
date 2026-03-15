@@ -8,7 +8,6 @@ karttakuvat:
   - src: "kartta.png"
     alt: "Laipanmaan vaellusalueen kartta"
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.4372,24.5784"
   karttapaikka: "https://asiointi.maanmittauslaitos.fi/karttapaikka/?n=6813880&e=370851&zoom=9&lang=fi"
 sources:
   - "https://www.laipanmaa.fi/laipanmaan-vaellusalue"
@@ -20,9 +19,9 @@ laavuja: 4
 vuokratupia: ["Rajalan kämppä"]
 tags: ["virkistysalue", "vaellus", "luontopolku"]
 draft: false
-pysakointi: 
-  - [61.408040, 24.620320]
-  - "Iso-Laipantie 4, 36760 Kangasala"
+pysakointi:
+  - koordinaatit: [61.408040, 24.620320]
+    osoite: "Iso-Laipantie 4, 36760 Kangasala"
 reviewed:
 ---
 

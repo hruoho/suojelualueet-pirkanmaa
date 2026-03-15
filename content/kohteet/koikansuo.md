@@ -5,7 +5,6 @@ koordinaatit: [61.5676, 23.8809]
 pinta_ala_ha: 5.7
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.5676,23.8809"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/koikansuon-luonnonsuojelualue"
 vaellusreitit_km:

@@ -5,7 +5,6 @@ koordinaatit: [61.08, 23.55]
 pinta_ala_ha: 18.5
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.08,23.55"
 sources:
   - "https://luonnonperintosaatio.fi/suojelualue/metsanpeitto/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]

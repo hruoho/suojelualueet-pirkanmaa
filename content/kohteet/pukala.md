@@ -5,7 +5,6 @@ koordinaatit: [61.6950, 24.1501]
 pinta_ala_ha: 1200
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.6950,24.1501"
 sources:
   - "https://www.luontoon.fi/fi/kohteet/pukala"
   - "https://www.luontoon.fi/fi/kohteet/pukala/luonto"
@@ -13,9 +12,9 @@ sources:
   - "https://retkipaikka.fi/pukalan-virkistymetsa-orivedella/"
   - "https://www.kotimaassa.fi/pukala-ja-erapyha-odottavat-retkeilijan-luontohelmet-loytyvat-orivedelta/"
 pysakointi:
-  - [6843414.000, 351621.000]
-  - Metsisianpolku 245, 35300 Orivesi
-  - [6843632.453, 350168.691]
+  - koordinaatit: [61.695, 24.150]
+    osoite: "Metsisianpolku 245, 35300 Orivesi"
+  - koordinaatit: [61.697, 24.126]
 vaellusreitit_km: 17
 tulipaikkoja: 6
 laavuja: 2

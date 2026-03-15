@@ -5,7 +5,6 @@ koordinaatit: [61.485461, 23.693585]
 pinta_ala_ha: 10.53
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.488,23.730"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/viikinsaaren-luonnonsuojelualue"
 vaellusreitit_km: 1.3

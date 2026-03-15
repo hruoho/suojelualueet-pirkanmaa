@@ -5,7 +5,6 @@ koordinaatit: [61.6540, 23.9235]
 pinta_ala_ha: 25
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.6540,23.9235"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/pikkuhaan-luonnonsuojelualue"
 vaellusreitit_km:

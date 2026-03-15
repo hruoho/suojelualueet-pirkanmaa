@@ -5,7 +5,6 @@ koordinaatit: [61.55, 23.57]
 pinta_ala_ha: 27
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.55,23.57"
 sources:
   - "https://luonnonperintosaatio.fi/suojelualue/tiitiaisen-metsa/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]

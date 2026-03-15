@@ -5,12 +5,11 @@ koordinaatit: [61.4600, 23.5200]
 pinta_ala_ha: 53.7
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.4600,23.5200"
 sources:
   - "https://visitnokia.fi/kohde/luodon-saari/"
   - "https://www.nokiankaupunki.fi/hyvinvointi-ja-vapaa-aika/ulkoilupaikat-ja-retkeily/luontoliikunta-ja-retkeilykohteet/"
   - "http://www.anttitomminen.com/p/nokian-luontokohteet.html"
-pysakointi: []
+pysakointi:
 vaellusreitit_km: 4
 tulipaikkoja: 5
 laavuja: 0

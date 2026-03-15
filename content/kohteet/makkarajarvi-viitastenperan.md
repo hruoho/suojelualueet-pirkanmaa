@@ -5,7 +5,6 @@ koordinaatit: [61.4356, 23.8898]
 pinta_ala_ha: 86
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.4356,23.8898"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/makkarajarvi-viitastenperan-luonnonsuojelualue"
 vaellusreitit_km:

@@ -9,7 +9,6 @@ laavuja: 1
 vuokratupia: []
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.5726,24.4566"
 sources:
   - "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/erapyha-orivesi"
 tags: ["virkistysalue"]

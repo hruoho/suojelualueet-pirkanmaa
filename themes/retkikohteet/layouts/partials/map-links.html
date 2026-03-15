@@ -1,13 +1,13 @@
 {{/* Map and navigation links from coordinates and front matter */}}
 {{ if .Params.koordinaatit }}
 
-{{/* Collect all coordinate points for Paikkatietoikkuna */}}
+{{/* Collect all coordinate points for Paikkatietoikkuna and embedded map */}}
 {{ $lat := index .Params.koordinaatit 0 }}
 {{ $lon := index .Params.koordinaatit 1 }}
 {{ $points := slice (dict "a" $lat "b" $lon "label" .Title) }}
-{{ range $i, $val := .Params.pysakointi }}
-  {{ if reflect.IsSlice $val }}
-    {{ $points = $points | append (dict "a" (index $val 0) "b" (index $val 1) "label" (printf "P%d" (add $i 1))) }}
+{{ range $i, $p := .Params.pysakointi }}
+  {{ with $p.koordinaatit }}
+    {{ $points = $points | append (dict "a" (index . 0) "b" (index . 1) "label" (printf "P%d" (add $i 1))) }}
   {{ end }}
 {{ end }}
 
@@ -39,22 +39,17 @@
 <section class="kohde-nav">
   <h2>Navigointi</h2>
   <div class="kohde-map-links">
-    {{ range $i, $val := .Params.pysakointi }}
-      {{ if reflect.IsSlice $val }}
-        {{ $a := index $val 0 }}
-        {{ $b := index $val 1 }}
-        <a href="#" class="kohde-map-link kohde-parking-link" data-a="{{ $a }}" data-b="{{ $b }}" target="_blank" rel="noopener">Pysäköinti {{ add $i 1 }}</a>
-      {{ else }}
-        <a href="https://www.google.com/maps/dir/?api=1&destination={{ urlquery $val }}" class="kohde-map-link" target="_blank" rel="noopener">{{ $val }}</a>
+    {{ if .Params.pysakointi }}
+      {{ range $i, $p := .Params.pysakointi }}
+        {{ $label := $p.osoite | default (printf "Pysäköinti %d" (add $i 1)) }}
+        {{ if $p.koordinaatit }}
+          <a href="https://www.google.com/maps/dir/?api=1&destination={{ index $p.koordinaatit 0 }},{{ index $p.koordinaatit 1 }}" class="kohde-map-link" target="_blank" rel="noopener">{{ $label }}</a>
+        {{ else if $p.osoite }}
+          <a href="https://www.google.com/maps/dir/?api=1&destination={{ urlquery $p.osoite }}" class="kohde-map-link" target="_blank" rel="noopener">{{ $label }}</a>
+        {{ end }}
       {{ end }}
-    {{ end }}
-    {{/* Fallback: if no parking, link to main coordinates */}}
-    {{ if not .Params.pysakointi }}
-      {{ if .Params.kartat.google_maps }}
-        <a href="{{ .Params.kartat.google_maps }}" class="kohde-map-link" target="_blank" rel="noopener">Google Maps</a>
-      {{ else }}
-        <a href="https://www.google.com/maps/dir/?api=1&destination={{ $lat }},{{ $lon }}" class="kohde-map-link" target="_blank" rel="noopener">Google Maps</a>
-      {{ end }}
+    {{ else }}
+      <a href="https://www.google.com/maps/dir/?api=1&destination={{ $lat }},{{ $lon }}" class="kohde-map-link" target="_blank" rel="noopener">Navigoi</a>
     {{ end }}
   </div>
 </section>

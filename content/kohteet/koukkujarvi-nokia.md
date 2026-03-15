@@ -5,11 +5,10 @@ koordinaatit: [61.5100, 23.4300]
 pinta_ala_ha: 20.1
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.5100,23.4300"
 sources:
   - "http://www.anttitomminen.com/p/nokian-luontokohteet.html"
   - "https://www.nokiankaupunki.fi/hyvinvointi-ja-vapaa-aika/ulkoilupaikat-ja-retkeily/luontoliikunta-ja-retkeilykohteet/"
-pysakointi: []
+pysakointi:
 vaellusreitit_km:
 tulipaikkoja:
 laavuja: 1

@@ -5,7 +5,6 @@ koordinaatit: [61.4173, 23.8110]
 pinta_ala_ha: # Ei sovellettavissa – kyseessä on reitti, ei alue
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.4173,23.8110"
 sources:
   - "https://www.visitlempaala.fi/content/fi/1/20738/Birgitanpolku-retkeilyreitti.html"
 vaellusreitit_km: 50

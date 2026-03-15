@@ -5,12 +5,11 @@ koordinaatit: [61.4900, 23.3500]
 pinta_ala_ha:
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.4900,23.3500"
 sources:
   - "https://visitnokia.fi/kohde/knuutilan-lintutorni/"
   - "https://www.nokiankaupunki.fi/hyvinvointi-ja-vapaa-aika/ulkoilupaikat-ja-retkeily/luontoliikunta-ja-retkeilykohteet/"
 pysakointi:
-  - "Lukkisalmentie 107, Siuro"
+  - osoite: "Lukkisalmentie 107, Siuro"
 vaellusreitit_km:
 tulipaikkoja: 0
 laavuja: 0

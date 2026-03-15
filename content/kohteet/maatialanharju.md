@@ -5,13 +5,12 @@ koordinaatit: [61.4800, 23.5300]
 pinta_ala_ha:
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.4800,23.5300"
 sources:
   - "https://visitnokia.fi/kohde/maatialanharju/"
   - "https://www.nokiankaupunki.fi/hyvinvointi-ja-vapaa-aika/ulkoilupaikat-ja-retkeily/luontoliikunta-ja-retkeilykohteet/"
   - "http://www.anttitomminen.com/p/nokian-luontokohteet.html"
 pysakointi:
-  - "Kennonnokka, Nokia"
+  - osoite: "Kennonnokka, Nokia"
 vaellusreitit_km: 5
 tulipaikkoja: 0
 laavuja: 0

@@ -5,7 +5,6 @@ koordinaatit: [61.4935, 23.8730]
 pinta_ala_ha: 1
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.4935,23.8730"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/sikosuon-kirvialanmaen-luonnonsuojelualue"
 vaellusreitit_km:

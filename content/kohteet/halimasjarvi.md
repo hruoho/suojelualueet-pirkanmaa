@@ -5,7 +5,6 @@ koordinaatit: [61.506346, 23.930074]
 pinta_ala_ha: 35
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.4780,23.7100"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/halimasjarven-luonnonsuojelualue"
 vaellusreitit_km: 1

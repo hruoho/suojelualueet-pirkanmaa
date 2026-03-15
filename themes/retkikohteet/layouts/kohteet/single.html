@@ -22,35 +22,12 @@
     };
   }
 
-  // ETRS-TM35FIN -> WGS84
-  function etrsToWGS84(n, e) {
-    var a=6378137,f=1/298.257222101,k0=0.9996,lon0=27,falseE=500000;
-    var e2=2*f-f*f,e1=(1-Math.sqrt(1-e2))/(1+Math.sqrt(1-e2));
-    var M=n/k0,mu=M/(a*(1-e2/4-3*e2*e2/64-5*e2*e2*e2/256));
-    var phi=mu+(3*e1/2-27*e1*e1*e1/32)*Math.sin(2*mu)+(21*e1*e1/16-55*e1*e1*e1*e1/32)*Math.sin(4*mu)+(151*e1*e1*e1/96)*Math.sin(6*mu);
-    var sp=Math.sin(phi),cp=Math.cos(phi),tp=Math.tan(phi);
-    var ep2=e2/(1-e2),C=ep2*cp*cp,T=tp*tp;
-    var N=a/Math.sqrt(1-e2*sp*sp),R=a*(1-e2)/Math.pow(1-e2*sp*sp,1.5);
-    var D=(e-falseE)/(N*k0);
-    var lat=phi-(N*tp/R)*(D*D/2-(5+3*T+10*C-4*C*C-9*ep2)*D*D*D*D/24+(61+90*T+298*C+45*T*T-252*ep2-3*C*C)*D*D*D*D*D*D/720);
-    var lon=lon0*Math.PI/180+(D-(1+2*T+C)*D*D*D/6+(5-2*C+28*T-3*C*C+8*ep2+24*T*T)*D*D*D*D*D/120)/cp;
-    return { lat: lat*180/Math.PI, lon: lon*180/Math.PI };
-  }
-
   // Embedded terrain map
   var mapEl = document.getElementById('kohde-map');
   if (mapEl) {
     var points = JSON.parse(mapEl.dataset.points);
-    var latlngs = [];
-    points.forEach(function(p) {
-      var lat, lon;
-      if (p.a > 100000) {
-        var wgs = etrsToWGS84(p.a, p.b);
-        lat = wgs.lat; lon = wgs.lon;
-      } else {
-        lat = p.a; lon = p.b;
-      }
-      latlngs.push({ lat: lat, lon: lon, label: p.label });
+    var latlngs = points.map(function(p) {
+      return { lat: p.a, lon: p.b, label: p.label };
     });
 
     var center = latlngs[0];
@@ -85,12 +62,7 @@
     var markers = [];
     var sumE = 0, sumN = 0;
     points.forEach(function(p) {
-      var etrs;
-      if (p.a > 100000) {
-        etrs = { e: Math.round(p.b), n: Math.round(p.a) };
-      } else {
-        etrs = wgs84ToETRS(p.a, p.b);
-      }
+      var etrs = wgs84ToETRS(p.a, p.b);
       sumE += etrs.e; sumN += etrs.n;
       markers.push('2|3|ffde00|' + etrs.e + '_' + etrs.n + '|' + p.label);
     });
@@ -114,18 +86,6 @@
     });
   }
 
-  // Parking links — auto-detect ETRS vs WGS84
-  document.querySelectorAll('.kohde-parking-link').forEach(function(link) {
-    var a = parseFloat(link.dataset.a), b = parseFloat(link.dataset.b);
-    var lat, lon;
-    if (a > 100000) {
-      var wgs = etrsToWGS84(a, b);
-      lat = wgs.lat; lon = wgs.lon;
-    } else {
-      lat = a; lon = b;
-    }
-    link.href = 'https://www.google.com/maps/dir/?api=1&destination=' + lat.toFixed(6) + ',' + lon.toFixed(6);
-  });
 })();
 </script>
 {{ end }}

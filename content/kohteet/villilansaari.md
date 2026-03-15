@@ -5,7 +5,6 @@ koordinaatit: [61.488279, 23.603332]
 pinta_ala_ha: 5.7
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.470,23.695"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/villilansaaren-luonnonsuojelualue"
 vaellusreitit_km:

@@ -5,7 +5,6 @@ koordinaatit: [61.445, 23.820]
 pinta_ala_ha: 1
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.445,23.820"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/vuoreksen-koukkujarven-luonnonsuojelualue"
 vaellusreitit_km:

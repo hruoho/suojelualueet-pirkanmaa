@@ -5,12 +5,11 @@ koordinaatit: [61.5200, 23.4700]
 pinta_ala_ha:
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.5200,23.4700"
 sources:
   - "https://visitnokia.fi/kohde/laajanojan-luontopolku/"
   - "https://www.nokiankaupunki.fi/hyvinvointi-ja-vapaa-aika/ulkoilupaikat-ja-retkeily/luontoliikunta-ja-retkeilykohteet/"
 pysakointi:
-  - "Pinsiöntie, Nokia"
+  - osoite: "Pinsiöntie, Nokia"
 vaellusreitit_km: 3.4
 tulipaikkoja: 0
 laavuja: 0

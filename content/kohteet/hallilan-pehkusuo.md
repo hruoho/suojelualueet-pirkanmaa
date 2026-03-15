@@ -5,7 +5,6 @@ koordinaatit: [61.4690, 23.8450]
 pinta_ala_ha: 5
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.4690,23.8450"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/hallilan-pehkusuon-luonnonsuojelualue"
 vaellusreitit_km:

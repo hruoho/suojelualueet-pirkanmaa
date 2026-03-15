@@ -5,7 +5,6 @@ koordinaatit: [61.4400, 23.8500]
 pinta_ala_ha: 8.9
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.4400,23.8500"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/hupakankorven-luonnonsuojelualue"
 vaellusreitit_km:

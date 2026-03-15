@@ -8,7 +8,6 @@ kotia: 1
 vuokratupia: []
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.8550,23.6800"
   karttapaikka: "https://asiointi.maanmittauslaitos.fi/karttapaikka/?lang=fi&share=customMarker&n=6864063.956656448&e=331992.276923649&title=Romunokka&desc=&zoom=11&layers=W3siaWQiOjIsIm9wYWNpdHkiOjEwMH1d-z"
 sources:
   - "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/romunokka-ylojarvi"

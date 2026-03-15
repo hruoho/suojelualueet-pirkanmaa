@@ -5,7 +5,6 @@ koordinaatit: [61.765418, 23.908825]
 pinta_ala_ha: 6
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.7657,23.9169"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/vaiverosuon-luonnonsuojelualue"
 vaellusreitit_km:

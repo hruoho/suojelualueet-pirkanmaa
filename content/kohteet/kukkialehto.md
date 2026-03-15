@@ -5,7 +5,6 @@ koordinaatit: [61.33, 24.58]
 pinta_ala_ha: 22
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.33,24.58"
 sources:
   - "https://luonnonperintosaatio.fi/suojelualue/kukkialehto/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]

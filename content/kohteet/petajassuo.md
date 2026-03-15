@@ -5,7 +5,6 @@ koordinaatit: [61.4956, 23.9346]
 pinta_ala_ha: 9
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.4956,23.9346"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/petajassuon-luonnonsuojelualue"
 vaellusreitit_km:

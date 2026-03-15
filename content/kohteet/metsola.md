@@ -5,7 +5,6 @@ koordinaatit: [61.24, 24.05]
 pinta_ala_ha: 7
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.24,24.05"
 sources:
   - "https://luonnonperintosaatio.fi/suojelualue/metsola/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]

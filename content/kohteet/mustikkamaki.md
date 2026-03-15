@@ -5,7 +5,6 @@ koordinaatit: [61.39, 24.42]
 pinta_ala_ha: 6.6
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.39,24.42"
 sources:
   - "https://luonnonperintosaatio.fi/suojelualue/mustikkamaki/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]

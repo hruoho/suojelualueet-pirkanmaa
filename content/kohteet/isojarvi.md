@@ -8,7 +8,6 @@ karttakuvat:
   - src: "kartta.png"
     alt: "Isojärven kansallispuiston retkeilykartta"
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.6833,25.0167"
 sources:
   - "https://www.luontoon.fi/fi/kohteet/isojarven-kansallispuisto"
 vaellusreitit_km: 30

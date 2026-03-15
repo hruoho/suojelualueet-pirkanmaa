@@ -5,7 +5,6 @@ koordinaatit: [62.05, 24.65]
 pinta_ala_ha: 18
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=62.05,24.65"
 sources:
   - "https://luonnonperintosaatio.fi/suojelualue/kaukametsa-vilppula/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]

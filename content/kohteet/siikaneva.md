@@ -5,7 +5,6 @@ koordinaatit: [61.8299, 24.1700]
 pinta_ala_ha: 950
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.8299,24.1700"
 sources:
   - "https://www.luontoon.fi/fi/kohteet/siikanevan-soidensuojelualue"
 vaellusreitit_km: 9.9

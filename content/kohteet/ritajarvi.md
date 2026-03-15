@@ -5,7 +5,6 @@ koordinaatit: [61.4504, 22.9205]
 pinta_ala_ha: 127
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.4504,22.9205"
 sources:
   - "https://www.visitsastamala.fi/ritajarven-luonnonsuojelualue/"
   - "https://www.luontoon.fi/fi/kohteet/ritajarven-luonnonsuojelualue-sastamala-527578"

@@ -5,7 +5,6 @@ koordinaatit: [61.5112, 23.5653]
 pinta_ala_ha: 2.2
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.5112,23.5653"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/pahaluoman-luonnonsuojelualue"
 vaellusreitit_km:

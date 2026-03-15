@@ -5,7 +5,6 @@ koordinaatit: [61.5171, 23.8642]
 pinta_ala_ha: 45.5
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.5171,23.8642"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/soukonvuoren-luonnonsuojelualue"
 vaellusreitit_km:

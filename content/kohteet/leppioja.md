@@ -5,7 +5,6 @@ koordinaatit: [61.5263, 23.5575]
 pinta_ala_ha: 4.4
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.5263,23.5575"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/leppiojan-luonnonsuojelualue"
 vaellusreitit_km:

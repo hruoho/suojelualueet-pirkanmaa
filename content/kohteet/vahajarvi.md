@@ -5,7 +5,6 @@ koordinaatit: [61.4666, 23.7396]
 pinta_ala_ha: 8
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.4666,23.7396"
 sources:
   - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/vahajarven-luonnonsuojelualue"
 vaellusreitit_km:

@@ -5,7 +5,6 @@ koordinaatit: [61.35, 24.30]
 pinta_ala_ha: 8.5
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.35,24.30"
 sources:
   - "https://luonnonperintosaatio.fi/suojelualue/suden-metsa/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]

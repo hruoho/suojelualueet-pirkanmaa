@@ -5,7 +5,6 @@ koordinaatit: [61.92, 23.60]
 pinta_ala_ha: 1600
 kuvia: []
 kartat:
-  google_maps: "https://www.google.com/maps?q=61.92,23.60"
 sources:
   - "https://www.luontoon.fi/fi/reitit/riuttaskorven-reitti-ylojarvi-198786"
 vaellusreitit_km: 15
