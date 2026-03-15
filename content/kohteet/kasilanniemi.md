@@ -13,6 +13,7 @@ sources:
   - "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/kasilanniemi-vilppula"
 tags: ["virkistysalue"]
 draft: false
+reviewed:
 ---
 
 Kasilanniemen virkistysalue sijaitsee Kasilansaaressa, Huopioniemen kylässä entisen Vilppulan kunnan alueella. Kolmen hehtaarin alue on saavutettavissa vesiteitse, ja rantaan sopii useita veneitä. Venelaiturissa on poijupaikat neljälle isolle veneelle. Alueella on laavu, kaksi nuotiopaikkaa ja puucee. Alueen kunnossapidosta vastaa Mänttä-Vilppulan kaupungin liikuntatoimi.

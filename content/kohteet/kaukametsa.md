@@ -10,6 +10,7 @@ sources:
   - "https://luonnonperintosaatio.fi/suojelualue/kaukametsa-vilppula/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
+reviewed:
 ---
 
 Kokonaisuutena Kaukametsä on harvinaislaatuinen, omaan rauhaansa unohdettu ja vapaana kasvanut salomaa, jonka juuret sananmukaisesti ulottuvat satojen vuosien taakse -- aikaan, jolloin Suomen sydänmaat olivat suurelta osin vielä valloittamattomia. Luonnonperintösäätiö osti noin 18 hehtaarin suuruisen metsän Mänttä-Vilppulan Kolhosta vuonna 2016. Kaukametsä rajoittuu itärajaltaan Karhusuohon, ja siellä tiedetään karhun talvehtineen. Loistavanvihreä sammal kattaa maaperää, josta nousevat mahtavat kuusijätit.

@@ -10,6 +10,7 @@ sources:
   - "https://luonnonperintosaatio.fi/suojelualue/kapypojan-metsa/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
+reviewed:
 ---
 
 Kirsi Kunnaksen kunniaksi suojeltu, lajistollisesti merkittävä Tiitiäisen metsän laajennusalue Ylöjärvellä. Käpypojan metsä sijaitsee Mikkolankorvessa, suositun Pikku-Ahveniston ulkoilualueen kyljessä. Noin 31 hehtaarin laajennusalue on suoraan yhteydessä aiemmin perustettuun Tiitiäisen metsän suojelualueeseen, ja yhteensä 58 hehtaarin kokoinen alue muodostaa Kirsi Kunnaksen muistometsän. Metsä on varttunutta ja kuusivaltaista, mutta joukossa on paikoin runsaasti lehtipuita. Alueen uhanalaisia lintuja ovat muun muassa pyy ja hömötiainen.

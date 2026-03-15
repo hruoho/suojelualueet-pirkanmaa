@@ -11,6 +11,7 @@ sources:
   - "https://luonnonperintosaatio.fi/suojelualue/myllyniitty/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
+reviewed:
 ---
 
 Myllyniityn maapohja on kauttaaltaan rehevää, lehtomaista kangasta. Kosteimmilla paikoilla esiintyy myös arvokasta aitoa lehtoa, maamme luontotyypeistä vehmainta. Metsän sisään jää myös muutama vanha niitty. Myllyniitty sijaitsee Valkeakosken Painossa ja ulottuu Painonjärven rantaan. Suojelualueeseen kuuluu kaunis, luonnonuomassa juokseva pikkujoki, joka laskee Isosta Leppäjärvestä Painonjärveen. Epätavallista alueessa on sen suuri lehtipuuvaltaisuus. Myllyniityn halki kulkee ulkoilupolku Pirkan Taival.

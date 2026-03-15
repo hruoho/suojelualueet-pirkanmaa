@@ -11,6 +11,7 @@ sources:
   - "https://luonnonperintosaatio.fi/suojelualue/mikko-saarelan-muistometsa/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
+reviewed:
 ---
 
 Eppu Normaali -yhtyeen perustajajäseniin kuuluneen Mikko Saarelan muistometsäksi perustettu puustoinen metsäalue Mastosvuoren Asuntilan pohjoispuolella, muutama kilometri Ylöjärven keskustasta koilliseen. Reilun 14 hehtaarin alue sijoittuu Mastosjärven itärannalle ja ympäröi osittain sinne jo aiemmin perustettua suojelualuetta. Yhdessä viereisen suojelualueen kanssa se muodostaa noin 25 hehtaarin suojellun kokonaisuuden. Maastonmuodot vaihtelevat kallioista niiden välisiin notkelmiin ja pieniin laaksoihin. Ylöjärven kaupunki myi alueen Luonnonperintösäätiölle vuonna 2020.

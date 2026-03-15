@@ -14,6 +14,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Ikuri-Kalkun Myllypuron luonnonsuojelualue on 35,3 hehtaarin laajuinen lehtojen ja puroympäristöjen suojelukohde noin 10 kilometrin päässä Tampereen keskustasta. Myllypuro on Tampereen kantakaupungin pisin yhtenäinen puro ja puronvarsilehto, noin kolmen kilometrin pituinen. Alueella kasvaa muun muassa kotkansiipiä, sinivuokkoja ja harvinaista lehtolitukkaa.

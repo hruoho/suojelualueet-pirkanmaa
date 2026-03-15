@@ -16,6 +16,7 @@ laavuja: 1
 vuokratupia: []
 tags: ["luonnonsuojelualue", "natura"]
 draft: false
+reviewed:
 ---
 
 Koukkujärven yksityinen suojelualue (20,1 ha) perustettiin vuonna 2011 ja kuuluu Natura-verkostoon. Alueella sijaitsee Nuijalammin laavu.

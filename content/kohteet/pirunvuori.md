@@ -10,6 +10,7 @@ sources:
   - "https://luonnonperintosaatio.fi/suojelualue/pirunvuori/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
+reviewed:
 ---
 
 Luonto- ja kulttuuriarvoiltaan poikkeuksellisen komea metsä Sastamalan Pirunvuoren jylhissä maisemissa. Pirunvuori kohoaa 151 metriä merenpinnan yläpuolelle Rautaveden Salonsaaressa. Luonnonperintösäätiö osti vuonna 2024 yhteensä 49 hehtaaria metsää. Alueella sijaitsevat Pirunvuoren näköalapaikka, kansantarinoita innoittanut luola sekä taiteilija Emil Danielssonin Kivilinna-ateljee. Vuori on jäänne muinaisesta tulivuoresta, jonka purkauskanavan kivi on kestänyt paremmin ajan kulutusta ja jäänyt muuta maastoa korkeammaksi. Pirunvuoren laella on luonnonsuojelualue ja se kuuluu Natura 2000 -verkostoon.

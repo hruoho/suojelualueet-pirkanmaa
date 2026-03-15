@@ -14,6 +14,7 @@ laavuja:
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Vähäjärven luonnonsuojelualue sijaitsee Härmälän kaupunginosassa noin 4,5 kilometrin päässä Tampereen keskustasta ja käsittää noin 8 hehtaaria, josta järven vesipinta-ala on 1,5 hehtaaria. Alueella suojellaan linnustoa, ranta- ja vesikasvillisuutta sekä viitasammakoita. Järven itäpäässä on puinen lintulaituri luontotarkkailuun, ja alue on saavutettavissa pyörällä ja bussilla.

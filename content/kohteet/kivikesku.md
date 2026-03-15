@@ -18,6 +18,7 @@ laavuja: 1
 vuokratupia: []
 tags: ["luonnonsuojelualue", "natura"]
 draft: false
+reviewed:
 ---
 
 Kivikesku on karu ja erämaatunnelmainen järvi Pohjois-Nokialla, osa Kaakkurijärvien Natura-aluetta. Suojelualueen pinta-ala on 35,2 hehtaaria (alkuperäinen 19,6 ha perustettu 1991, laajennus 15,6 ha vuonna 1996). Alue on tärkeä kaakkurin pesimäympäristö.

@@ -17,6 +17,7 @@ laavuja: 1
 vuokratupia: ["Heretty"]
 tags: ["kansallispuisto", "vaellus"]
 draft: false
+reviewed:
 ---
 
 Isojärven kansallispuisto on Kuhmoisissa sijaitseva, vuonna 1982 perustettu kansallispuisto. Pinta-ala on noin 22 neliökilometriä. Puiston maisema on korkokuvaltaan vaihtelevaa ja kasvillisuus on paikoin lehtomaista. Alueella on useita pieniä metsäjärviä ja lampia.

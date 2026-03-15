@@ -14,6 +14,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Hallilan Pehkusuon luonnonsuojelualue on noin 5 hehtaarin laajuinen luonnontilainen suoalue noin 6 kilometrin päässä Tampereen keskustasta. Alueella kasvaa rahkasammalta, saroja, tupasvillaa ja harvinaista jouheikkoa, ja suon poikki kulkee pitkospuut. Hyönteislajistoon kuuluu muun muassa suokirjosiipi ja huomionarvoinen rimpiputkisirvikäs.

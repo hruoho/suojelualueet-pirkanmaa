@@ -14,6 +14,7 @@ sources:
   - "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/erapyha-orivesi"
 tags: ["virkistysalue"]
 draft: false
+reviewed: 2026-03-14
 ---
 
 Eräpyhä on kallioinen niemi Längelmävedessä Oriveden Eräjärvellä, Uiherlan kylän Eräpyhän kulmakunnalla, noin 20 km Oriveden keskustasta. Nimensä mukaisesti Eräpyhä on ikivanhaa eränkävijöiden seutua. Niemen kärjessä, noin 25 metrin korkeudella vedenpinnasta on pronssikautiseksi hautaröykkiöksi määritelty kiviraunio, jota kutsutaan Nunnankirkoksi. Eräpyhän niemi on valtakunnallisesti merkittävä kallioalue sekä maisemallisin, geologisin että biologisin perustein. Alueella on liki kilometrin pituinen kalliojyrkänne.

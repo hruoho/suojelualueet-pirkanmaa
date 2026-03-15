@@ -17,6 +17,7 @@ laavuja: 32
 vuokratupia: []
 tags: ["virkistysalue", "vaellus"]
 draft: false
+reviewed:
 ---
 
 Hämeenkangas on hieman yli 20 kilometriä pitkä ja noin 5 500 hehtaarin laajuinen harjujakso Pohjois-Satakunnassa ja Pirkanmaan rajalla. Alue on ensisijaisesti puolustusvoimien harjoitusalue, jossa myös retkeilijät voivat liikkua. Metsähallitus hoitaa aluetta vuodesta 2002 lähtien.

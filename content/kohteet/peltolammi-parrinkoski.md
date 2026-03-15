@@ -14,6 +14,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Peltolammi-Pärrinkosken luonnonsuojelualue sijaitsee Sarankulman ja Peltolammin kaupunginosissa Tampereen eteläosassa ja on yhteensä noin 34,69 hehtaaria laaja. Alueella on rehevää ja monipuolista lehtokasvillisuutta, ja Myllypuro virtaa sammalpeitteisten kivien lomitse runsaan saniaiskasvillisuuden ympäröimänä. Alueella on polkuverkosto, pitkoksia Myllyojan varrella sekä uimaranta.

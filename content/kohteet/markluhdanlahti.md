@@ -16,6 +16,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["virkistysalue"]
 draft: false
+reviewed:
 ---
 
 Markluhdanlahti on Pyhäjärven Pappilanselän pohjoisin lahti. Syksyllä 2022 rakennettu kaksikerroksinen luontolava tarjoaa näköalapaikan linnuille ja vesistöluonnolle. Alue on tärkeä uhanalaisten vesilintujen ja sudenkorentojen elinympäristö.

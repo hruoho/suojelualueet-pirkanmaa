@@ -1,7 +1,7 @@
 ---
 title: "Kurikanlehto"
 kunta: "Kangasala"
-koordinaatit: [61.5019, 24.3418]
+koordinaatit: [61.500769, 24.339925]
 pinta_ala_ha: 14
 kuvia: []
 kartat:
@@ -11,6 +11,7 @@ sources:
   - "https://luonnonperintosaatio.fi/suojelualue/kurikanlehto/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
+reviewed:
 ---
 
 Pentti Linkolan muistolehto suojelee mittaamattoman arvokasta luonnonperintöä Sahalahden maisemissa Pirkanmaalla. Kurikanlehto sijaitsee Sahalahden Keljossa, noin kilometrin päässä Längelmäveden rannasta. Reheväpohjainen 14 hehtaarin laajuinen metsä levittäytyy Kurikanvuoren länsi- ja lounaisrinteelle, ja suojelualueeseen kuuluu myös kaistale vuoren lakea, joka sijaitsee noin 140 metriä merenpinnan yläpuolella. Metsässä kasvaa harvinaisen järeitä kuusia, mäntyjä ja eri-ikäisiä rauduskoivuja, myös vanhoja naavaisia ja kääpäisiä yksilöitä; joukossa on haavan, lepän ja pihlajan lisäksi lehmusta ja metsävaahteraa.

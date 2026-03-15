@@ -14,6 +14,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Soukonvuoren luonnonsuojelualue on 45,5 hehtaarin laajuinen alue Kauppi-Niihaman virkistysalueella, noin 5 kilometriä Tampereen keskustasta koilliseen. Alueen tarkoituksena on säilyttää vanha, 100–120-vuotias kuusivaltainen metsä eliölajistoineen, mukaan lukien uhanalaiset pohjantikka ja liito-orava. Alueella kulkee Kauppi-Leinolan valaistu pääulkoilureitti, Niihaman luontopolku sekä talvella hiihtolatuja.

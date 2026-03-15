@@ -1,7 +1,7 @@
 ---
 title: "Kintulammin retkeily- ja luonnonsuojelualue"
 kunta: "Tampere"
-koordinaatit: [61.5650, 23.8950]
+koordinaatit: [61.588310, 23.964036]
 pinta_ala_ha: 580
 kuvia: []
 kartat:
@@ -15,6 +15,7 @@ laavuja: 4
 vuokratupia: ["Kintulammi", "Kortejärvi"]
 tags: ["luonnonsuojelualue", "vaellus"]
 draft: false
+reviewed:
 ---
 
 6 tulipaikkaa, 4 laavua ja 2 vuokratupaa.

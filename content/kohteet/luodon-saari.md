@@ -17,6 +17,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Pyhäjärvessä Sotkanvirran eteläpuolella sijaitseva Luodon saari on kokonaisuudessaan luonnonsuojelualuetta (53,7 ha, perustettu 1992). Saari kuuluu lehtojensuojeluohjelmaan ja tunnetaan lehmuksistaan, jalavistaan sekä monipuolisista metsätyypeistään.

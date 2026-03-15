@@ -11,6 +11,7 @@ sources:
   - "https://luonnonperintosaatio.fi/suojelualue/laipansalo/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
+reviewed:
 ---
 
 Maisemallisesti erittäin kaunis luonnontilainen ja aarniomainen metsä Laipanmaan lähellä. Noin 18 hehtaarin kokoinen alue sijaitsee Kangasalla, Luopioisten ja Kuhmalahden vanhojen kirkonkylien välissä. Luonnonperintösäätiön perustaja Pentti Linkola löysi alueen 2000-luvun alkupuolella retkeillessään Kuhmalahdella. Maasto vaihtelee valoisista, palleroporonjäkälän täplittämistä kalliomänniköistä kuusivaltaisiin metsiin, joissa lahopuut kertovat alueen koskemattomuudesta. Metsän kätkössä olevan pienen järven pitkä rantaviiva on erityisen viehättävä.

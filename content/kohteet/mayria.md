@@ -12,6 +12,7 @@ sources:
   - "https://www.pirkanmaanvirkistysalueyhdistys.fi/virkistysalueet/mayria-lempaala"
 tags: ["virkistysalue"]
 draft: false
+reviewed:
 ---
 
 Mäyriän virkistysalue sijaitsee Pyhäjärven rannalla Lempäälässä, Korkeemäen kylässä, noin 7 km Lempäälän keskustasta. Alueella on vuokrattava mökki pieniin tilaisuuksiin ja saunontaan, kaksi varattavissa olevaa saunaa rannassa, telttailumahdollisuus (etukäteen sovittava) sekä kolme maksutonta nuotiopaikkaa. Lisäksi alueella on uimaranta, keittokatos (noin 50 henkilölle) ja pieni venesatama.

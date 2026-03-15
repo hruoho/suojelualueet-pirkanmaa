@@ -17,6 +17,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["virkistysalue"]
 draft: false
+reviewed:
 ---
 
 Kuloveden Alasenlahden rannalla sijaitseva lintutorni on hyvä tarkkailukohde etenkin keväällä, kun sula ei ole vielä edennyt pitkälle. Alueella on nähty laulujoutsenia, taveja, sinisorssia, kurkia, merikotkia ja sääksiä.

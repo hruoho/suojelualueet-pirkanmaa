@@ -17,6 +17,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["virkistysalue"]
 draft: false
+reviewed:
 ---
 
 Laajanojan luontopolulla pääsee tutustumaan erittäin uhanalaisen purotaimenen elinympäristöön. Polku kulkee Laajanoja-puron varrella monimuotoisessa luonnossa.

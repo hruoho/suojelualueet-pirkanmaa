@@ -14,6 +14,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Korvenvuoren luonnonsuojelualue on noin 4,1 hehtaarin kokoinen suojelukohde Aitolahden kaupunginosassa, Vääräjärven itäpuolella. Alueella kasvaa harvinainen korpisorsimo, jonka suojelusta Suomella on kansainvälinen vastuu. Lisäksi alueella esiintyy harvinaista lehtoheinää sekä uhanalaisia jäkälälajeja.

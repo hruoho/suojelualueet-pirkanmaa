@@ -14,6 +14,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Pahaluoman luonnonsuojelualue sijaitsee Myllypuron kaupunginosassa Kolmenkulman alueella, noin 11 kilometriä Tampereen keskustasta. Suojelualueen halki virtaa polveileva, kivikkoinen purouoma, jonka reunoilla on rehevää puronvarsilehtoa ja korpea. Alue on perustettu suojelemaan EU:n luontodirektiivin uhanalaista hajuheinää.

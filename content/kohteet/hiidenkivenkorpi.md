@@ -11,6 +11,7 @@ sources:
   - "https://luonnonperintosaatio.fi/suojelualue/hiidenkivenkorpi/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
+reviewed:
 ---
 
 Vanha ja huomattavan sankka kuusimetsä Urjalan Nuutajärvellä. Metsä on kauttaaltaan puustoinen, sillä siihen ei ole sataan vuoteen juuri kajottu. Nimestään huolimatta metsä ei biologisessa mielessä ole korpi, mutta sanan yleiskielisen merkityksen mukaisesti se on vanha ja huomattavan sankka kuusimetsä. Metsän reunalla sijaitsee jääkauden jättämä siirtokivilohkare, joka paikkakunnalla tunnetaan Rojukivenä. Hiidenkivenkorpi on viides Luonnonperintösäätiön suojelualue Urjalassa.

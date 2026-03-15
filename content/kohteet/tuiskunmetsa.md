@@ -11,6 +11,7 @@ sources:
   - "https://luonnonperintosaatio.fi/suojelualue/tuiskunmetsa/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
+reviewed:
 ---
 
 Voimistelu- ja urheiluseura Tuiskun urheilukentän paikalla kasvava metsä Punkalaitumella. Reilun hehtaarin kokoinen metsä sijaitsee Oriniemen kylässä. Yli sata vuotta sitten perustettu urheiluseura hankki alueen kauan sitten paikaksi omalle urheilukentälleen, mutta myöhemmin alue jäi käyttämättä ja puskemaan komeaa metsää. Metsä on vanha, sillä se on säilynyt kirveen koskematta lähes sata vuotta. Alueella viihtyvät muun muassa erittäin uhanalainen hömötiainen, puukiipijä ja liito-orava.

@@ -14,6 +14,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Leppiojan luonnonsuojelualue on 4,4 hehtaarin laajuinen suojelukohde Ikurin kaupunginosassa, Ylöjärven rajalla, noin 12 kilometrin päässä Tampereen keskustasta. Alue on perustettu erityisesti EU-direktiivillä suojellun hajuheinän esiintymän turvaamiseksi. Alueella ei ole reittejä eikä palveluita.

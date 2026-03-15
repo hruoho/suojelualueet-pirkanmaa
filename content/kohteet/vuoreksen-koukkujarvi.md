@@ -14,6 +14,7 @@ laavuja:
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Vuoreksen Koukkujärven luonnonsuojelualue on reilun hehtaarin laajuinen alue Koukkujärven pohjoispuolella Vuoreksessa, lähellä Lempäälän rajaa. Alue on perustettu suojelemaan arvokasta tervaleppälehtoa, jossa kasvaa vanhoja monirunkoisia tervaleppiä sekä harvinaista pallorahkasammalta. Koukkujärven luontopolku kiertää järven ja kulkee suojelualueen läpi opastein ja pitkospuin.

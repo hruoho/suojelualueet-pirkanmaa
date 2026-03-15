@@ -15,6 +15,7 @@ laavuja: 1
 vuokratupia: ["varaustuva"]
 tags: ["luonnonsuojelualue", "vaellus"]
 draft: false
+reviewed:
 ---
 
 Ritajärven luonnonsuojelualue on 127 hehtaarin kokoinen suojelualue Sastamalan keskellä, Vammalan, Häijään ja Kiikoisten taajamien muodostaman kolmion ytimessä. Alue perustettiin keväällä 2015 Pirkanmaan ELY-keskuksen rauhoituspäätöksellä. Valittu vuoden retkikohteeksi 2017.

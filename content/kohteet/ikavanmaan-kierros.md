@@ -17,6 +17,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["virkistysalue"]
 draft: false
+reviewed:
 ---
 
 Ikävänmaan kierros vie kulkijansa Pohjois-Nokialle, Alinenjärven ja Laajanojan rantamaisemiin. Reitti jakaa osittain maisemia Laajanojan luontopolun kanssa.

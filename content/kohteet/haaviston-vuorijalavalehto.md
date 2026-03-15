@@ -1,7 +1,7 @@
 ---
 title: "Haaviston vuorijalavalehto"
 kunta: "Nokia"
-koordinaatit: [61.4750, 23.4900]
+koordinaatit: [61.464644, 23.443598]
 pinta_ala_ha: 3.02
 kuvia: []
 kartat:
@@ -15,6 +15,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed: 2026-03-14
 ---
 
 Nokian vanhin luonnonsuojelualue, perustettu vuonna 1941. Alkuperäinen 0,42 hehtaarin alue laajennettiin vuonna 1999 (2,6 ha). Lehto tunnetaan vanhoista vuorijalavistaan, jotka ovat monimuotoisuuden kannalta erittäin tärkeitä — ne tarjoavat suojaa ja ravintoa lukuisille eläin-, sieni- ja kasvilajeille.

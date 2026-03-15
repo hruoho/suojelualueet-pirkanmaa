@@ -18,6 +18,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Ruutanajärven rannalla sijaitseva 22 hehtaarin yksityinen suojelualue, perustettu vuonna 1984. Alue tunnetaan rehevistä lehdoista, pähkinäpensasesiintymistä, saniaisista ja jääkauden muovaamista siirtolohkareista.

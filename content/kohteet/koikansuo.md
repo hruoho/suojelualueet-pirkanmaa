@@ -14,6 +14,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Koikansuon luonnonsuojelualue on 5,7 hehtaarin laajuinen suoalue Aitolahden kaupunginosassa, noin 19 kilometrin päässä Tampereen keskustasta, Vähäjärven eteläpuolella. Alue on isovarpurämeistä suometsää, jossa kasvaa harvakseltaan matalaa mäntyä koivun ja kuusen seassa, ja osa männyistä on noin 180-vuotiaita. Alueella ei ole reittejä eikä palveluita.

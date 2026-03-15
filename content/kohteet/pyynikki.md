@@ -14,6 +14,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Pyynikin luonnonsuojelualue suojelee ainutlaatuista harjukokonaisuutta, joka kohoaa 160 metriin merenpinnasta ja on kuvattu maailman korkeimmaksi soraharjuksi. Alueella on yli 300 putkilokasvilajia, mukaan lukien harvinaisia harjukasveja, sekä noin 23 pesivää lintulajia. Alueella on merkittyjä ulkoilureittejä, luontopolku, 26-metrinen näkötorni sekä talvisin hiihtolatuja.

@@ -14,6 +14,7 @@ laavuja: 9
 vuokratupia: []
 tags: ["vaellus"]
 draft: false
+reviewed:
 ---
 
 Birgitan polku on noin 50 kilometrin mittainen ympyranmuotoinen retkeilyreitti Lempäälän järvi- ja metsämaisemissa. Reitti valittiin Suomen vuoden retkikohteeksi vuonna 2006. Polku on nimetty Pyhän Birgitan kirkon mukaan.

@@ -14,6 +14,7 @@ laavuja: 1
 vuokratupia: []
 tags: ["virkistysalue", "vaellus"]
 draft: false
+reviewed:
 ---
 
 Riuttaskorven virkistysmetsä sijaitsee Ylöjärven pohjoisosassa Kurussa, Seitsemisen ja Helvetinjärven kansallispuistojen välisellä ekologisesti arvokkaalla vyöhykkeellä. Metsähallituksen hoitovastuulla olevan alueen pinta-ala on noin 16 neliökilometriä.

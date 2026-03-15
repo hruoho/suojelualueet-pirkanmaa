@@ -1,7 +1,7 @@
 ---
 title: "Hakavuori"
 kunta: "Nokia"
-koordinaatit: [61.4900, 23.3300]
+koordinaatit: [61.471169, 23.378630]
 pinta_ala_ha:
 kuvia: []
 kartat:
@@ -18,6 +18,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["virkistysalue"]
 draft: false
+reviewed: 2026-03-14
 ---
 
 Hakavuori on Siurossa sijaitseva liuskekallio, jolta avautuu hienot näköalat Kulovedelle ja Nokianvirralle. Kallio sijaitsee Ruutanan suojelualueen eteläpuolella.

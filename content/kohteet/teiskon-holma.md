@@ -14,6 +14,7 @@ laavuja:
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Teiskon Holman luonnonsuojelualue sijaitsee Teiskossa noin 22 kilometrin päässä Tampereen keskustasta. Noin 13 hehtaarin alue on perustettu vanhan metsän suojelemiseksi ja se koostuu pääosin kuusivaltaisista vanhoista metsistä, luonnontilaisista soista ja kosteikkoympäristöistä. Alueella esiintyy lahopuuta, harvinaisia kääpälajeja ja liito-oravan jälkiä, mutta reitistöä tai palveluita ei ole.

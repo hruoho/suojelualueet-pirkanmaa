@@ -11,6 +11,7 @@ sources:
   - "https://luonnonperintosaatio.fi/suojelualue/pyssynkangas/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
+reviewed:
 ---
 
 Liito-oravan elinpiiriä aidossa ikimetsässä, jossa huomattavan suuria kuusia, keskellä jyrkkä kallio keloineen. Pyssynkankaan metsä sijaitsee Kiimankulmantien pohjoispuolella ja sen pinta-ala on 7,1 hehtaaria. Arvokkain osa metsästä on kallionalusmetsää, jossa kasvaa suuria kuusia, sekapuina kilpikaarnamäntyjä, vanhoja koivuja sekä muutama iso raita. Metsän sisään jää myös kaksi pientä niittyä. Luonnonperintösäätiö hankki alueen vuonna 2009 yhdessä Haapalaakson kanssa.

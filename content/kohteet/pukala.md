@@ -22,6 +22,7 @@ laavuja: 2
 vuokratupia: []
 tags: ["virkistysmetsä", "vaellus", "melonta"]
 draft: false
+reviewed:
 ---
 
 Pukalan virkistysmetsä sijaitsee Oriveden länsipuolella. Se perustettiin vuonna 1968 Pukalan luonnonhoitometsän nimellä. Alueen sydän on syvä ja kirkasvetinen Pukalajärvi (syvyys jopa 57m), jota kutsutaan "Etelä-Suomen Inariksi".

@@ -11,6 +11,7 @@ sources:
   - "https://luonnonperintosaatio.fi/suojelualue/metsaveraja/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
+reviewed:
 ---
 
 Mustikkatyypin monimuotoinen metsä, jonka keskiosaan sijoittuu kaunis lehtomainen puronotko. Metsäveräjä sijaitsee lähellä Kuljua Lempäälässä ja on kooltaan viitisen hehtaaria. Puron ympäristössä rehottavat saniaiset ja siellä kasvaa suuria tervaleppiä ja lehmuksia, jotka molemmat ovat metsän monimuotoisuuden tärkeitä avainlajeja. Metsässä on kauniita sammaleisia kiviä ja sen läpi kulkee vanha kärrytie. OP Etelä-Pirkanmaa lahjoitti alueen Luonnonperintösäätiölle 100-vuotisjuhlavuotensa kunniaksi.

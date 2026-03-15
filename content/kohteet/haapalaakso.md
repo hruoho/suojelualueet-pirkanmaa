@@ -11,6 +11,7 @@ sources:
   - "https://luonnonperintosaatio.fi/suojelualue/haapalaakso/"
 tags: ["luonnonperintösäätiö", "yksityinen-suojelualue"]
 draft: false
+reviewed: 2026-03-14
 ---
 
 Entiselle metsälaitumelle syntynyt lahopuustoinen aarniometsä suurine haapoineen. Haapalaakso on vajaan kuuden hehtaarin kokoinen entinen laidunmetsä, joka on saanut kasvaa vuosikymmenet omassa rauhassaan täysin kirveenkoskemattomana. Haapalaakson keskiosaa luonnehtivat valtavat haavat, jotka kohottavat latvansa muun metsän yläpuolelle. Luonnonperintösäätiö osti alueen vuonna 2009 yhdessä Pyssynkankaan kanssa.

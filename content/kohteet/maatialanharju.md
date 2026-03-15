@@ -18,6 +18,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["virkistysalue"]
 draft: false
+reviewed:
 ---
 
 Nokian keskustan itäpuolella Vihnusjärven rannassa sijaitseva Maatialanharju nousee noin 40 metriä järven pinnasta. Viitoitettu luontopolku on noin viiden kilometrin mittainen.

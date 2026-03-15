@@ -14,6 +14,7 @@ laavuja: 0
 vuokratupia: []
 tags: ["luonnonsuojelualue"]
 draft: false
+reviewed:
 ---
 
 Pikkuhaan luonnonsuojelualue sijaitsee Teiskon Kulkkilassa Hirvijärven itäpuolella, noin 30 kilometrin päässä Tampereen keskustasta, ja on noin 25 hehtaarin laajuinen. Alue suojelee vanhaa kuusivaltaista metsää ja sen lajistoa, mukaan lukien rauhoitettu lehtoneidonvaippa ja harvinainen humala. Alueella ei ole reittejä tai palveluita.
