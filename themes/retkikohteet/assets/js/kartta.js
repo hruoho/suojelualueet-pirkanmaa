@@ -68,7 +68,12 @@
     var lat = coords[1];
     var lon = coords[0];
     var html = '<div class="map-popup">';
-    html += '<h3><a href="' + p.url + '">' + p.name + '</a></h3>';
+    var reviewedTitle = '';
+    if (p.reviewed) {
+      var d = new Date(p.reviewed);
+      reviewedTitle = 'Tarkistettu ' + d.getDate() + '.' + (d.getMonth()+1) + '.' + d.getFullYear();
+    }
+    html += '<h3><a href="' + p.url + '">' + p.name + '</a>' + (p.reviewed ? ' <span class="map-popup__reviewed" title="' + reviewedTitle + '">✓</span>' : '') + '</h3>';
 
     // Meta
     html += '<p class="map-popup__meta">' + p.kunta;

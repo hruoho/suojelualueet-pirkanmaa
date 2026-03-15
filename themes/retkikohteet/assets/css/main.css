@@ -171,6 +171,11 @@ main {
   content: "📍 ";
 }
 
+.kohde-reviewed {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
 .kohde-tags {
   display: flex;
   flex-wrap: wrap;
@@ -582,6 +587,12 @@ body:has(.kartta-page) .site-footer {
   color: var(--muted);
   margin-bottom: 0.6rem;
   line-height: 1.4;
+}
+
+.map-popup__reviewed {
+  color: var(--muted);
+  font-size: 0.85em;
+  font-weight: 400;
 }
 
 .map-popup__tags {

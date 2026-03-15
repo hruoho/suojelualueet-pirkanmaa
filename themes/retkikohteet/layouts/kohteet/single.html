@@ -139,6 +139,9 @@
       {{ with .Params.pinta_ala_ha }}
         <span class="kohde-ala">{{ . }} ha</span>
       {{ end }}
+      {{ with .Params.reviewed }}
+        <span class="kohde-reviewed" title="Tarkistettu {{ dateFormat "2.1.2006" . }}">✓ Tarkistettu</span>
+      {{ end }}
     </div>
   </header>
 
