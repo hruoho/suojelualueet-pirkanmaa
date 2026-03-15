@@ -583,6 +583,22 @@ body:has(.kartta-page) .site-footer {
   line-height: 1.4;
 }
 
+.map-popup__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.6rem;
+}
+
+.map-popup__tag {
+  background: var(--bg-alt);
+  color: var(--text);
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.8rem;
+  font-size: 0.72rem;
+  font-family: var(--sans);
+}
+
 .map-popup__links {
   display: flex;
   gap: 0.75rem;
@@ -749,12 +765,45 @@ body:has(.kartta-page) .site-footer {
 /* ---------- Map legend ---------- */
 .map-legend {
   background: var(--bg);
-  padding: 0.6rem 0.8rem;
   border-radius: 0.4rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   font-family: var(--sans);
   font-size: 0.8rem;
   line-height: 1.6;
+}
+
+.map-legend__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: var(--bg);
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.map-legend__btn:hover {
+  color: var(--accent-dk);
+}
+
+.map-legend__content {
+  display: none;
+  padding: 0.5rem 0.7rem 0.6rem;
+  border-top: 1px solid var(--bg-alt);
+}
+
+.map-legend--open .map-legend__content {
+  display: block;
+}
+
+.map-legend--open .map-legend__btn {
+  border-radius: 0.4rem 0.4rem 0 0;
 }
 
 .map-legend__item {

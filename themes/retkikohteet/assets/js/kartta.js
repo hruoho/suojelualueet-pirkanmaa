@@ -36,19 +36,8 @@
     }).addTo(map);
   }
 
-  // Marker colors by category
-  var colors = {
-    default: { fill: '#6B7B9E', stroke: '#536180' },
-    lps:     { fill: '#5B8A8A', stroke: '#456B6B' },
-    lsa:     { fill: '#B07285', stroke: '#8C5A6A' }
-  };
-
-  function getCategory(feature) {
-    var tags = feature.properties.tags || [];
-    if (tags.indexOf('luonnonperintösäätiö') !== -1) return 'lps';
-    if (tags.indexOf('luonnonsuojelualue') !== -1) return 'lsa';
-    return 'default';
-  }
+  // Marker color
+  var markerColor = { fill: '#6B7B9E', stroke: '#536180' };
 
   function areaRadius(ha) {
     if (!ha || ha <= 0) return 5;
@@ -61,15 +50,13 @@
   }
 
   function getStyle(feature) {
-    var c = colors[getCategory(feature)];
     var r = areaRadius(feature.properties.pinta_ala_ha);
-    return { radius: r, fillColor: c.fill, color: c.stroke, weight: 2, opacity: 1, fillOpacity: 0.85 };
+    return { radius: r, fillColor: markerColor.fill, color: markerColor.stroke, weight: 2, opacity: 1, fillOpacity: 0.85 };
   }
 
   function getHoverStyle(feature) {
-    var c = colors[getCategory(feature)];
     var r = areaRadius(feature.properties.pinta_ala_ha) + 2;
-    return { radius: r, fillColor: c.fill, color: c.stroke, weight: 3, opacity: 1, fillOpacity: 1 };
+    return { radius: r, fillColor: markerColor.fill, color: markerColor.stroke, weight: 3, opacity: 1, fillOpacity: 1 };
   }
 
   function buildPopupHTML(p, coords) {
@@ -95,6 +82,14 @@
     if (p.vuokratupia && p.vuokratupia.length) fac.push('Vuokratupia: ' + p.vuokratupia.join(', '));
     if (fac.length) {
       html += '<div class="map-popup__facilities">' + fac.join(' · ') + '</div>';
+    }
+
+    // Tags
+    var tags = p.tags || [];
+    if (tags.length) {
+      html += '<div class="map-popup__tags">';
+      tags.forEach(function(t) { html += '<span class="map-popup__tag">' + t + '</span>'; });
+      html += '</div>';
     }
 
     // Links
@@ -235,18 +230,6 @@
     };
     toggle.addTo(map);
   }
-
-  // Legend
-  var legend = L.control({ position: 'bottomright' });
-  legend.onAdd = function() {
-    var div = L.DomUtil.create('div', 'map-legend');
-    div.innerHTML =
-      '<div class="map-legend__item"><span class="map-legend__dot" style="background:#6B7B9E"></span> Virkistysalueet</div>' +
-      '<div class="map-legend__item"><span class="map-legend__dot" style="background:#5B8A8A"></span> Luonnonperintösäätiö</div>' +
-      '<div class="map-legend__item"><span class="map-legend__dot" style="background:#B07285"></span> Luonnonsuojelualueet</div>';
-    return div;
-  };
-  legend.addTo(map);
 
   // Hide controls when popup is open (mobile z-index issue)
   map.on('popupopen', function() {
