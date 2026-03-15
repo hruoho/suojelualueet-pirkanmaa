@@ -2,22 +2,35 @@
 title: "Kintulammin retkeily- ja luonnonsuojelualue"
 kunta: "Tampere"
 koordinaatit: [61.588310, 23.964036]
-pinta_ala_ha: 580
+pinta_ala_ha: 608.5
 kuvia: []
+karttakuvat:
+  - src: "kartta.png"
+    alt: "Kintulammin retkeilyalueen kartta"
 kartat:
   google_maps: "https://www.google.com/maps/place/Kintulammi"
+pysakointi:
+  - "Keltolahdentie 47, Tampere"
+  - "Kintulammentie 378, Tampere"
 sources:
-  - "https://www.kintulammi.fi"
-  - "https://www.luontoon.fi/fi/reitit/kintulammin-retkeilyreitti-tampere-528583"
-vaellusreitit_km: 15
-tulipaikkoja: 6
-laavuja: 4
+  - "https://www.tampere.fi/luonto-ja-ymparisto/luonnonsuojelu/luonnonsuojelualueet-ja-suojelukohteet/kintulammin-luonnonsuojelualue"
+  - "https://outdoorstampere.fi/retkeilyalueet/kintulammin-retkeilyalue/"
+  - "https://ekokumppanit.fi/julkaisut/kintulammi-tamperelaisten-oma-luonto-olohuone/"
+vaellusreitit_km: 18
+tulipaikkoja: 7
+laavuja: 5
 vuokratupia: ["Kintulammi", "Kortejärvi"]
 tags: ["luonnonsuojelualue", "vaellus"]
 draft: false
 reviewed:
 ---
 
-6 tulipaikkaa, 4 laavua ja 2 vuokratupaa.
-Vattulan vanha metsä suojeltu vuonna 1959.
-Suunnitteilla yhteysreittejä Pukala-Orivesi suuntaan.
+Tampereen laajin luonnonsuojelualue ja Pirkanmaan kolmanneksi suurin suojeltu metsäalue Seitsemisen ja Helvetinjärven jälkeen. Sijaitsee noin 20 km keskustasta koilliseen. Rauhoitettu 18.4.2018 Suomen 100-vuotisjuhlan luontolahjana. Metsien, lampien ja soiden mosaiikkia hallitsevat 300–400-vuotiaat aihkimännyt. Alueella esiintyy metso (yksi Pirkanmaan vahvimmista esiintymisalueista), liito-orava, pohjantikka ja viitasammakko.
+
+## Reitit ja palvelut
+
+Opastettuja retkeilyreittejä noin 18 km useina rengasreitteinä. Kirkkokivelle johtaa 300 m esteetön polku. Viisi laavua (Kirkkokivi, Kintulammi, Kaukaloistenkallio, Saarijärvi, Ala-Kaulamoinen) ja kaksi tulipaikkaa ilman laavua. Vuokrattavissa Kintulammin maja ja Kortejärven tila. Kävijämäärä ylitti 51 000 vuonna 2020. Suunnitteilla retkeilyreitti Oriveden keskustaan ja yhteys Kangasalan Kaarinanpolkuun.
+
+## Saapuminen
+
+Aitolahti–Sorilan risteyksestä Pulesjärventielle. P1 Keltolahdentie 47, P2 Kintulammentie 378. Myös Nysse-linja 90 Sorilan pysäkille.
