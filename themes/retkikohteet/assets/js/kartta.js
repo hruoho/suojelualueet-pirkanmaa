@@ -16,6 +16,7 @@
   var kuntaLayer = null;
   if (kuntaData) {
     kuntaLayer = L.geoJSON(kuntaData, {
+      interactive: false,
       style: {
         color: '#536180',
         weight: 1.5,
