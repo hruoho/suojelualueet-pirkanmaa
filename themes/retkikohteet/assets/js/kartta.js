@@ -13,9 +13,14 @@
   // Municipality boundaries
   var kuntaEl = document.getElementById('kuntarajat-data');
   var kuntaData = kuntaEl ? JSON.parse(kuntaEl.textContent) : null;
+  // Create a pane for kuntarajat below markers (default marker pane is 600)
+  map.createPane('kuntarajat');
+  map.getPane('kuntarajat').style.zIndex = 350;
+
   var kuntaLayer = null;
   if (kuntaData) {
     kuntaLayer = L.geoJSON(kuntaData, {
+      pane: 'kuntarajat',
       interactive: false,
       style: {
         color: '#536180',
