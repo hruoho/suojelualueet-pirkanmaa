@@ -504,6 +504,10 @@ body:has(.kartta-page) .site-footer {
   pointer-events: none;
 }
 
+@media (max-width: 768px) {
+  .leaflet-control-zoom { display: none; }
+}
+
 /* Override Leaflet default font */
 .leaflet-container {
   font-family: var(--sans);
