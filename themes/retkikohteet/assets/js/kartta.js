@@ -248,6 +248,14 @@
   };
   legend.addTo(map);
 
+  // Hide controls when popup is open (mobile z-index issue)
+  map.on('popupopen', function() {
+    map.getContainer().classList.add('map--popup-open');
+  });
+  map.on('popupclose', function() {
+    map.getContainer().classList.remove('map--popup-open');
+  });
+
   // Keyboard zoom: P = zoom in, M = zoom out
   document.addEventListener('keydown', function(e) {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;

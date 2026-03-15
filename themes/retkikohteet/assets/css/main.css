@@ -488,6 +488,22 @@ body:has(.kartta-page) .site-footer {
   height: 100%;
 }
 
+/* Hide controls when popup is open */
+.map--popup-open .leaflet-control-container {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.map--popup-open .map-crosshair {
+  opacity: 0;
+}
+
+.map--popup-open .map-coords-bar {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* Override Leaflet default font */
 .leaflet-container {
   font-family: var(--sans);
@@ -506,10 +522,6 @@ body:has(.kartta-page) .site-footer {
 }
 
 /* Map popup (click - full details) */
-.map-popup-container {
-  z-index: 1100 !important;
-}
-
 .map-popup-container .leaflet-popup-content-wrapper {
   background: var(--bg);
   color: var(--text);
