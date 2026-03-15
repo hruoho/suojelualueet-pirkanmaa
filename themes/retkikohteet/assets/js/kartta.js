@@ -180,7 +180,8 @@
       allLayers.forEach(function(layer) {
         var name = layer.feature.properties.name || '';
         var kunta = layer.feature.properties.kunta || '';
-        if (!q || fuzzy(q, name) || fuzzy(q, kunta)) {
+        var tags = (layer.feature.properties.tags || []).join(' ');
+        if (!q || fuzzy(q, name) || fuzzy(q, kunta) || fuzzy(q, tags)) {
           if (!geoLayer.hasLayer(layer)) geoLayer.addLayer(layer);
           visible.push(layer);
         } else {
