@@ -176,30 +176,33 @@
     var input = div.querySelector('input');
     input.addEventListener('input', function() {
       var q = this.value.trim();
-      var visible = [];
+      visibleLayers = [];
       allLayers.forEach(function(layer) {
         var name = layer.feature.properties.name || '';
         var kunta = layer.feature.properties.kunta || '';
         var tags = (layer.feature.properties.tags || []).join(' ');
         if (!q || fuzzy(q, name) || fuzzy(q, kunta) || fuzzy(q, tags)) {
           if (!geoLayer.hasLayer(layer)) geoLayer.addLayer(layer);
-          visible.push(layer);
+          visibleLayers.push(layer);
         } else {
           if (geoLayer.hasLayer(layer)) geoLayer.removeLayer(layer);
         }
       });
-      updateLabels(visible);
+      updateLabels(visibleLayers);
     });
     return div;
   };
   search.addTo(map);
 
-  // Permanent labels when few markers visible
+  // Permanent labels when few markers visible in viewport
   var labelMarkers = [];
-  function updateLabels(visible) {
+  function updateLabels(layers) {
     labelMarkers.forEach(function(m) { map.removeLayer(m); });
     labelMarkers = [];
-    if (visible.length > 0 && visible.length <= 10) {
+    // Filter to markers in current viewport
+    var bounds = map.getBounds();
+    var visible = layers.filter(function(l) { return bounds.contains(l.getLatLng()); });
+    if (visible.length > 0 && visible.length <= 5) {
       visible.forEach(function(layer) {
         var latlng = layer.getLatLng();
         var label = L.marker(latlng, {
@@ -215,6 +218,11 @@
       });
     }
   }
+
+  // Update labels on pan/zoom
+  var visibleLayers = allLayers;
+  map.on('moveend', function() { updateLabels(visibleLayers); });
+  updateLabels(visibleLayers);
 
   // Kuntarajat toggle
   if (kuntaLayer) {

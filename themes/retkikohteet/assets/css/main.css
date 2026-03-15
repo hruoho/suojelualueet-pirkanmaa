@@ -525,6 +525,7 @@ body:has(.kartta-page) .site-footer {
   border-radius: 0.3rem;
 }
 
+
 /* Map popup (click - full details) */
 .map-popup-container .leaflet-popup-content-wrapper {
   background: var(--bg);
