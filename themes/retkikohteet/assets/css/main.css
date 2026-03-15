@@ -506,6 +506,10 @@ body:has(.kartta-page) .site-footer {
 }
 
 /* Map popup (click - full details) */
+.map-popup-container {
+  z-index: 1100 !important;
+}
+
 .map-popup-container .leaflet-popup-content-wrapper {
   background: var(--bg);
   color: var(--text);
