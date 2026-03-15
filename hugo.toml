@@ -12,3 +12,18 @@ enableGitInfo = true
 
 [markup.goldmark.renderer]
   unsafe = true
+
+[mediaTypes."text/css"]
+  suffixes = ["css"]
+[mediaTypes."text/javascript"]
+  suffixes = ["js", "mjs"]
+
+[server]
+  [[server.headers]]
+    for = "**.css"
+    [server.headers.values]
+      Content-Type = "text/css; charset=utf-8"
+  [[server.headers]]
+    for = "**.js"
+    [server.headers.values]
+      Content-Type = "text/javascript; charset=utf-8"
