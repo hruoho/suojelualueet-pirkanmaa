@@ -6,11 +6,13 @@
   {{ end }}
   {{ $kunta := .Title }}
   {{ $pages := where site.RegularPages "Params.kunta" $kunta }}
-  <h2>Kohteet ({{ len $pages }})</h2>
+  {{ with $pages }}
+  <h2>Kohteet ({{ len . }})</h2>
   <div class="kohteet-grid">
-    {{ range $pages }}
+    {{ range . }}
       {{ partial "kohde-card.html" . }}
     {{ end }}
   </div>
+  {{ end }}
 </div>
 {{ end }}

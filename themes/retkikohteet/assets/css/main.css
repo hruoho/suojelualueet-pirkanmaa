@@ -374,6 +374,33 @@ main {
   margin-bottom: 2rem;
 }
 
+.kunta-description {
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.kunta-description p {
+  margin-bottom: 1rem;
+}
+
+.kohteet-page h2 {
+  margin-bottom: 1.5rem;
+}
+
+.taxonomy-list {
+  list-style: none;
+  padding: 0;
+}
+
+.taxonomy-list li {
+  margin-bottom: 0.5rem;
+}
+
+.taxonomy-list a {
+  font-size: 1.1rem;
+}
+
 .kohteet-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
