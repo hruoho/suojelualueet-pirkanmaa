@@ -3,3 +3,5 @@ resources/_gen/
 .hugo_build.lock
 .idea/
 node_modules
+kartat-pdf/
+kintulammi-kartta.png

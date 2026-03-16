@@ -1,5 +1,6 @@
 (function() {
   var data = JSON.parse(document.getElementById('places-data').textContent);
+  var visibleLayers = [];
 
   // Center on Pirkanmaa
   var map = L.map('map').setView([61.5, 23.8], 9);
@@ -73,7 +74,8 @@
       var d = new Date(p.reviewed);
       reviewedTitle = 'Tarkistettu ' + d.getDate() + '.' + (d.getMonth()+1) + '.' + d.getFullYear();
     }
-    html += '<h3><a href="' + p.url + '">' + p.name + '</a>' + (p.reviewed ? ' <span class="map-popup__reviewed" title="' + reviewedTitle + '">✓</span>' : '') + '</h3>';
+    html += '<div class="map-popup__header"><h3><a href="' + p.url + '">' + p.name + '</a>' + (p.reviewed ? ' <span class="map-popup__reviewed" title="' + reviewedTitle + '">✓</span>' : '') + '</h3>';
+    html += '<a href="' + p.url + '" class="map-popup__open">Näytä</a></div>';
 
     // Meta
     html += '<p class="map-popup__meta">' + p.kunta;
@@ -147,8 +149,8 @@
 
       // Rich popup on click
       layer.bindPopup(buildPopupHTML(feature.properties, feature.geometry.coordinates), {
-        maxWidth: 320,
-        minWidth: 240,
+        maxWidth: 400,
+        minWidth: 280,
         className: 'map-popup-container'
       });
 
@@ -230,7 +232,7 @@
   }
 
   // Update labels on pan/zoom
-  var visibleLayers = allLayers;
+  visibleLayers = allLayers;
   map.on('moveend', function() { updateLabels(visibleLayers); });
   updateLabels(visibleLayers);
 
@@ -285,7 +287,7 @@
         var orig = wgsEl.textContent;
         wgsEl.textContent = 'Kopioitu!';
         setTimeout(function() { wgsEl.textContent = orig; div.classList.remove('map-coords-bar--copied'); }, 1200);
-      });
+      }).catch(function() {});
     });
     return div;
   };
@@ -301,20 +303,5 @@
   }
   map.on('move', updateCoordsBar);
   updateCoordsBar();
-
-  // WGS84 to ETRS-TM35FIN for Maastokartta links
-  function wgs84ToETRS(lat, lon) {
-    var a = 6378137, f = 1/298.257222101, k0 = 0.9996, lon0 = 27, falseE = 500000;
-    var e2 = 2*f - f*f, e4 = e2*e2, e6 = e4*e2, ep2 = e2/(1-e2);
-    var latR = lat*Math.PI/180, lonR = lon*Math.PI/180, dLon = lonR - lon0*Math.PI/180;
-    var N = a/Math.sqrt(1 - e2*Math.sin(latR)*Math.sin(latR));
-    var T = Math.tan(latR)*Math.tan(latR);
-    var C = ep2*Math.cos(latR)*Math.cos(latR);
-    var A = Math.cos(latR)*dLon;
-    var M = a*((1-e2/4-3*e4/64-5*e6/256)*latR - (3*e2/8+3*e4/32+45*e6/1024)*Math.sin(2*latR) + (15*e4/256+45*e6/1024)*Math.sin(4*latR) - (35*e6/3072)*Math.sin(6*latR));
-    var easting = falseE + k0*N*(A + (1-T+C)*A*A*A/6 + (5-18*T+T*T+72*C-58*ep2)*A*A*A*A*A/120);
-    var northing = k0*(M + N*Math.tan(latR)*(A*A/2 + (5-T+9*C+4*C*C)*A*A*A*A/24 + (61-58*T+T*T+600*C-330*ep2)*A*A*A*A*A*A/720));
-    return { e: Math.round(easting), n: Math.round(northing) };
-  }
 
 })();

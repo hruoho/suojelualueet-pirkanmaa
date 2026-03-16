@@ -1,17 +1,3 @@
-{{ define "head" }}
-<style>
-  .status-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-  .status-table th, .status-table td { padding: 0.4rem 0.6rem; border-bottom: 1px solid #e0e0e0; text-align: left; }
-  .status-table th { font-family: var(--sans); font-weight: 600; position: sticky; top: 0; background: var(--bg); cursor: pointer; user-select: none; }
-  .status-table th:hover { color: var(--accent); }
-  .status-table td { font-family: var(--sans); }
-  .status-table tr:hover { background: rgba(0,0,0,0.03); }
-  .status-ok { color: #5B8A8A; }
-  .status-missing { color: #B07285; }
-  .status-summary { font-family: var(--sans); margin-bottom: 1.5rem; color: #666; }
-</style>
-{{ end }}
-
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 
