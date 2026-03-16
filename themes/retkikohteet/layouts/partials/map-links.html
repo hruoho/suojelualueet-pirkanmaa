@@ -12,7 +12,6 @@
 {{ end }}
 
 <div class="kohde-location">
-  <code class="kohde-coords" title="Klikkaa kopioidaksesi">📍 {{ $lat }}, {{ $lon }}</code>
   <a href="#" class="kohde-map-link kohde-map-link--pti" data-points='{{ $points | jsonify }}' target="_blank" rel="noopener">Paikkatietoikkuna</a>
 </div>
 
@@ -25,7 +24,7 @@
       {{ $imgPath := printf "img/kohteet/%s/%s" ($.File.ContentBaseName) .src }}
       {{ $img := resources.Get $imgPath }}
       {{ if $img }}
-        {{ $thumb := $img.Fit "240x160 q80" }}
+        {{ $thumb := $img.Fit "600x400 q85" }}
         <a href="{{ $img.RelPermalink }}" class="kohde-map-thumb" target="_blank" rel="noopener">
           <img src="{{ $thumb.RelPermalink }}" alt="{{ .alt }}" loading="lazy">
           <span class="kohde-map-thumb__label">{{ .alt }}</span>

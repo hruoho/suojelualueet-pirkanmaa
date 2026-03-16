@@ -6,22 +6,10 @@
 {{ define "scripts" }}
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+{{ $coords := resources.Get "js/coords.js" | minify | fingerprint }}
+<script src="{{ $coords.RelPermalink }}"></script>
 <script>
 (function() {
-  // WGS84 -> ETRS-TM35FIN
-  function wgs84ToETRS(lat, lon) {
-    var a=6378137,f=1/298.257222101,k0=0.9996,lon0=27,falseE=500000;
-    var e2=2*f-f*f,e4=e2*e2,e6=e4*e2,ep2=e2/(1-e2);
-    var latR=lat*Math.PI/180,lonR=lon*Math.PI/180,dLon=lonR-lon0*Math.PI/180;
-    var N=a/Math.sqrt(1-e2*Math.sin(latR)*Math.sin(latR));
-    var T=Math.tan(latR)*Math.tan(latR),C=ep2*Math.cos(latR)*Math.cos(latR),A=Math.cos(latR)*dLon;
-    var M=a*((1-e2/4-3*e4/64-5*e6/256)*latR-(3*e2/8+3*e4/32+45*e6/1024)*Math.sin(2*latR)+(15*e4/256+45*e6/1024)*Math.sin(4*latR)-(35*e6/3072)*Math.sin(6*latR));
-    return {
-      e: Math.round(falseE+k0*N*(A+(1-T+C)*A*A*A/6+(5-18*T+T*T+72*C-58*ep2)*A*A*A*A*A/120)),
-      n: Math.round(k0*(M+N*Math.tan(latR)*(A*A/2+(5-T+9*C+4*C*C)*A*A*A*A/24+(61-58*T+T*T+600*C-330*ep2)*A*A*A*A*A*A/720)))
-    };
-  }
-
   // Embedded terrain map
   var mapEl = document.getElementById('kohde-map');
   if (mapEl) {
@@ -58,33 +46,20 @@
   // Paikkatietoikkuna link with all coordinates as markers
   var ptiLink = document.querySelector('.kohde-map-link--pti');
   if (ptiLink) {
-    var points = JSON.parse(ptiLink.dataset.points);
+    var ptiPoints = JSON.parse(ptiLink.dataset.points);
     var markers = [];
     var sumE = 0, sumN = 0;
-    points.forEach(function(p) {
+    ptiPoints.forEach(function(p) {
       var etrs = wgs84ToETRS(p.a, p.b);
       sumE += etrs.e; sumN += etrs.n;
       markers.push('2|3|ffde00|' + etrs.e + '_' + etrs.n + '|' + p.label);
     });
-    var cE = Math.round(sumE / points.length);
-    var cN = Math.round(sumN / points.length);
+    var cE = Math.round(sumE / ptiPoints.length);
+    var cN = Math.round(sumN / ptiPoints.length);
     ptiLink.href = 'https://kartta.paikkatietoikkuna.fi/?lang=fi&coord=' + cE + '_' + cN +
       '&zoomLevel=10&mapLayers=base_35+100+default&markers=' + encodeURIComponent(markers.join('___'));
   }
 
-  // Copy coordinates on click
-  var coordsEl = document.querySelector('.kohde-coords');
-  if (coordsEl) {
-    coordsEl.addEventListener('click', function() {
-      var text = coordsEl.textContent.replace(/📍\s*/, '').trim();
-      navigator.clipboard.writeText(text).then(function() {
-        coordsEl.classList.add('kohde-coords--copied');
-        var orig = coordsEl.textContent;
-        coordsEl.textContent = '✓ Kopioitu';
-        setTimeout(function() { coordsEl.textContent = orig; coordsEl.classList.remove('kohde-coords--copied'); }, 1500);
-      });
-    });
-  }
 
 })();
 </script>
@@ -93,13 +68,15 @@
 {{ define "main" }}
 <article class="kohde-page">
   <header class="kohde-header">
-    <h1>{{ .Title }}</h1>
+    <h1>{{ .Title }}, {{ .Params.kunta }}</h1>
     <div class="kohde-meta">
-      <span class="kohde-kunta">{{ .Params.kunta }}</span>
-      {{ with .Params.pinta_ala_ha }}
-        <span class="kohde-ala">{{ . }} ha</span>
+      {{ with .Params.koordinaatit }}
+        <span class="kohde-coords-text">📍 {{ index . 0 }}, {{ index . 1 }}</span>
       {{ end }}
-      {{ with .Params.reviewed }}
+      {{ with .Params.pinta_ala_ha }}
+        <span class="kohde-title-area">📐 {{ . }} ha</span>
+      {{ end }}
+      {{ with $.Params.reviewed }}
         <span class="kohde-reviewed" title="Tarkistettu {{ dateFormat "2.1.2006" . }}">✓ Tarkistettu</span>
       {{ end }}
     </div>
@@ -127,6 +104,7 @@
 
   {{ partial "map-links.html" . }}
 
+  {{ if or .Params.vaellusreitit_km .Params.tulipaikkoja .Params.laavuja .Params.vuokratupia }}
   <section class="kohde-facilities">
     <h2>Palvelut</h2>
     <ul class="kohde-facilities-list">
@@ -144,6 +122,7 @@
       {{ end }}
     </ul>
   </section>
+  {{ end }}
 
   {{ with .Params.sources }}
   <section class="kohde-sources">
