@@ -48,7 +48,7 @@
         {{ end }}
       {{ end }}
     {{ else }}
-      <a href="https://www.google.com/maps/dir/?api=1&destination={{ $lat }},{{ $lon }}" class="kohde-map-link" target="_blank" rel="noopener">Navigoi</a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination={{ $lat }},{{ $lon }}" class="kohde-map-link" target="_blank" rel="noopener">{{ $lat }}, {{ $lon }}</a>
     {{ end }}
   </div>
 </section>
