@@ -76,10 +76,10 @@
       {{ with .Params.pinta_ala_ha }}
         <span class="kohde-title-area">📐 {{ . }} ha</span>
       {{ end }}
-      {{ with $.Params.reviewed }}
-        <span class="kohde-reviewed" title="Tarkistettu {{ dateFormat "2.1.2006" . }}">✓ Tarkistettu</span>
-      {{ end }}
     </div>
+    {{ with $.Params.reviewed }}
+      <span class="kohde-reviewed" title="Tarkistettu {{ dateFormat "2.1.2006" . }}">✓ Tarkistettu</span>
+    {{ end }}
   </header>
 
   {{ if .Params.kuvia }}
