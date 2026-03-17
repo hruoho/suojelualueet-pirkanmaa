@@ -2,7 +2,7 @@
 title: "Kintulammin retkeily- ja luonnonsuojelualue"
 kunta: "Tampere"
 koordinaatit: [61.588310, 23.964036]
-pinta_ala_ha: 608.5
+pinta_ala_ha: 610
 kuvia: []
 karttakuvat:
   - src: "kartta.png"
