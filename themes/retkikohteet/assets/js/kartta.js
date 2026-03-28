@@ -301,7 +301,46 @@
     var etrs = wgs84ToETRS(c.lat, c.lng);
     bar.querySelector('.coords-etrs').textContent = etrs.n + ', ' + etrs.e;
   }
-  map.on('move', updateCoordsBar);
+
+  // Crosshair label: show place name when crosshair is over a marker
+  var crosshairLabel = document.createElement('div');
+  crosshairLabel.className = 'map-crosshair-label';
+  map.getContainer().appendChild(crosshairLabel);
+  var lastCrosshairLayer = null;
+
+  function updateCrosshairLabel() {
+    var centerPx = map.latLngToContainerPoint(map.getCenter());
+    var hitRadius = 20; // pixels
+    var closest = null;
+    var closestDist = Infinity;
+    allLayers.forEach(function(layer) {
+      if (!geoLayer.hasLayer(layer)) return;
+      var px = map.latLngToContainerPoint(layer.getLatLng());
+      var dx = px.x - centerPx.x;
+      var dy = px.y - centerPx.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < hitRadius && dist < closestDist) {
+        closest = layer;
+        closestDist = dist;
+      }
+    });
+    if (closest && closest !== lastCrosshairLayer) {
+      var p = closest.feature.properties;
+      var text = p.name;
+      if (p.pinta_ala_ha) text += ', ' + p.pinta_ala_ha + ' ha';
+      crosshairLabel.textContent = text;
+      crosshairLabel.style.display = 'block';
+      lastCrosshairLayer = closest;
+    } else if (!closest) {
+      crosshairLabel.style.display = 'none';
+      lastCrosshairLayer = null;
+    }
+  }
+
+  map.on('move', function() {
+    updateCoordsBar();
+    updateCrosshairLabel();
+  });
   updateCoordsBar();
 
 })();

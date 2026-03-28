@@ -463,7 +463,8 @@ body:has(.kartta-page) .site-footer {
   transition: opacity 0.2s;
 }
 
-.map--popup-open .map-crosshair {
+.map--popup-open .map-crosshair,
+.map--popup-open .map-crosshair-label {
   opacity: 0;
 }
 
@@ -619,6 +620,23 @@ body:has(.kartta-page) .site-footer {
   width: 28px; height: 28px;
   transform: translate(-50%, -50%);
   z-index: 1000;
+}
+
+.map-crosshair-label {
+  display: none;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(20px, -50%);
+  z-index: 1000;
+  pointer-events: none;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .map-crosshair::before,
