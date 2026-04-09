@@ -68,14 +68,13 @@
   function buildPopupHTML(p, coords) {
     var lat = coords[1];
     var lon = coords[0];
-    var html = '<div class="map-popup">';
+    var html = '<a href="' + p.url + '" class="map-popup">';
     var reviewedTitle = '';
     if (p.reviewed) {
       var d = new Date(p.reviewed);
       reviewedTitle = 'Tarkistettu ' + d.getDate() + '.' + (d.getMonth()+1) + '.' + d.getFullYear();
     }
-    html += '<div class="map-popup__header"><h3><a href="' + p.url + '">' + p.name + '</a>' + (p.reviewed ? ' <span class="map-popup__reviewed" title="' + reviewedTitle + '">✓</span>' : '') + '</h3>';
-    html += '<a href="' + p.url + '" class="map-popup__open">Näytä</a></div>';
+    html += '<div class="map-popup__header"><h3>' + p.name + (p.reviewed ? ' <span class="map-popup__reviewed" title="' + reviewedTitle + '">✓</span>' : '') + '</h3></div>';
 
     // Meta
     html += '<p class="map-popup__meta">' + p.kunta;
@@ -104,7 +103,9 @@
       html += '</div>';
     }
 
-    // Links
+    html += '</a>';
+
+    // Links (outside the main link to avoid nested anchors)
     html += '<div class="map-popup__links">';
     html += '<a href="https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lon + '" class="map-popup__link" target="_blank" rel="noopener">Navigoi</a>';
     var c = wgs84ToETRS(lat, lon);
@@ -113,7 +114,6 @@
     html += '<a href="' + ptiUrl + '" class="map-popup__link" target="_blank" rel="noopener">Kartta</a>';
     html += '</div>';
 
-    html += '</div>';
     return html;
   }
 
@@ -307,6 +307,13 @@
   crosshairLabel.className = 'map-crosshair-label';
   map.getContainer().appendChild(crosshairLabel);
   var lastCrosshairLayer = null;
+
+  // Click crosshair label to open marker popup
+  crosshairLabel.addEventListener('click', function() {
+    if (lastCrosshairLayer) {
+      lastCrosshairLayer.openPopup();
+    }
+  });
 
   function updateCrosshairLabel() {
     var centerPx = map.latLngToContainerPoint(map.getCenter());

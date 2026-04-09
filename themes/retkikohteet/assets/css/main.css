@@ -4,14 +4,14 @@
 
 /* ---------- Design Tokens ---------- */
 :root {
-  --bg:        #fff;
-  --bg-alt:    #f5f5f5;
-  --text:      #333;
-  --accent:    #356;
-  --accent-dk: #234;
-  --muted:     #888;
-  --serif:     'Lora', Georgia, serif;
-  --sans:      'Source Sans 3', -apple-system, sans-serif;
+  --bg:        #fffff8;
+  --bg-alt:    #f8f8f0;
+  --text:      #111;
+  --accent:    #a00000;
+  --accent-dk: #800000;
+  --muted:     #666;
+  --serif:     'et-book', Georgia, serif;
+  --sans:      'et-book', Georgia, serif;
 }
 
 /* ---------- Reset ---------- */
@@ -140,7 +140,7 @@ main {
   max-width: 920px;
   margin: 0 auto 3em;
   padding: 40px 60px;
-  background: #fff;
+  background: floralwhite;
   box-shadow: 2px 4px 6px 1px rgba(50, 50, 50, 0.14);
 }
 
@@ -482,9 +482,14 @@ body:has(.kartta-page) .site-footer {
   font-family: var(--sans);
 }
 
+/* Pointer cursor on markers */
+.leaflet-interactive {
+  cursor: pointer;
+}
+
 /* Map tooltip (hover - name only) */
 .map-tooltip {
-  background: #fff;
+  background: var(--bg);
   color: var(--text);
   border: 1px solid #e8e8e8;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -497,14 +502,14 @@ body:has(.kartta-page) .site-footer {
 
 /* Map popup (click - full details) */
 .map-popup-container .leaflet-popup-content-wrapper {
-  background: #fff;
+  background: var(--bg);
   color: var(--text);
   border-radius: 3px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .map-popup-container .leaflet-popup-tip {
-  background: #fff;
+  background: var(--bg);
 }
 
 .map-popup-container .leaflet-popup-content {
@@ -514,7 +519,20 @@ body:has(.kartta-page) .site-footer {
 }
 
 .map-popup {
+  display: block;
   padding: 1rem 1.25rem;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.map-popup:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.map-popup:hover h3 {
+  color: var(--accent);
 }
 
 .map-popup h3 {
@@ -522,15 +540,7 @@ body:has(.kartta-page) .site-footer {
   font-size: 1.2rem;
   margin: 0 0 0.4rem;
   line-height: 1.3;
-}
-
-.map-popup h3 a {
-  color: var(--text);
-  text-decoration: none;
-}
-
-.map-popup h3 a:hover {
-  color: var(--accent);
+  transition: color 0.2s;
 }
 
 .map-popup__meta {
@@ -575,7 +585,7 @@ body:has(.kartta-page) .site-footer {
 .map-popup__links {
   display: flex;
   gap: 0.75rem;
-  padding-top: 0.5rem;
+  padding: 0.5rem 1.25rem 1rem;
   border-top: 1px solid var(--bg-alt);
 }
 
@@ -592,24 +602,7 @@ body:has(.kartta-page) .site-footer {
 }
 
 .map-popup__header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.75rem;
-}
-
-.map-popup__open {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--accent) !important;
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-right: 1rem;
-}
-
-.map-popup__open:hover {
-  color: var(--accent-dk) !important;
-  text-decoration: underline;
+  margin-bottom: 0;
 }
 
 /* ---------- Map crosshair ---------- */
@@ -628,15 +621,19 @@ body:has(.kartta-page) .site-footer {
   top: 50%; left: 50%;
   transform: translate(20px, -50%);
   z-index: 1000;
-  pointer-events: none;
+  cursor: pointer;
   font-family: var(--sans);
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 248, 0.92);
   padding: 0.2rem 0.5rem;
   white-space: nowrap;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.map-crosshair-label:hover {
+  color: var(--accent);
 }
 
 .map-crosshair::before,
@@ -659,7 +656,7 @@ body:has(.kartta-page) .site-footer {
 }
 
 .map-coords-bar {
-  background: #fff;
+  background: var(--bg);
   padding: 0.3rem 0.7rem;
   border-radius: 0.3rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -694,7 +691,7 @@ body:has(.kartta-page) .site-footer {
 
 /* ---------- Municipality toggle ---------- */
 .map-toggle {
-  background: #fff;
+  background: var(--bg);
   padding: 0.4rem 0.7rem;
   border-radius: 0.4rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -717,7 +714,7 @@ body:has(.kartta-page) .site-footer {
 
 /* ---------- Municipality tooltip ---------- */
 .kunta-tooltip {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 248, 0.92);
   color: var(--accent-dk);
   border: none;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -740,7 +737,7 @@ body:has(.kartta-page) .site-footer {
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--text);
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 248, 0.92);
   padding: 0.1rem 0.4rem;
   border-radius: 0.2rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
@@ -756,7 +753,7 @@ body:has(.kartta-page) .site-footer {
   padding: 0.5rem 0.75rem;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.4rem;
-  background: #fff;
+  background: var(--bg);
   font-family: var(--sans);
   font-size: 0.9rem;
   color: var(--text);
