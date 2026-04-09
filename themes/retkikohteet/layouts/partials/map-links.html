@@ -11,14 +11,12 @@
   {{ end }}
 {{ end }}
 
-<div class="kohde-location">
-  <a href="#" class="kohde-map-link kohde-map-link--pti" data-points='{{ $points | jsonify }}' target="_blank" rel="noopener">Paikkatietoikkuna</a>
-</div>
-
 <section class="kohde-maps">
   <h2>Kartat</h2>
   <div id="kohde-map" class="kohde-embed-map" data-points='{{ $points | jsonify }}' data-area="{{ .Params.pinta_ala_ha }}"></div>
+  <a href="#" class="kohde-map-link kohde-map-link--pti" data-points='{{ $points | jsonify }}' target="_blank" rel="noopener" style="margin-bottom: 1rem; display: inline-block;">Avaa sijainti paikkatietoikkunassa ↗️</a>
   {{ with .Params.karttakuvat }}
+  <h2>Tiedostot</h2>
   <div class="kohde-map-thumbs">
     {{ range . }}
       {{ $imgPath := printf "img/kohteet/%s/%s" ($.File.ContentBaseName) .src }}
