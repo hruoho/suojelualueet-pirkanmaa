@@ -303,10 +303,16 @@
   map.getContainer().appendChild(crosshairLabel);
   var lastCrosshairLayer = null;
 
-  // Click crosshair label to open marker popup
-  crosshairLabel.addEventListener('click', function() {
-    if (lastCrosshairLayer) {
-      lastCrosshairLayer.openPopup();
+  // Tap/click crosshair label to open marker popup
+  var crosshairTarget = null;
+  crosshairLabel.addEventListener('pointerdown', function() {
+    crosshairTarget = lastCrosshairLayer;
+  });
+  crosshairLabel.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (crosshairTarget) {
+      crosshairTarget.openPopup();
+      crosshairTarget = null;
     }
   });
 
@@ -326,14 +332,28 @@
         closestDist = dist;
       }
     });
-    if (closest && closest !== lastCrosshairLayer) {
-      var p = closest.feature.properties;
-      var text = p.name;
-      if (p.pinta_ala_ha) text += ', ' + p.pinta_ala_ha + ' ha';
-      crosshairLabel.textContent = text;
-      crosshairLabel.style.display = 'block';
-      lastCrosshairLayer = closest;
-    } else if (!closest) {
+    if (closest) {
+      if (closest !== lastCrosshairLayer) {
+        var p = closest.feature.properties;
+        var text = p.name;
+        if (p.pinta_ala_ha) text += ', ' + p.pinta_ala_ha + ' ha';
+        crosshairLabel.textContent = text;
+        crosshairLabel.style.display = 'block';
+        lastCrosshairLayer = closest;
+      }
+      // Flip label left/right so it stays within the map
+      var cw = map.getContainer().clientWidth;
+      var labelW = crosshairLabel.offsetWidth;
+      if (cw / 2 + 20 + labelW > cw) {
+        crosshairLabel.style.left = 'auto';
+        crosshairLabel.style.right = '50%';
+        crosshairLabel.style.transform = 'translate(-20px, -50%)';
+      } else {
+        crosshairLabel.style.left = '50%';
+        crosshairLabel.style.right = 'auto';
+        crosshairLabel.style.transform = 'translate(20px, -50%)';
+      }
+    } else {
       crosshairLabel.style.display = 'none';
       lastCrosshairLayer = null;
     }
