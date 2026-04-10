@@ -39,7 +39,7 @@
           interactive: false
         });
       }
-    }).addTo(map);
+    });
   }
 
   // Marker color
@@ -236,7 +236,7 @@
     var toggle = L.control({ position: 'topright' });
     toggle.onAdd = function() {
       var div = L.DomUtil.create('div', 'map-toggle');
-      div.innerHTML = '<label><input type="checkbox" checked> Kuntarajat</label>';
+      div.innerHTML = '<label><input type="checkbox"> Kuntarajat</label>';
       L.DomEvent.disableClickPropagation(div);
       var cb = div.querySelector('input');
       cb.addEventListener('change', function() {

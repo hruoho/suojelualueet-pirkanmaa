@@ -30,6 +30,10 @@
 
     var kohdeMap = L.map('kohde-map', { scrollWheelZoom: false }).setView([center.lat, center.lon], zoom);
 
+    // Enable scroll zoom only while hovering over the map
+    mapEl.addEventListener('mouseenter', function() { kohdeMap.scrollWheelZoom.enable(); });
+    mapEl.addEventListener('mouseleave', function() { kohdeMap.scrollWheelZoom.disable(); });
+
     L.tileLayer('https://avoin-karttakuva.maanmittauslaitos.fi/avoin/wmts/1.0.0/maastokartta/default/WGS84_Pseudo-Mercator/{z}/{y}/{x}.png?api-key={{ .Site.Params.mml_api_key }}', {
       maxZoom: 16,
       attribution: '&copy; <a href="https://www.maanmittauslaitos.fi/">MML</a> CC 4.0'
