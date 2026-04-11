@@ -47,12 +47,10 @@
 
   function areaRadius(ha) {
     if (!ha || ha <= 0) return 5;
-    // Piecewise: sqrt for <100ha (4–16px), 4th root for 100–15000ha (16–25px)
-    if (ha < 100) {
-      return Math.round(4 + 12 * (Math.sqrt(Math.max(ha, 1)) - 1) / (Math.sqrt(100) - 1));
-    }
-    var root = function(x) { return Math.pow(x, 0.25); };
-    return Math.round(16 + 9 * (root(ha) - root(100)) / (root(15000) - root(100)));
+    // log10-based — roughly equal visual spacing per multiplication of area.
+    // 1 ha -> 5px, 100 ha -> 13px, 10000 ha -> 21px; clamped to [5, 23].
+    var r = 5 + Math.log10(Math.max(ha, 1)) * 4;
+    return Math.round(Math.max(5, Math.min(23, r)));
   }
 
   function getStyle(feature) {
