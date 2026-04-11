@@ -613,6 +613,30 @@ body:has(.kartta-page) .site-footer {
   text-decoration: underline;
 }
 
+button.map-popup__link {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.map-popup__zoom,
+.map-popup__zoom-out {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.map-popup__zoom {
+  margin-left: auto;
+}
+
+.map-popup__icon {
+  display: block;
+}
+
 .map-popup__header {
   margin-bottom: 0;
 }
@@ -739,23 +763,6 @@ body:has(.kartta-page) .site-footer {
 }
 
 /* ---------- Map labels ---------- */
-.map-label {
-  background: none;
-  border: none;
-  white-space: nowrap;
-}
-
-.map-label span {
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text);
-  background: rgba(255, 255, 248, 0.92);
-  padding: 0.1rem 0.4rem;
-  border-radius: 0.2rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-}
-
 /* ---------- Map search ---------- */
 .map-search {
   margin: 10px 0 0 10px;

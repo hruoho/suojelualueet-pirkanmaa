@@ -1,9 +1,9 @@
 (function() {
   var data = JSON.parse(document.getElementById('places-data').textContent);
-  var visibleLayers = [];
 
   // Center on Pirkanmaa
-  var map = L.map('map').setView([61.5, 23.8], 9);
+  var DEFAULT_ZOOM = 9;
+  var map = L.map('map').setView([61.5, 23.8], DEFAULT_ZOOM);
 
   // OpenStreetMap tiles
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -107,6 +107,20 @@
     var ptiUrl = 'https://kartta.paikkatietoikkuna.fi/?lang=fi&coord=' + c.e + '_' + c.n +
       '&zoomLevel=10&mapLayers=base_35+100+default&markers=' + encodeURIComponent('2|3|ffde00|' + c.e + '_' + c.n + '|' + p.name);
     html += '<a href="' + ptiUrl + '" class="map-popup__link" target="_blank" rel="noopener">Kartta</a>';
+    var zoomInIcon = '<svg class="map-popup__icon" viewBox="0 0 24 24" width="18" height="18" ' +
+      'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>' +
+      '<line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>';
+    var zoomOutIcon = '<svg class="map-popup__icon" viewBox="0 0 24 24" width="18" height="18" ' +
+      'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>' +
+      '<line x1="8" y1="11" x2="14" y2="11"/></svg>';
+    html += '<button type="button" class="map-popup__link map-popup__zoom" ' +
+      'data-lat="' + lat + '" data-lon="' + lon + '" data-action="zoom-in" ' +
+      'aria-label="Tarkenna kartta tähän kohteeseen">' + zoomInIcon + '</button>';
+    html += '<button type="button" class="map-popup__link map-popup__zoom-out" ' +
+      'data-lat="' + lat + '" data-lon="' + lon + '" data-action="zoom-out" ' +
+      'aria-label="Loitonna takaisin yleisnäkymään">' + zoomOutIcon + '</button>';
     html += '</div>';
 
     return html;
@@ -183,53 +197,20 @@
     var input = div.querySelector('input');
     input.addEventListener('input', function() {
       var q = this.value.trim();
-      visibleLayers = [];
       allLayers.forEach(function(layer) {
         var name = layer.feature.properties.name || '';
         var kunta = layer.feature.properties.kunta || '';
         var tags = (layer.feature.properties.tags || []).join(' ');
         if (!q || fuzzy(q, name) || fuzzy(q, kunta) || fuzzy(q, tags)) {
           if (!geoLayer.hasLayer(layer)) geoLayer.addLayer(layer);
-          visibleLayers.push(layer);
         } else {
           if (geoLayer.hasLayer(layer)) geoLayer.removeLayer(layer);
         }
       });
-      updateLabels(visibleLayers);
     });
     return div;
   };
   search.addTo(map);
-
-  // Permanent labels when few markers visible in viewport
-  var labelMarkers = [];
-  function updateLabels(layers) {
-    labelMarkers.forEach(function(m) { map.removeLayer(m); });
-    labelMarkers = [];
-    // Filter to markers in current viewport
-    var bounds = map.getBounds();
-    var visible = layers.filter(function(l) { return bounds.contains(l.getLatLng()); });
-    if (visible.length > 0 && visible.length <= 5) {
-      visible.forEach(function(layer) {
-        var latlng = layer.getLatLng();
-        var label = L.marker(latlng, {
-          icon: L.divIcon({
-            className: 'map-label',
-            html: '<span>' + layer.feature.properties.name + '</span>',
-            iconAnchor: [-12, 12]
-          }),
-          interactive: false
-        });
-        label.addTo(map);
-        labelMarkers.push(label);
-      });
-    }
-  }
-
-  // Update labels on pan/zoom
-  visibleLayers = allLayers;
-  map.on('moveend', function() { updateLabels(visibleLayers); });
-  updateLabels(visibleLayers);
 
   // Kuntarajat toggle
   if (kuntaLayer) {
@@ -248,8 +229,24 @@
   }
 
   // Hide controls when popup is open (mobile z-index issue)
-  map.on('popupopen', function() {
+  map.on('popupopen', function(e) {
     map.getContainer().classList.add('map--popup-open');
+
+    // Wire up the "Tarkenna" / "Loitonna" zoom buttons in the popup footer
+    var zoomBtns = e.popup.getElement().querySelectorAll('[data-action="zoom-in"], [data-action="zoom-out"]');
+    Array.prototype.forEach.call(zoomBtns, function(btn) {
+      L.DomEvent.disableClickPropagation(btn);
+      L.DomEvent.on(btn, 'click', function(ev) {
+        ev.preventDefault();
+        var lat = parseFloat(btn.getAttribute('data-lat'));
+        var lon = parseFloat(btn.getAttribute('data-lon'));
+        var action = btn.getAttribute('data-action');
+        var targetZoom = action === 'zoom-in'
+          ? Math.min(map.getMaxZoom(), DEFAULT_ZOOM + 4)
+          : DEFAULT_ZOOM;
+        map.flyTo([lat, lon], targetZoom, { duration: 0.6 });
+      });
+    });
   });
   map.on('popupclose', function() {
     map.getContainer().classList.remove('map--popup-open');
