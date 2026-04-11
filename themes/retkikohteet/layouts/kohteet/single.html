@@ -51,6 +51,28 @@
     if (markersToShow.length > 1) {
       kohdeMap.fitBounds(bounds, { padding: [30, 30], maxZoom: 12 });
     }
+
+    // Fullscreen control
+    var fsCtrl = L.control({ position: 'topright' });
+    fsCtrl.onAdd = function() {
+      var div = L.DomUtil.create('div', 'leaflet-bar leaflet-control kohde-map-fs');
+      div.innerHTML = '<a href="#" role="button" aria-label="Kokoruutu" title="Kokoruutu">⛶</a>';
+      L.DomEvent.disableClickPropagation(div);
+      div.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (!document.fullscreenElement) {
+          mapEl.requestFullscreen().catch(function(){});
+        } else {
+          document.exitFullscreen();
+        }
+      });
+      return div;
+    };
+    fsCtrl.addTo(kohdeMap);
+
+    document.addEventListener('fullscreenchange', function() {
+      setTimeout(function() { kohdeMap.invalidateSize(); }, 100);
+    });
   }
 
   // Paikkatietoikkuna link with all coordinates as markers

@@ -261,6 +261,17 @@ main {
   border: 1px solid #e8e8e8;
 }
 
+.kohde-embed-map:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+}
+
+.kohde-map-fs a {
+  font-size: 1.1rem;
+  line-height: 30px !important;
+}
+
 .kohde-map-thumbs {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
