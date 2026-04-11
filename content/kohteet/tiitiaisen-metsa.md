@@ -1,7 +1,7 @@
 ---
 title: "Tiitiäisen metsä"
 kunta: "Ylöjärvi"
-koordinaatit: [61.55, 23.57]
+koordinaatit: [61.548136, 23.550310]
 pinta_ala_ha: 27
 kuvia: []
 kartat:

@@ -1,7 +1,7 @@
 ---
 title: "Ikuri-Kalkun Myllypuron luonnonsuojelualue"
 kunta: "Tampere"
-koordinaatit: [61.5150, 23.5800]
+koordinaatit: [61.508774, 23.588226]
 pinta_ala_ha: 35.3
 kuvia: []
 kartat:

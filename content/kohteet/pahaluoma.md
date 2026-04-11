@@ -1,7 +1,7 @@
 ---
 title: "Pahaluoman luonnonsuojelualue"
 kunta: "Tampere"
-koordinaatit: [61.5112, 23.5653]
+koordinaatit: [61.512271, 23.564655]
 pinta_ala_ha: 2.2
 kuvia: []
 kartat:

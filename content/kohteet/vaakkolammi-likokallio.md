@@ -1,7 +1,7 @@
 ---
 title: "Vaakkolammi-Likokallion luonnonsuojelualue"
 kunta: "Tampere"
-koordinaatit: [61.494, 23.710]
+koordinaatit: [61.503712, 23.671632]
 pinta_ala_ha: 8.9
 kuvia: []
 kartat:
