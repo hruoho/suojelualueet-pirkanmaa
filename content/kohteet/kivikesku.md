@@ -2,7 +2,7 @@
 title: "Kivikesku"
 kunta: "Nokia"
 koordinaatit: [61.529343, 23.520388]
-pinta_ala_ha: 35.2
+pinta_ala_ha: 35
 kuvia: []
 kartat:
 sources:

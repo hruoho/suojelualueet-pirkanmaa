@@ -2,7 +2,7 @@
 title: "Hupakankorven luonnonsuojelualue"
 kunta: "Tampere"
 koordinaatit: [61.436367, 23.837585]
-pinta_ala_ha: 8.9
+pinta_ala_ha: 9
 kuvia: []
 kartat:
 sources:

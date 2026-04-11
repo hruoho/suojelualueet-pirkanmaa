@@ -2,7 +2,7 @@
 title: "Pelto-Talvisilta"
 kunta: "Ylöjärvi"
 koordinaatit: [61.9696, 23.5895]
-pinta_ala_ha: 0.5
+pinta_ala_ha: 1
 vuokratupia: []
 kuvia: []
 kartat:

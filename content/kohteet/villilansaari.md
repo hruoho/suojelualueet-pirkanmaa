@@ -2,7 +2,7 @@
 title: "Villilänsaaren luonnonsuojelualue"
 kunta: "Tampere"
 koordinaatit: [61.488279, 23.603332]
-pinta_ala_ha: 5.7
+pinta_ala_ha: 6
 kuvia: []
 kartat:
 sources:

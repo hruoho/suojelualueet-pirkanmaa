@@ -2,7 +2,7 @@
 title: "Ryypön metsä"
 kunta: "Vesilahti"
 koordinaatit: [61.235050, 23.537946]
-pinta_ala_ha: 9.6
+pinta_ala_ha: 10
 kuvia: []
 kartat:
 pysakointi:

@@ -2,7 +2,7 @@
 title: "Korvenvuoren luonnonsuojelualue"
 kunta: "Tampere"
 koordinaatit: [61.5750, 23.8600]
-pinta_ala_ha: 4.1
+pinta_ala_ha: 4
 kuvia: []
 kartat:
 sources:

@@ -2,7 +2,7 @@
 title: "Pinalhon luonnonsuojelualue"
 kunta: "Vesilahti"
 koordinaatit:
-pinta_ala_ha: 2.1
+pinta_ala_ha: 2
 kuvia: []
 kartat:
 pysakointi:

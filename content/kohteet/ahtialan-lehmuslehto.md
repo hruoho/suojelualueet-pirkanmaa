@@ -2,7 +2,7 @@
 title: "Ahtialan lehmuslehto"
 kunta: "Vesilahti"
 koordinaatit:
-pinta_ala_ha: 0.4
+pinta_ala_ha: 1
 kuvia: []
 kartat:
 pysakointi:

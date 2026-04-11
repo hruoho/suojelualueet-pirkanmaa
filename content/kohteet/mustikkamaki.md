@@ -2,7 +2,7 @@
 title: "Mustikkamäki"
 kunta: "Pälkäne"
 koordinaatit: [61.39, 24.42]
-pinta_ala_ha: 6.6
+pinta_ala_ha: 7
 kuvia: []
 kartat:
 sources:

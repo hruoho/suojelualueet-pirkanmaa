@@ -2,7 +2,7 @@
 title: "Haaviston vuorijalavalehto"
 kunta: "Nokia"
 koordinaatit: [61.464644, 23.443598]
-pinta_ala_ha: 3.02
+pinta_ala_ha: 3
 kuvia: []
 kartat:
 sources:

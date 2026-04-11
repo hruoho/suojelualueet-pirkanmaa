@@ -2,7 +2,7 @@
 title: "Ruutana"
 kunta: "Nokia"
 koordinaatit: [61.478012, 23.372988]
-pinta_ala_ha: 22.1
+pinta_ala_ha: 22
 kuvia: []
 kartat:
 sources:

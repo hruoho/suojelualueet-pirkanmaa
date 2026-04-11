@@ -2,7 +2,7 @@
 title: "Kirkkojärven-Taivallammin luonnonsuojelualue"
 kunta: "Kangasala"
 koordinaatit: [61.445988, 24.067825]
-pinta_ala_ha: 12.9
+pinta_ala_ha: 13
 kuvia: []
 kartat:
 pysakointi:

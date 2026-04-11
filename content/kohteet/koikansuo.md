@@ -2,7 +2,7 @@
 title: "Koikansuon luonnonsuojelualue"
 kunta: "Tampere"
 koordinaatit: [61.5676, 23.8809]
-pinta_ala_ha: 5.7
+pinta_ala_ha: 6
 kuvia: []
 kartat:
 sources:

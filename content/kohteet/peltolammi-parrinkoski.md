@@ -2,7 +2,7 @@
 title: "Peltolammi-Pärrinkosken luonnonsuojelualue"
 kunta: "Tampere"
 koordinaatit: [61.448247, 23.741369]
-pinta_ala_ha: 34.69
+pinta_ala_ha: 35
 kuvia: []
 kartat:
 sources:

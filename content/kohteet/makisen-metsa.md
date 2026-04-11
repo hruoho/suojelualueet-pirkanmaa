@@ -2,7 +2,7 @@
 title: "Mäkisen metsä"
 kunta: "Vesilahti"
 koordinaatit: [61.352812, 23.282313]
-pinta_ala_ha: 18.1
+pinta_ala_ha: 18
 kuvia: []
 kartat:
 pysakointi:

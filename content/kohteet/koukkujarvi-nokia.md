@@ -2,7 +2,7 @@
 title: "Koukkujärvi (Nokia)"
 kunta: "Nokia"
 koordinaatit: [61.5100, 23.4300]
-pinta_ala_ha: 20.1
+pinta_ala_ha: 20
 kuvia: []
 kartat:
 sources:

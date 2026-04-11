@@ -2,7 +2,7 @@
 title: "Luodon saari"
 kunta: "Nokia"
 koordinaatit: [61.4600, 23.5200]
-pinta_ala_ha: 53.7
+pinta_ala_ha: 54
 kuvia: []
 kartat:
 sources:

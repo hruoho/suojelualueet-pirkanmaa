@@ -2,7 +2,7 @@
 title: "Leppiojan luonnonsuojelualue"
 kunta: "Tampere"
 koordinaatit: [61.5263, 23.5575]
-pinta_ala_ha: 4.4
+pinta_ala_ha: 4
 kuvia: []
 kartat:
 sources:

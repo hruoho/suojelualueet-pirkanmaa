@@ -2,7 +2,7 @@
 title: "Viikinsaaren luonnonsuojelualue"
 kunta: "Tampere"
 koordinaatit: [61.485461, 23.693585]
-pinta_ala_ha: 10.53
+pinta_ala_ha: 11
 kuvia: []
 kartat:
 sources:

@@ -2,7 +2,7 @@
 title: "Huippuvuoren metsä"
 kunta: "Vesilahti"
 koordinaatit: [61.261368, 23.431983]
-pinta_ala_ha: 6.7
+pinta_ala_ha: 7
 kuvia: []
 kartat:
 pysakointi:

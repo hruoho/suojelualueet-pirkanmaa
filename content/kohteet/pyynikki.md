@@ -2,7 +2,7 @@
 title: "Pyynikin luonnonsuojelualue"
 kunta: "Tampere"
 koordinaatit: [61.495961, 23.730469]
-pinta_ala_ha: 49.62
+pinta_ala_ha: 50
 kuvia: []
 kartat:
 sources:

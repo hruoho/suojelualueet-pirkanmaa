@@ -2,7 +2,7 @@
 title: "Eräpyhä"
 kunta: "Orivesi"
 koordinaatit: [61.5726, 24.4566]
-pinta_ala_ha: 1.67
+pinta_ala_ha: 2
 vaellusreitit_km: 3
 tulipaikkoja: 1
 laavuja: 1

@@ -2,7 +2,7 @@
 title: "Suden metsä"
 kunta: "Pälkäne"
 koordinaatit: [61.35, 24.30]
-pinta_ala_ha: 8.5
+pinta_ala_ha: 9
 kuvia: []
 kartat:
 sources:

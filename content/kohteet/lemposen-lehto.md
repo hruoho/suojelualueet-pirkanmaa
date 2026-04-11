@@ -2,7 +2,7 @@
 title: "Lemposen lehto"
 kunta: "Kangasala"
 koordinaatit: [61.491222, 23.970593]
-pinta_ala_ha: 5.5
+pinta_ala_ha: 6
 kuvia: []
 kartat:
 pysakointi:

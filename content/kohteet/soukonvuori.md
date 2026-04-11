@@ -2,7 +2,7 @@
 title: "Soukonvuoren luonnonsuojelualue"
 kunta: "Tampere"
 koordinaatit: [61.5171, 23.8642]
-pinta_ala_ha: 45.5
+pinta_ala_ha: 46
 kuvia: []
 kartat:
 sources:

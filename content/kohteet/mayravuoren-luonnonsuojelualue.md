@@ -2,7 +2,7 @@
 title: "Mäyrävuoren luonnonsuojelualue"
 kunta: "Kangasala"
 koordinaatit: [61.451645, 24.096073]
-pinta_ala_ha: 9.2
+pinta_ala_ha: 9
 kuvia: []
 kartat:
 pysakointi:

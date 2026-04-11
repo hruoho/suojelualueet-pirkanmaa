@@ -2,7 +2,7 @@
 title: "Metsänpeitto"
 kunta: "Urjala"
 koordinaatit: [61.08, 23.55]
-pinta_ala_ha: 18.5
+pinta_ala_ha: 19
 kuvia: []
 kartat:
 sources:

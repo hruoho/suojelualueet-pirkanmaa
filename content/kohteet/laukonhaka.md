@@ -2,7 +2,7 @@
 title: "Laukonhaka"
 kunta: "Vesilahti"
 koordinaatit: [61.335276, 23.521466]
-pinta_ala_ha: 13.3
+pinta_ala_ha: 13
 kuvia: []
 kartat:
 pysakointi:

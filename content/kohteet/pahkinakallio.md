@@ -2,7 +2,7 @@
 title: "Pähkinäkallio"
 kunta: "Kangasala"
 koordinaatit: [61.467609, 24.015347]
-pinta_ala_ha: 4.7
+pinta_ala_ha: 5
 kuvia: []
 kartat:
 pysakointi:
